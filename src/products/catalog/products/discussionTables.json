@@ -1,0 +1,94 @@
+[
+  {
+    "id": "MAG-DST-001",
+    "sku": "MAG-DST-VBBEN",
+    "slug": "vb-ben",
+    "name": "VB-BEN",
+    "category": "Discussion Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-DST-002",
+    "sku": "MAG-DST-VBCORAL",
+    "slug": "vb-coral",
+    "name": "VB-CORAL",
+    "category": "Discussion Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-DST-003",
+    "sku": "MAG-DST-VBMEET",
+    "slug": "vb-meet",
+    "name": "VB-MEET",
+    "category": "Discussion Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-DST-004",
+    "sku": "MAG-DST-VBOAK",
+    "slug": "vb-oak",
+    "name": "VB-OAK",
+    "category": "Discussion Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  }
+]

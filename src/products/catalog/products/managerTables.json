@@ -1,0 +1,163 @@
+[
+  {
+    "id": "MAG-MGR-001",
+    "sku": "MAG-MGR-VBFUSION",
+    "slug": "vb-fusion",
+    "name": "VB Fusion",
+    "category": "Manager Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-MGR-002",
+    "sku": "MAG-MGR-VBHEXA",
+    "slug": "vb-hexa",
+    "name": "VB-HEXA",
+    "category": "Manager Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-MGR-003",
+    "sku": "MAG-MGR-ASPIRE",
+    "slug": "aspire",
+    "name": "ASPIRE",
+    "category": "Manager Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-MGR-004",
+    "sku": "MAG-MGR-VENOM",
+    "slug": "venom",
+    "name": "VENOM",
+    "category": "Manager Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-MGR-005",
+    "sku": "MAG-MGR-BOLD",
+    "slug": "bold",
+    "name": "BOLD",
+    "category": "Manager Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-MGR-006",
+    "sku": "MAG-MGR-SOLO",
+    "slug": "solo",
+    "name": "SOLO",
+    "category": "Manager Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-MGR-007",
+    "sku": "MAG-MGR-DELTON",
+    "slug": "delton",
+    "name": "DELTON",
+    "category": "Manager Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "id": "MAG-HCT-001",
+    "sku": "MAG-HCT-TABLE1",
+    "slug": "table-1",
+    "name": "Table-1",
+    "category": "High Counter Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-HCT-002",
+    "sku": "MAG-HCT-TABLE2",
+    "slug": "table-2",
+    "name": "Table-2",
+    "category": "High Counter Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-HCT-003",
+    "sku": "MAG-HCT-TABLE3",
+    "slug": "table-3",
+    "name": "Table-3",
+    "category": "High Counter Tables",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  }
+]

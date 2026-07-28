@@ -1,0 +1,117 @@
+[
+  {
+    "id": "MAG-STO-001",
+    "sku": "MAG-STO-STORAGE",
+    "slug": "storage",
+    "name": "STORAGE",
+    "category": "Storages and Pedestals",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-STO-002",
+    "sku": "MAG-STO-2DRAWS",
+    "slug": "2-draws",
+    "name": "2 DRAWS",
+    "category": "Storages and Pedestals",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-STO-003",
+    "sku": "MAG-STO-1DRAW1DOOR",
+    "slug": "1-draw-1-door",
+    "name": "1 DRAW 1 DOOR",
+    "category": "Storages and Pedestals",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-STO-004",
+    "sku": "MAG-STO-3DRAWS",
+    "slug": "3-draws",
+    "name": "3 DRAWS",
+    "category": "Storages and Pedestals",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  },
+  {
+    "id": "MAG-STO-005",
+    "sku": "MAG-STO-CUSHIONWITH2DRAWS",
+    "slug": "cushion-with-2-draws",
+    "name": "Cushion with 2 Draws",
+    "category": "Storages and Pedestals",
+    "brand": "Magnus Office Furniture",
+    "shortDescription": "",
+    "description": "",
+    "materials": [],
+    "dimensions": [],
+    "applications": [],
+    "features": [],
+    "images": {
+      "thumbnail": "",
+      "gallery": [],
+      "hero": ""
+    },
+    "brochure": "",
+    "tags": [],
+    "relatedProducts": [],
+    "status": "Active"
+  }
+]
