@@ -9,10 +9,20 @@ function getKey(collection: string): string {
   return `${PREFIX}${collection}`;
 }
 
+export function parseStoredJson<T>(raw: string | null, fallback: T): T {
+  if (!raw) return fallback;
+
+  try {
+    return JSON.parse(raw) as T;
+  } catch {
+    return fallback;
+  }
+}
+
 export const storage = {
   async getAll<T>(collection: string): Promise<T[]> {
     const raw = localStorage.getItem(getKey(collection));
-    return raw ? JSON.parse(raw) : [];
+    return parseStoredJson<T[]>(raw, []);
   },
 
   async getById<T extends { id: string }>(collection: string, id: string): Promise<T | null> {

@@ -1,4 +1,5 @@
 import type { AuthToken, AdminUser } from '../types/admin.types';
+import { parseStoredJson } from './storage';
 
 const TOKEN_KEY = 'magnus_admin_token';
 
@@ -37,7 +38,10 @@ export const authService = {
   getToken(): AuthToken | null {
     const raw = localStorage.getItem(TOKEN_KEY);
     if (!raw) return null;
-    const token: AuthToken = JSON.parse(raw);
+
+    const token = parseStoredJson<AuthToken | null>(raw, null);
+    if (!token) return null;
+
     if (Date.now() > token.expiresAt) {
       localStorage.removeItem(TOKEN_KEY);
       return null;

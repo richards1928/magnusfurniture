@@ -12,16 +12,19 @@ export function ImageUploader({ images, onChange, maxImages = 6 }: ImageUploader
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleFiles = (files: FileList) => {
-    const remaining = maxImages - images.length;
+    const remaining = Math.max(0, maxImages - images.length);
     const toProcess = Array.from(files).slice(0, remaining);
 
-    toProcess.forEach(file => {
+    if (!toProcess.length) return;
+
+    const readers = toProcess.map(file => new Promise<string>((resolve) => {
       const reader = new FileReader();
-      reader.onload = () => {
-        const result = reader.result as string;
-        onChange([...images, result]);
-      };
+      reader.onload = () => resolve(reader.result as string);
       reader.readAsDataURL(file);
+    }));
+
+    Promise.all(readers).then((results) => {
+      onChange([...images, ...results]);
     });
   };
 
