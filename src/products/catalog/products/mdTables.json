@@ -1,0 +1,186 @@
+{
+  "id": "MAG-MDT-002",
+  "sku": "MAG-MDT-VBBROOK",
+  "slug": "vb-brook",
+  "name": "VB Brook",
+  "category": "MD Tables",
+  "brand": "Magnus Office Furniture",
+  "shortDescription": "Executive MD table.",
+  "description": "Premium executive office table from the Magnus MD Tables collection.",
+  "materials": [],
+  "dimensions": [],
+  "applications": [
+    "Managing Director Cabin",
+    "Executive Office"
+  ],
+  "features": [],
+  "images": {
+    "thumbnail": "",
+    "gallery": [],
+    "hero": ""
+  },
+  "brochure": "",
+  "tags": [
+    "MD Table",
+    "Executive Desk",
+    "Office Furniture"
+  ],
+  "relatedProducts": [],
+  "status": "Active"
+},
+{
+  "id": "MAG-MDT-003",
+  "sku": "MAG-MDT-VBREGAL",
+  "slug": "vb-regal-desk",
+  "name": "VB Regal Desk",
+  "category": "MD Tables",
+  "brand": "Magnus Office Furniture",
+  "shortDescription": "Executive MD table.",
+  "description": "Executive office desk from the Magnus MD Tables collection.",
+  "materials": [],
+  "dimensions": [],
+  "applications": [
+    "Managing Director Cabin",
+    "Executive Office"
+  ],
+  "features": [],
+  "images": {
+    "thumbnail": "",
+    "gallery": [],
+    "hero": ""
+  },
+  "brochure": "",
+  "tags": [
+    "MD Table",
+    "Executive Desk",
+    "Office Furniture"
+  ],
+  "relatedProducts": [],
+  "status": "Active"
+},
+{
+  "id": "MAG-MDT-004",
+  "sku": "MAG-MDT-VBALASKA",
+  "slug": "vb-alaska",
+  "name": "VB Alaska",
+  "category": "MD Tables",
+  "brand": "Magnus Office Furniture",
+  "shortDescription": "Executive MD table.",
+  "description": "Executive office table from the Magnus MD Tables collection.",
+  "materials": [],
+  "dimensions": [],
+  "applications": [
+    "Managing Director Cabin",
+    "Executive Office"
+  ],
+  "features": [],
+  "images": {
+    "thumbnail": "",
+    "gallery": [],
+    "hero": ""
+  },
+  "brochure": "",
+  "tags": [
+    "MD Table",
+    "Executive Desk",
+    "Office Furniture"
+  ],
+  "relatedProducts": [],
+  "status": "Active"
+},
+{
+  "id": "MAG-MDT-005",
+  "sku": "MAG-MDT-VBELEGANT",
+  "slug": "vb-elegant",
+  "name": "VB Elegant",
+  "category": "MD Tables",
+  "brand": "Magnus Office Furniture",
+  "shortDescription": "Premium executive MD table.",
+  "description": "Executive office table designed for premium office cabins.",
+  "materials": [
+    "Engineered Wood"
+  ],
+  "dimensions": [],
+  "applications": [
+    "Managing Director Cabin",
+    "Executive Office"
+  ],
+  "features": [],
+  "images": {
+    "thumbnail": "",
+    "gallery": [],
+    "hero": ""
+  },
+  "brochure": "",
+  "tags": [
+    "MD Table",
+    "Executive Desk",
+    "Office Furniture"
+  ],
+  "relatedProducts": [],
+  "status": "Active"
+},
+{
+  "id": "MAG-MDT-006",
+  "sku": "MAG-MDT-VBELITEDESK",
+  "slug": "vb-elite-desk",
+  "name": "VB Elite Desk",
+  "category": "MD Tables",
+  "brand": "Magnus Office Furniture",
+  "shortDescription": "Premium executive MD desk.",
+  "description": "Executive desk from the Magnus MD Tables collection.",
+  "materials": [
+    "Engineered Wood"
+  ],
+  "dimensions": [],
+  "applications": [
+    "Managing Director Cabin",
+    "Executive Office"
+  ],
+  "features": [],
+  "images": {
+    "thumbnail": "",
+    "gallery": [],
+    "hero": ""
+  },
+  "brochure": "",
+  "tags": [
+    "MD Table",
+    "Executive Desk",
+    "Office Furniture"
+  ],
+  "relatedProducts": [],
+  "status": "Active"
+},
+{
+  "id": "MAG-MDT-007",
+  "sku": "MAG-MDT-VBTRIANGLELEG",
+  "slug": "vb-triangle-leg",
+  "name": "VB Triangle Leg",
+  "category": "MD Tables",
+  "brand": "Magnus Office Furniture",
+  "shortDescription": "Premium executive MD table.",
+  "description": "Executive MD table with triangle leg design.",
+  "materials": [
+    "Engineered Wood"
+  ],
+  "dimensions": [],
+  "applications": [
+    "Managing Director Cabin",
+    "Executive Office"
+  ],
+  "features": [],
+  "images": {
+    "thumbnail": "",
+    "gallery": [],
+    "hero": ""
+  },
+  "brochure": "",
+  "tags": [
+    "MD Table",
+    "Executive Desk",
+    "Office Furniture"
+  ],
+  "relatedProducts": [],
+  "status": "Active"
+}

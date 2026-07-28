@@ -1,0 +1,14 @@
+[
+  {
+    "id": "md-tables",
+    "name": "MD Tables",
+    "slug": "md-tables",
+    "description": "Premium executive office tables."
+  },
+  {
+    "id": "manager-tables",
+    "name": "Manager Tables",
+    "slug": "manager-tables",
+    "description": "Professional manager office desks."
+  }
+]
