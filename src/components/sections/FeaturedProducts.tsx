@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { products } from '../../data/products';
+import { products } from '../../products/services/catalogService';
 import { ProductCard } from '../product/ProductCard';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';

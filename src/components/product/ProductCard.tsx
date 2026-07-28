@@ -1,7 +1,7 @@
 
 import { Card } from '../ui/Card';
 import { Link } from 'react-router-dom';
-import type { Product } from '../../data/products';
+import type { Product } from '../../products/services/catalogService';
 
 export function ProductCard({ product }: { product: Product }) {
   return (

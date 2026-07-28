@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { categories } from '../data/products';
+import { categories } from '../products/services/catalogService';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Card } from '../components/ui/Card';
 

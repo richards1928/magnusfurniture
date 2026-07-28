@@ -1,7 +1,7 @@
 
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { products, categories, getCategoryBySlug, getProductsByCategory } from '../data/products';
+import { products, categories, getCategoryBySlug, getProductsByCategory } from '../products/services/catalogService';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { ProductCard } from '../components/product/ProductCard';
 

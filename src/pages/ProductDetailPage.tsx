@@ -1,7 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Check, Shield, Truck, Settings } from 'lucide-react';
-import { getProductBySlug } from '../data/products';
+import { getProductBySlug } from '../products/services/catalogService';
 import { Button } from '../components/ui/Button';
 
 export function ProductDetailPage() {
