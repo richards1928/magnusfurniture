@@ -2,8 +2,9 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { products, categories, getCategoryBySlug, getProductsByCategory } from '../products/services/catalogService';
-import { SectionHeading } from '../components/ui/SectionHeading';
 import { ProductCard } from '../components/product/ProductCard';
+import { ChevronRight } from 'lucide-react';
+import '../styles/ProductsPage.css';
 
 export function ProductsPage() {
   const { slug } = useParams<{ slug?: string }>();
@@ -11,65 +12,97 @@ export function ProductsPage() {
   const currentCategory = slug ? getCategoryBySlug(slug) : null;
   const displayProducts = currentCategory ? getProductsByCategory(slug!) : products;
   
-  const title = currentCategory ? currentCategory.name : 'All Products';
   const description = currentCategory 
     ? currentCategory.description 
     : 'Explore our complete collection of premium, handcrafted furniture.';
 
   return (
-    <div style={{ background: 'var(--color-warm-white)', minHeight: '100vh', paddingBottom: 'var(--space-20)' }}>
-      {/* Header */}
-      <div style={{
-        background: 'var(--color-cream)',
-        paddingTop: 'calc(var(--nav-height) + var(--space-12))',
-        paddingBottom: 'var(--space-12)',
-        marginBottom: 'var(--space-12)',
-        borderBottom: '1px solid var(--color-gray-200)'
-      }}>
-        <div className="container">
-          <SectionHeading
-            subtitle={currentCategory ? 'Category' : 'Collection'}
-            title={title}
-            description={description}
-            align="left"
-          />
+    <div style={{ background: '#0C0A09', minHeight: '100vh' }}>
+      {/* ── Premium Hero Banner ── */}
+      <div className="products-hero">
+        <div className="products-hero__inner container">
+          {/* Breadcrumb */}
+          <motion.nav
+            className="products-breadcrumb"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            aria-label="Breadcrumb"
+          >
+            <Link to="/">Home</Link>
+            <ChevronRight size={10} className="products-breadcrumb__separator" />
+            {currentCategory ? (
+              <>
+                <Link to="/products">Products</Link>
+                <ChevronRight size={10} className="products-breadcrumb__separator" />
+                <span className="products-breadcrumb__current">{currentCategory.name}</span>
+              </>
+            ) : (
+              <span className="products-breadcrumb__current">Products</span>
+            )}
+          </motion.nav>
+
+          {/* Overline */}
+          <motion.div
+            className="products-hero__overline"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <span className="products-hero__overline-bar" />
+            Magnus Office Furniture
+            <span className="products-hero__overline-bar" />
+          </motion.div>
+
+          {/* Title */}
+          <motion.h1
+            className="products-hero__title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            Office Furniture{' '}
+            <strong>Collection</strong>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            className="products-hero__subtitle"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            {description}
+          </motion.p>
         </div>
       </div>
 
-      <div className="container" style={{ display: 'flex', gap: 'var(--space-12)', alignItems: 'flex-start' }}>
-        {/* Sidebar Filters */}
-        <div className="sidebar-filters" style={{ width: 240, flexShrink: 0, position: 'sticky', top: 'calc(var(--nav-height) + var(--space-8))' }}>
-          <h3 style={{ fontSize: 'var(--fs-body-lg)', marginBottom: 'var(--space-4)', color: 'var(--color-dark)' }}>Categories</h3>
-          <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+      {/* ── Main Content ── */}
+      <div className="products-layout container">
+        {/* Filter Panel */}
+        <div className="products-filter-panel">
+          <div className="products-filter-panel__header">
+            <div className="products-filter-panel__accent-bar" />
+            <span className="products-filter-panel__title">Filter by Category</span>
+          </div>
+          <ul className="products-filter-list">
             <li>
               <Link
                 to="/products"
-                style={{
-                  display: 'flex', justifyContent: 'space-between',
-                  padding: 'var(--space-2) 0',
-                  color: !slug ? 'var(--color-primary)' : 'var(--color-gray-700)',
-                  fontWeight: !slug ? 'var(--fw-semibold)' : 'var(--fw-regular)',
-                  textDecoration: 'none',
-                }}
+                className={`products-filter-item${!slug ? ' products-filter-item--active' : ''}`}
               >
                 <span>All Products</span>
-                <span style={{ color: 'var(--color-gray-400)', fontSize: 'var(--fs-small)' }}>{products.length}</span>
+                <span className="products-filter-item__count">{products.length}</span>
               </Link>
             </li>
             {categories.map(cat => (
               <li key={cat.id}>
                 <Link
                   to={`/categories/${cat.slug}`}
-                  style={{
-                    display: 'flex', justifyContent: 'space-between',
-                    padding: 'var(--space-2) 0',
-                    color: slug === cat.slug ? 'var(--color-primary)' : 'var(--color-gray-700)',
-                    fontWeight: slug === cat.slug ? 'var(--fw-semibold)' : 'var(--fw-regular)',
-                    textDecoration: 'none',
-                  }}
+                  className={`products-filter-item${slug === cat.slug ? ' products-filter-item--active' : ''}`}
                 >
                   <span>{cat.name}</span>
-                  <span style={{ color: 'var(--color-gray-400)', fontSize: 'var(--fs-small)' }}>{cat.productCount}</span>
+                  <span className="products-filter-item__count">{cat.productCount}</span>
                 </Link>
               </li>
             ))}
@@ -77,25 +110,14 @@ export function ProductsPage() {
         </div>
 
         {/* Product Grid */}
-        <div style={{ flex: 1 }}>
-          <div style={{
-            display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-            marginBottom: 'var(--space-6)',
-            paddingBottom: 'var(--space-4)',
-            borderBottom: '1px solid var(--color-gray-200)',
-          }}>
-            <div style={{ color: 'var(--color-gray-500)', fontSize: 'var(--fs-small)' }}>
-              Showing {displayProducts.length} products
+        <div style={{ flex: 1, minWidth: 0 }}>
+          {/* Sort Bar */}
+          <div className="products-sort-bar">
+            <div className="products-sort-bar__count">
+              Showing <strong>{displayProducts.length}</strong> {displayProducts.length === 1 ? 'product' : 'products'}
+              {currentCategory && <> in <strong>{currentCategory.name}</strong></>}
             </div>
-            {/* Mock sort dropdown */}
-            <select style={{
-              padding: '8px 12px',
-              borderRadius: 'var(--radius-sm)',
-              border: '1px solid var(--color-gray-300)',
-              background: 'var(--color-white)',
-              fontFamily: 'var(--font-body)',
-              color: 'var(--color-dark)',
-            }}>
+            <select className="products-sort-select">
               <option>Recommended</option>
               <option>Price: Low to High</option>
               <option>Price: High to Low</option>
@@ -104,35 +126,26 @@ export function ProductsPage() {
           </div>
 
           {displayProducts.length > 0 ? (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-              gap: 'var(--space-6)',
-            }}>
+            <div className="products-grid">
               {displayProducts.map((product, i) => (
                 <motion.div
                   key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  transition={{ duration: 0.5, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <ProductCard product={product} />
                 </motion.div>
               ))}
             </div>
           ) : (
-            <div style={{ padding: 'var(--space-12)', textAlign: 'center', color: 'var(--color-gray-500)' }}>
+            <div className="products-empty">
+              <div className="products-empty__icon">📦</div>
               No products found in this category.
             </div>
           )}
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 900px) {
-          .sidebar-filters { display: none; }
-        }
-      `}</style>
     </div>
   );
 }

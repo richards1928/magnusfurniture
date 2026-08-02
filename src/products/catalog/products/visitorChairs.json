@@ -13,9 +13,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/visitorChairs/bravo.webp",
+      "thumbnail": "/assets/products/visitorChairs/bravo.webp",
+      "gallery": [
+        "/assets/products/visitorChairs/bravo.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -36,9 +38,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/visitorChairs/visitor.webp",
+      "thumbnail": "/assets/products/visitorChairs/visitor.webp",
+      "gallery": [
+        "/assets/products/visitorChairs/visitor.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -59,9 +63,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/visitorChairs/robo.webp",
+      "thumbnail": "/assets/products/visitorChairs/robo.webp",
+      "gallery": [
+        "/assets/products/visitorChairs/robo.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -82,9 +88,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/visitorChairs/kabel.webp",
+      "thumbnail": "/assets/products/visitorChairs/kabel.webp",
+      "gallery": [
+        "/assets/products/visitorChairs/kabel.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -105,9 +113,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/visitorChairs/navy.webp",
+      "thumbnail": "/assets/products/visitorChairs/navy.webp",
+      "gallery": [
+        "/assets/products/visitorChairs/navy.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -128,9 +138,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/visitorChairs/eco.webp",
+      "thumbnail": "/assets/products/visitorChairs/eco.webp",
+      "gallery": [
+        "/assets/products/visitorChairs/eco.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -151,9 +163,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/visitorChairs/kabel-stand.webp",
+      "thumbnail": "/assets/products/visitorChairs/kabel-stand.webp",
+      "gallery": [
+        "/assets/products/visitorChairs/kabel-stand.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -174,9 +188,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/visitorChairs/navy-stand.webp",
+      "thumbnail": "/assets/products/visitorChairs/navy-stand.webp",
+      "gallery": [
+        "/assets/products/visitorChairs/navy-stand.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -197,9 +213,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/visitorChairs/eco-stand.webp",
+      "thumbnail": "/assets/products/visitorChairs/eco-stand.webp",
+      "gallery": [
+        "/assets/products/visitorChairs/eco-stand.webp"
+      ]
     },
     "brochure": "",
     "tags": [],

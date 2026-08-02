@@ -13,9 +13,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-basic-back-to-back.webp",
+      "thumbnail": "/assets/products/workstations/vb-basic-back-to-back.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-basic-back-to-back.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -36,9 +38,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-basic-linear.webp",
+      "thumbnail": "/assets/products/workstations/vb-basic-linear.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-basic-linear.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -59,9 +63,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-hanging-desk-back-to-back.webp",
+      "thumbnail": "/assets/products/workstations/vb-hanging-desk-back-to-back.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-hanging-desk-back-to-back.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -82,9 +88,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-hanging-desk-linear.webp",
+      "thumbnail": "/assets/products/workstations/vb-hanging-desk-linear.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-hanging-desk-linear.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -105,9 +113,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-apl-desk-back-to-back.webp",
+      "thumbnail": "/assets/products/workstations/vb-apl-desk-back-to-back.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-apl-desk-back-to-back.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -128,9 +138,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-apl-leg-desk-linear.webp",
+      "thumbnail": "/assets/products/workstations/vb-apl-leg-desk-linear.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-apl-leg-desk-linear.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -151,9 +163,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-spark-desk-back-to-back.webp",
+      "thumbnail": "/assets/products/workstations/vb-spark-desk-back-to-back.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-spark-desk-back-to-back.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -174,9 +188,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-spark-series-linear.webp",
+      "thumbnail": "/assets/products/workstations/vb-spark-series-linear.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-spark-series-linear.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -197,9 +213,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-rectangle-desk-back-to-back.webp",
+      "thumbnail": "/assets/products/workstations/vb-rectangle-desk-back-to-back.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-rectangle-desk-back-to-back.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -220,9 +238,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-rectangle-desk-linear.webp",
+      "thumbnail": "/assets/products/workstations/vb-rectangle-desk-linear.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-rectangle-desk-linear.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -243,9 +263,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-wd-desk-back-to-back.webp",
+      "thumbnail": "/assets/products/workstations/vb-wd-desk-back-to-back.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-wd-desk-back-to-back.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -266,9 +288,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-l-desk-back-to-back.webp",
+      "thumbnail": "/assets/products/workstations/vb-l-desk-back-to-back.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-l-desk-back-to-back.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -289,9 +313,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-straight-legs-desk-back-to-back.webp",
+      "thumbnail": "/assets/products/workstations/vb-straight-legs-desk-back-to-back.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-straight-legs-desk-back-to-back.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -312,9 +338,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-straight-legs-desk-linear.webp",
+      "thumbnail": "/assets/products/workstations/vb-straight-legs-desk-linear.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-straight-legs-desk-linear.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -335,9 +363,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-triangle-pipe-premium-back-to-back.webp",
+      "thumbnail": "/assets/products/workstations/vb-triangle-pipe-premium-back-to-back.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-triangle-pipe-premium-back-to-back.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -358,9 +388,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-x-desk.webp",
+      "thumbnail": "/assets/products/workstations/vb-x-desk.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-x-desk.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -381,9 +413,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-table-1.webp",
+      "thumbnail": "/assets/products/workstations/vb-table-1.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-table-1.webp"
+      ]
     },
     "brochure": "",
     "tags": [
@@ -406,9 +440,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-table-2.webp",
+      "thumbnail": "/assets/products/workstations/vb-table-2.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-table-2.webp"
+      ]
     },
     "brochure": "",
     "tags": [
@@ -431,9 +467,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/workstations/vb-table-3.webp",
+      "thumbnail": "/assets/products/workstations/vb-table-3.webp",
+      "gallery": [
+        "/assets/products/workstations/vb-table-3.webp"
+      ]
     },
     "brochure": "",
     "tags": [

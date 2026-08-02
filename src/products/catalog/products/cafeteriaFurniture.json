@@ -13,9 +13,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/cafeteriaFurniture/cafeteria-table-1.webp",
+      "thumbnail": "/assets/products/cafeteriaFurniture/cafeteria-table-1.webp",
+      "gallery": [
+        "/assets/products/cafeteriaFurniture/cafeteria-table-1.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -36,9 +38,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/cafeteriaFurniture/cafeteria-table-2.webp",
+      "thumbnail": "/assets/products/cafeteriaFurniture/cafeteria-table-2.webp",
+      "gallery": [
+        "/assets/products/cafeteriaFurniture/cafeteria-table-2.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -59,9 +63,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/cafeteriaFurniture/cafeteria-table-3.webp",
+      "thumbnail": "/assets/products/cafeteriaFurniture/cafeteria-table-3.webp",
+      "gallery": [
+        "/assets/products/cafeteriaFurniture/cafeteria-table-3.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -82,9 +88,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/cafeteriaFurniture/cafeteria-table-4.webp",
+      "thumbnail": "/assets/products/cafeteriaFurniture/cafeteria-table-4.webp",
+      "gallery": [
+        "/assets/products/cafeteriaFurniture/cafeteria-table-4.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -105,9 +113,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/cafeteriaFurniture/modcurve-studio.webp",
+      "thumbnail": "/assets/products/cafeteriaFurniture/modcurve-studio.webp",
+      "gallery": [
+        "/assets/products/cafeteriaFurniture/modcurve-studio.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -128,9 +138,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/cafeteriaFurniture/panda-chair.webp",
+      "thumbnail": "/assets/products/cafeteriaFurniture/panda-chair.webp",
+      "gallery": [
+        "/assets/products/cafeteriaFurniture/panda-chair.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -151,9 +163,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/cafeteriaFurniture/studioshell.webp",
+      "thumbnail": "/assets/products/cafeteriaFurniture/studioshell.webp",
+      "gallery": [
+        "/assets/products/cafeteriaFurniture/studioshell.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -174,9 +188,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/cafeteriaFurniture/auraslat-lounge.webp",
+      "thumbnail": "/assets/products/cafeteriaFurniture/auraslat-lounge.webp",
+      "gallery": [
+        "/assets/products/cafeteriaFurniture/auraslat-lounge.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -197,9 +213,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/cafeteriaFurniture/netshell-modern.webp",
+      "thumbnail": "/assets/products/cafeteriaFurniture/netshell-modern.webp",
+      "gallery": [
+        "/assets/products/cafeteriaFurniture/netshell-modern.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -220,9 +238,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/cafeteriaFurniture/heritage-curve.webp",
+      "thumbnail": "/assets/products/cafeteriaFurniture/heritage-curve.webp",
+      "gallery": [
+        "/assets/products/cafeteriaFurniture/heritage-curve.webp"
+      ]
     },
     "brochure": "",
     "tags": [],

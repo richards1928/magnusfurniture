@@ -13,9 +13,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/conferenceTables/vb-conveet.webp",
+      "thumbnail": "/assets/products/conferenceTables/vb-conveet.webp",
+      "gallery": [
+        "/assets/products/conferenceTables/vb-conveet.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -36,9 +38,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/conferenceTables/vb-rectangle.webp",
+      "thumbnail": "/assets/products/conferenceTables/vb-rectangle.webp",
+      "gallery": [
+        "/assets/products/conferenceTables/vb-rectangle.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -59,9 +63,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/conferenceTables/vb-boat.webp",
+      "thumbnail": "/assets/products/conferenceTables/vb-boat.webp",
+      "gallery": [
+        "/assets/products/conferenceTables/vb-boat.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -82,9 +88,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/conferenceTables/vb-diamond.webp",
+      "thumbnail": "/assets/products/conferenceTables/vb-diamond.webp",
+      "gallery": [
+        "/assets/products/conferenceTables/vb-diamond.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -105,9 +113,9 @@
     "applications": [],
     "features": [],
     "images": {
+      "hero": "",
       "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "gallery": []
     },
     "brochure": "",
     "tags": [],
@@ -128,9 +136,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/conferenceTables/vb-edge.webp",
+      "thumbnail": "/assets/products/conferenceTables/vb-edge.webp",
+      "gallery": [
+        "/assets/products/conferenceTables/vb-edge.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -151,9 +161,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/conferenceTables/vb-destiny.webp",
+      "thumbnail": "/assets/products/conferenceTables/vb-destiny.webp",
+      "gallery": [
+        "/assets/products/conferenceTables/vb-destiny.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -174,9 +186,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/conferenceTables/vb-shadow.webp",
+      "thumbnail": "/assets/products/conferenceTables/vb-shadow.webp",
+      "gallery": [
+        "/assets/products/conferenceTables/vb-shadow.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -197,9 +211,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/conferenceTables/vb-tango.webp",
+      "thumbnail": "/assets/products/conferenceTables/vb-tango.webp",
+      "gallery": [
+        "/assets/products/conferenceTables/vb-tango.webp"
+      ]
     },
     "brochure": "",
     "tags": [],

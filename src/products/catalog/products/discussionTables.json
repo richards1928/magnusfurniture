@@ -13,9 +13,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/discussionTables/vb-ben.webp",
+      "thumbnail": "/assets/products/discussionTables/vb-ben.webp",
+      "gallery": [
+        "/assets/products/discussionTables/vb-ben.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -36,9 +38,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/discussionTables/vb-coral.webp",
+      "thumbnail": "/assets/products/discussionTables/vb-coral.webp",
+      "gallery": [
+        "/assets/products/discussionTables/vb-coral.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -59,9 +63,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/discussionTables/vb-meet.webp",
+      "thumbnail": "/assets/products/discussionTables/vb-meet.webp",
+      "gallery": [
+        "/assets/products/discussionTables/vb-meet.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -82,9 +88,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/discussionTables/vb-oak.webp",
+      "thumbnail": "/assets/products/discussionTables/vb-oak.webp",
+      "gallery": [
+        "/assets/products/discussionTables/vb-oak.webp"
+      ]
     },
     "brochure": "",
     "tags": [],

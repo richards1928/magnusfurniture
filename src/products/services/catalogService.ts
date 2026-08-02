@@ -16,6 +16,8 @@ export interface Product {
   material: string;
   features: string[];
   images: string[];
+  hero?: string;
+  thumbnail?: string;
   badge?: string;
   inStock: boolean;
 }
@@ -76,6 +78,8 @@ function mapProduct(raw: any): Product {
       : raw.materials || "",
     features: raw.features || [],
     images: raw.images?.gallery || [],
+    hero: raw.images?.hero || "",
+    thumbnail: raw.images?.thumbnail || "",
     inStock: raw.status === "Active",
   };
 }

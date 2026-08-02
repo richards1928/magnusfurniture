@@ -1,4 +1,5 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Check, Shield, Truck, Settings } from 'lucide-react';
 import { getProductBySlug } from '../products/services/catalogService';
@@ -8,6 +9,40 @@ export function ProductDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const product = getProductBySlug(slug!);
+
+  const images = product ? [
+    product.hero,
+    product.thumbnail,
+    ...(product.images || [])
+  ].filter(Boolean) as string[] : [];
+  
+  const uniqueImages = Array.from(new Set(images));
+  const [activeImage, setActiveImage] = useState(uniqueImages[0] || "");
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (uniqueImages.length > 0) {
+      setActiveImage(uniqueImages[0] || "");
+      setLoaded(false);
+    }
+  }, [product?.id]);
+
+  const getCategoryIcon = (category: string): string => {
+    const icons: Record<string, string> = {
+      'MD Tables': '🖥️',
+      'Manager Tables': '🖥️',
+      'Workstations': '💻',
+      'Conference Tables': '🤝',
+      'Reception Tables': '🏢',
+      'Storages and Pedestals': '🗄️',
+      'Discussion Tables': '🤝',
+      'Executive Chairs': '💺',
+      'Visitor Chairs': '🪑',
+      'Cafeteria Furniture': '☕',
+      'High Counter Tables': '🖥️',
+    };
+    return icons[category] || '📦';
+  };
 
   if (!product) {
     return (
@@ -45,7 +80,27 @@ export function ProductDetailPage() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               border: '1px solid var(--color-gray-200)', marginBottom: 'var(--space-4)',
               position: 'relative',
+              overflow: 'hidden',
             }}>
+              {activeImage ? (
+                <img
+                  src={activeImage}
+                  alt={product.name}
+                  loading="lazy"
+                  onLoad={() => setLoaded(true)}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    opacity: loaded ? 1 : 0,
+                    transition: 'opacity 0.5s ease-in-out',
+                  }}
+                />
+              ) : (
+                <span style={{ fontSize: 72, opacity: 0.15 }}>
+                  {getCategoryIcon(product.category)}
+                </span>
+              )}
               {product.badge && (
                 <span style={{
                   position: 'absolute', top: 16, left: 16,
@@ -54,18 +109,36 @@ export function ProductDetailPage() {
                   fontWeight: 'var(--fw-semibold)',
                   padding: '6px 16px',
                   borderRadius: 'var(--radius-full)',
+                  zIndex: 1,
                 }}>{product.badge}</span>
               )}
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-4)' }}>
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} style={{
-                  aspectRatio: '1', borderRadius: 'var(--radius-md)',
-                  background: 'var(--color-gray-100)', border: '1px solid var(--color-gray-200)',
-                  cursor: 'pointer',
-                }} />
-              ))}
-            </div>
+            {uniqueImages.length > 1 && (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-4)' }}>
+                {uniqueImages.map((img, idx) => (
+                  <div key={idx} 
+                    onClick={() => { setActiveImage(img); setLoaded(false); }}
+                    style={{
+                      aspectRatio: '1', borderRadius: 'var(--radius-md)',
+                      background: 'var(--color-gray-100)', 
+                      border: `2px solid ${activeImage === img ? 'var(--color-primary)' : 'var(--color-gray-200)'}`,
+                      cursor: 'pointer',
+                      overflow: 'hidden',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      transition: 'all 0.2s ease',
+                    }}>
+                    <img
+                      src={img}
+                      alt={`${product.name} thumbnail ${idx + 1}`}
+                      loading="lazy"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </motion.div>
 
           {/* Details */}

@@ -13,9 +13,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/managerTables/vb-fusion.webp",
+      "thumbnail": "/assets/products/managerTables/vb-fusion.webp",
+      "gallery": [
+        "/assets/products/managerTables/vb-fusion.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -36,9 +38,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/managerTables/vb-hexa.webp",
+      "thumbnail": "/assets/products/managerTables/vb-hexa.webp",
+      "gallery": [
+        "/assets/products/managerTables/vb-hexa.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -59,9 +63,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/managerTables/aspire.webp",
+      "thumbnail": "/assets/products/managerTables/aspire.webp",
+      "gallery": [
+        "/assets/products/managerTables/aspire.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -82,9 +88,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/managerTables/venom.webp",
+      "thumbnail": "/assets/products/managerTables/venom.webp",
+      "gallery": [
+        "/assets/products/managerTables/venom.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -105,9 +113,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/managerTables/bold.webp",
+      "thumbnail": "/assets/products/managerTables/bold.webp",
+      "gallery": [
+        "/assets/products/managerTables/bold.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -128,9 +138,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/managerTables/solo.webp",
+      "thumbnail": "/assets/products/managerTables/solo.webp",
+      "gallery": [
+        "/assets/products/managerTables/solo.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -151,9 +163,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/managerTables/delton.webp",
+      "thumbnail": "/assets/products/managerTables/delton.webp",
+      "gallery": [
+        "/assets/products/managerTables/delton.webp"
+      ]
     },
     "brochure": "",
     "tags": [],

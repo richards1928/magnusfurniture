@@ -13,9 +13,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/receptionTables/reception-1.webp",
+      "thumbnail": "/assets/products/receptionTables/reception-1.webp",
+      "gallery": [
+        "/assets/products/receptionTables/reception-1.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -36,9 +38,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/receptionTables/reception-2.webp",
+      "thumbnail": "/assets/products/receptionTables/reception-2.webp",
+      "gallery": [
+        "/assets/products/receptionTables/reception-2.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -59,9 +63,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/receptionTables/reception-3.webp",
+      "thumbnail": "/assets/products/receptionTables/reception-3.webp",
+      "gallery": [
+        "/assets/products/receptionTables/reception-3.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -82,9 +88,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/receptionTables/reception-4.webp",
+      "thumbnail": "/assets/products/receptionTables/reception-4.webp",
+      "gallery": [
+        "/assets/products/receptionTables/reception-4.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -105,9 +113,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/receptionTables/reception-5.webp",
+      "thumbnail": "/assets/products/receptionTables/reception-5.webp",
+      "gallery": [
+        "/assets/products/receptionTables/reception-5.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -128,9 +138,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/receptionTables/reception-6.webp",
+      "thumbnail": "/assets/products/receptionTables/reception-6.webp",
+      "gallery": [
+        "/assets/products/receptionTables/reception-6.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -151,9 +163,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/receptionTables/reception-7.webp",
+      "thumbnail": "/assets/products/receptionTables/reception-7.webp",
+      "gallery": [
+        "/assets/products/receptionTables/reception-7.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -174,9 +188,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/receptionTables/reception-8.webp",
+      "thumbnail": "/assets/products/receptionTables/reception-8.webp",
+      "gallery": [
+        "/assets/products/receptionTables/reception-8.webp"
+      ]
     },
     "brochure": "",
     "tags": [],

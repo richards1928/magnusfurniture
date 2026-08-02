@@ -13,9 +13,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/storage/storage.webp",
+      "thumbnail": "/assets/products/storage/storage.webp",
+      "gallery": [
+        "/assets/products/storage/storage.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -36,9 +38,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/storage/2-draws.webp",
+      "thumbnail": "/assets/products/storage/2-draws.webp",
+      "gallery": [
+        "/assets/products/storage/2-draws.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -59,9 +63,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/storage/1-draw-1-door.webp",
+      "thumbnail": "/assets/products/storage/1-draw-1-door.webp",
+      "gallery": [
+        "/assets/products/storage/1-draw-1-door.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -82,9 +88,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/storage/3-draws.webp",
+      "thumbnail": "/assets/products/storage/3-draws.webp",
+      "gallery": [
+        "/assets/products/storage/3-draws.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -105,9 +113,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/storage/cushion-with-2-draws.webp",
+      "thumbnail": "/assets/products/storage/cushion-with-2-draws.webp",
+      "gallery": [
+        "/assets/products/storage/cushion-with-2-draws.webp"
+      ]
     },
     "brochure": "",
     "tags": [],

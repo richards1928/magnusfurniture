@@ -13,9 +13,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/highCounterTables/high-counter-table-1.webp",
+      "thumbnail": "/assets/products/highCounterTables/high-counter-table-1.webp",
+      "gallery": [
+        "/assets/products/highCounterTables/high-counter-table-1.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -36,9 +38,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/highCounterTables/high-counter-table-2.webp",
+      "thumbnail": "/assets/products/highCounterTables/high-counter-table-2.webp",
+      "gallery": [
+        "/assets/products/highCounterTables/high-counter-table-2.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
@@ -59,9 +63,11 @@
     "applications": [],
     "features": [],
     "images": {
-      "thumbnail": "",
-      "gallery": [],
-      "hero": ""
+      "hero": "/assets/products/highCounterTables/high-counter-table-3.webp",
+      "thumbnail": "/assets/products/highCounterTables/high-counter-table-3.webp",
+      "gallery": [
+        "/assets/products/highCounterTables/high-counter-table-3.webp"
+      ]
     },
     "brochure": "",
     "tags": [],
