@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from 'lucide-react';
+// react-icons not needed in this component currently
 
 const footerLinks = {
   'Quick Links': [
@@ -155,6 +156,84 @@ export function Footer() {
             </ul>
           </div>
         ))}
+        {/* Business Hours */}
+<div>
+  <h4
+    style={{
+      fontFamily: 'var(--font-heading)',
+      color: 'var(--color-primary)',
+      fontSize: 'var(--fs-body-lg)',
+      fontWeight: 'var(--fw-semibold)',
+      marginBottom: 'var(--space-6)',
+      letterSpacing: 'var(--ls-wide)',
+      textTransform: 'uppercase',
+    }}
+  >
+    Business Hours
+  </h4>
+
+  <div
+    style={{
+      width: '40px',
+      height: '2px',
+      background: 'var(--color-primary)',
+      marginBottom: 'var(--space-5)',
+      borderRadius: '999px',
+    }}
+  />
+
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'flex-start',
+      gap: '12px',
+    }}
+  >
+    <Clock
+      size={18}
+      color="var(--color-primary)"
+      style={{ marginTop: 2 }}
+    />
+
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        fontSize: 'var(--fs-body)',
+        color: 'var(--color-gray-400)',
+        lineHeight: 1.7,
+      }}
+    >
+      <div>
+        <strong style={{ color: '#fff' }}>
+          Monday – Saturday
+        </strong>
+        <br />
+        10:00 AM – 7:30 PM
+      </div>
+
+      <div>
+        <strong style={{ color: '#fff' }}>
+          Sunday
+        </strong>
+        <br />
+        Closed
+      </div>
+
+      <div
+        style={{
+          color: 'var(--color-primary)',
+          fontWeight: 500,
+        }}
+      >
+        Corporate Visits
+        <br />
+        By Appointment
+      </div>
+    </div>
+  </div>
+</div>
       </div>
 
       {/* Bottom Bar */}
@@ -169,7 +248,7 @@ export function Footer() {
           gap: 'var(--space-4)',
         }}>
           <p style={{ fontSize: 'var(--fs-xs)', color: 'var(--color-gray-500)' }}>
-            © {new Date().getFullYear()} Magnus Office Furniture. All rights reserved.
+            © {new Date().getFullYear()} Magnus Office Furniture. Crafting Premium Workspaces Across India.
           </p>
           <div style={{ display: 'flex', gap: 'var(--space-4)' }}>
             <a
