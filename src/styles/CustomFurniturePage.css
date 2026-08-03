@@ -1,0 +1,147 @@
+/* ============================================================
+   Magnus Office Furniture — Custom Furniture Page Styles
+   Luxury Spatial UI & Interactive Material Finish Previewer
+   ============================================================ */
+
+.custom-furniture-page {
+  background-color: var(--color-warm-white);
+  min-height: 100vh;
+  color: var(--color-gray-700);
+  font-family: var(--font-body);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ── Hero Section ── */
+.custom-hero {
+  position: relative;
+  padding-top: calc(var(--nav-height) + var(--space-16));
+  padding-bottom: var(--space-20);
+  background: radial-gradient(circle at 50% 0%, #2A1D1A 0%, #170E0C 60%, #0A0706 100%);
+  color: #FFFFFF;
+  text-align: center;
+  overflow: hidden;
+}
+
+.custom-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%, transparent 75%);
+  pointer-events: none;
+}
+
+.custom-hero-glow {
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 750px;
+  height: 450px;
+  background: radial-gradient(ellipse, rgba(212, 175, 55, 0.15) 0%, rgba(62, 39, 35, 0.05) 50%, transparent 75%);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+/* ── Interactive Material Finishes Grid ── */
+.finishes-preview-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-12);
+  align-items: center;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-gray-200);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  margin-top: var(--space-8);
+}
+
+@media (max-width: 900px) {
+  .finishes-preview-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+.finish-option-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-warm-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: var(--space-3);
+}
+
+.finish-option-card:hover,
+.finish-option-card.active {
+  background: var(--color-cream);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.15);
+  transform: translateX(4px);
+}
+
+.finish-swatch {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+/* ── Custom Pillars Cards ── */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .pillars-grid { grid-template-columns: 1fr; }
+}
+
+.pillar-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  border: 1px solid var(--color-gray-200);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  transition: all 0.35s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(62, 39, 35, 0.08);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.pillar-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--color-cream);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.pillar-card:hover .pillar-icon-box {
+  background: var(--color-primary);
+  color: var(--color-accent);
+}

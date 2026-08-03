@@ -38,8 +38,8 @@ export const AboutPage = () => (
   </SimplePage>
 );
 
-export const ServicesPage = () => <SimplePage title="Our Corporate Services" description="From office layout design to bulk installation, we offer comprehensive workspace solutions." />;
-export const GalleryPage = () => <SimplePage title="Project Gallery" description="Explore our recent corporate installations and bespoke office designs." />;
+export { ServicesPage } from './ServicesPage';
+export { GalleryPage } from './GalleryPage';
 export const TestimonialsPage = () => <SimplePage title="Client Testimonials" description="Hear from the companies and startups we've partnered with." />;
 export const FaqPage = () => <SimplePage title="Frequently Asked Questions" description="Find answers to common questions about our corporate furniture, bulk orders, and services." />;
 export const ContactPage = () => (
