@@ -1,19 +1,24 @@
 export function AboutStory() {
   return (
     <section className="abt-section abt-section--warm abt-story">
+      {/* Ambient background glow near story image */}
+      <div className="abt-glow abt-glow--gold-bl" style={{ opacity: 0.4 }} />
+
       <div className="abt-container">
         <div className="abt-story__grid">
-          {/* Left — Image */}
+          {/* Left — Image wrapper with animations */}
           <div className="abt-story__image-wrap abt-fade-in">
             <div className="abt-story__image-frame" />
-            <img
-              src="/assets/about/workspace.png"
-              alt="Premium Magnus office workspace with executive furniture"
-              className="abt-story__image"
-              loading="lazy"
-            />
+            <div className="abt-story__image-container">
+              <img
+                src="/assets/about/workspace.png"
+                alt="Premium Magnus office workspace with executive furniture"
+                className="abt-story__image"
+                loading="lazy"
+              />
+            </div>
             <div className="abt-story__image-badge">
-              ✦ Premium Quality
+              ✦ ARCHITECTURAL GRADE
             </div>
           </div>
 
@@ -21,7 +26,7 @@ export function AboutStory() {
           <div className="abt-story__text abt-fade-in abt-delay-2">
             <div className="abt-overline">
               <span className="abt-overline__line" />
-              Our Story
+              Our Legacy &amp; Vision
             </div>
 
             <h2 className="abt-heading abt-heading--lg abt-heading--light">
@@ -53,9 +58,9 @@ export function AboutStory() {
             <div className="abt-story__signature">
               <div className="abt-story__sig-avatar">M</div>
               <div>
-                <div className="abt-story__sig-name">Magnus Furniture</div>
+                <div className="abt-story__sig-name">Magnus Office Furniture</div>
                 <div className="abt-story__sig-role">
-                  Premium Office Solutions
+                  Premium Workspace Solutions
                 </div>
               </div>
             </div>
