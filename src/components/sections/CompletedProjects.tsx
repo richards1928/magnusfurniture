@@ -1,117 +1,231 @@
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
-const projects = [
-  { title: 'TechStar Solutions', location: 'Gachibowli, Hyderabad', industry: 'IT / SaaS', size: '120 Seats', timeline: '6 Weeks', products: 'Workstations, Chairs, Conference' },
-  { title: 'Greenfield Capital', location: 'Banjara Hills, Hyderabad', industry: 'Finance', size: '45 Seats', timeline: '3 Weeks', products: 'Executive Desks, Cabins, Storage' },
-  { title: 'Nova Design Studio', location: 'Kondapur, Hyderabad', industry: 'Creative Agency', size: '30 Seats', timeline: '2 Weeks', products: 'Open Plan, Collaborative Tables' },
-];
+export default function CompletedProjects() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-export function CompletedProjects() {
+  const containerStyle: React.CSSProperties = {
+    backgroundColor: '#080604',
+    padding: '80px 20px',
+    color: '#ffffff',
+    fontFamily: '"Inter", sans-serif',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
+
+  const headerStyle: React.CSSProperties = {
+    textAlign: 'center',
+    marginBottom: '40px',
+    maxWidth: '800px',
+  };
+
+  const overlineStyle: React.CSSProperties = {
+    color: '#D4AF37',
+    textTransform: 'uppercase',
+    letterSpacing: '2px',
+    fontSize: '0.85rem',
+    fontWeight: 600,
+    marginBottom: '16px',
+    display: 'block',
+  };
+
+  const h2Style: React.CSSProperties = {
+    fontSize: 'clamp(2rem, 4vw, 3rem)',
+    fontWeight: 700,
+    marginBottom: '20px',
+    lineHeight: 1.2,
+  };
+
+  const subtitleStyle: React.CSSProperties = {
+    color: '#a0a0a0',
+    fontSize: '1.1rem',
+    lineHeight: 1.6,
+  };
+
+  const statsRowStyle: React.CSSProperties = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: '24px',
+    marginBottom: '60px',
+    padding: '0 20px',
+  };
+
+  const statTextStyle: React.CSSProperties = {
+    color: '#D4AF37',
+    fontSize: '0.9rem',
+    fontWeight: 500,
+    letterSpacing: '0.5px',
+    textTransform: 'uppercase',
+  };
+
+  const projects = [
+    {
+      id: 1,
+      name: 'TechStar Solutions',
+      location: 'Gachibowli, Hyderabad',
+      industry: 'IT/SaaS',
+      seats: '120 Seats',
+      timeline: '6 Weeks',
+      products: 'Workstations, Chairs, Conference Tables',
+      gradient: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
+    },
+    {
+      id: 2,
+      name: 'Greenfield Capital',
+      location: 'Banjara Hills, Hyderabad',
+      industry: 'Finance',
+      seats: '45 Seats',
+      timeline: '3 Weeks',
+      products: 'Executive Desks, Cabins, Storage',
+      gradient: 'linear-gradient(135deg, #114357 0%, #F29492 100%)',
+    },
+    {
+      id: 3,
+      name: 'Nova Design Studio',
+      location: 'Kondapur, Hyderabad',
+      industry: 'Creative Agency',
+      seats: '30 Seats',
+      timeline: '2 Weeks',
+      products: 'Open Plan, Collaborative Tables',
+      gradient: 'linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%)',
+    }
+  ];
+
+  const gridStyle: React.CSSProperties = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+    gap: '30px',
+    width: '100%',
+    maxWidth: '1200px',
+  };
+
   return (
-    <section style={{ background: 'var(--color-dark)', padding: 'var(--space-24) 0' }}>
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          style={{ textAlign: 'center', marginBottom: 64 }}
-        >
-          <div style={{
-            fontSize: '11px', fontWeight: 600, letterSpacing: '0.2em',
-            textTransform: 'uppercase', color: 'var(--color-accent)',
-            marginBottom: 16,
-          }}>Portfolio</div>
-          <h2 style={{
-            fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 4vw, 3rem)',
-            fontWeight: 300, color: '#fff', marginBottom: 20,
-          }}>
-            Completed <span style={{ fontWeight: 600 }}>Projects</span>
-          </h2>
-          <p style={{
-            fontSize: 'var(--fs-body-lg)', color: 'rgba(255,255,255,0.5)',
-            maxWidth: 520, margin: '0 auto', lineHeight: 'var(--lh-relaxed)',
-          }}>
-            A selection of workspaces we have recently designed, built, and delivered.
-          </p>
-        </motion.div>
+    <section style={containerStyle}>
+      <motion.div 
+        style={headerStyle}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <span style={overlineStyle}>Portfolio</span>
+        <h2 style={h2Style}>Completed Projects</h2>
+        <p style={subtitleStyle}>
+          Explore how we've transformed bare spaces into thriving, productive environments for leading enterprises.
+        </p>
+      </motion.div>
 
-        <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-          gap: 24,
-        }}>
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.06)',
-                borderRadius: 'var(--radius-lg)',
-                overflow: 'hidden',
-                transition: 'border-color 0.3s ease',
-              }}
-              whileHover={{ borderColor: 'rgba(212, 175, 55, 0.3)' }}
-            >
-              {/* Project image placeholder */}
+      <motion.div 
+        style={statsRowStyle}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <span style={statTextStyle}>3 Featured Projects</span>
+        <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+        <span style={statTextStyle}>175+ Seats Installed</span>
+        <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+        <span style={statTextStyle}>3 Industries</span>
+        <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+        <span style={statTextStyle}>100% On-Time</span>
+      </motion.div>
+
+      <div style={gridStyle}>
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.id}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            style={{
+              backgroundColor: 'rgba(255,255,255,0.02)',
+              borderRadius: '16px',
+              border: '1px solid',
+              borderColor: hoveredIndex === index ? 'rgba(212, 175, 55, 0.4)' : 'rgba(255, 255, 255, 0.05)',
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'column',
+              boxShadow: hoveredIndex === index ? '0 10px 40px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.1)' : 'none',
+              transform: hoveredIndex === index ? 'translateY(-8px)' : 'translateY(0)',
+              transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            }}
+          >
+            <div style={{
+              width: '100%',
+              aspectRatio: '16/9',
+              background: project.gradient,
+              position: 'relative',
+              padding: '16px',
+            }}>
               <div style={{
-                width: '100%', aspectRatio: '16/9',
-                background: `linear-gradient(135deg, rgba(62, 39, 35, 0.5) 0%, rgba(30, 20, 18, 0.8) 100%)`,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                padding: '6px 12px',
+                borderRadius: '20px',
+                display: 'inline-block',
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                color: '#fff',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
               }}>
-                <span style={{
-                  fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase',
-                  color: 'rgba(255,255,255,0.2)', fontWeight: 600,
-                }}>Project Photo</span>
+                {project.industry}
+              </div>
+            </div>
+
+            <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 700, margin: '0 0 8px 0', color: '#fff' }}>
+                {project.name}
+              </h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#888', marginBottom: '24px', fontSize: '0.9rem' }}>
+                <MapPin size={14} />
+                <span>{project.location}</span>
               </div>
 
-              <div style={{ padding: '28px 28px 32px' }}>
-                <h3 style={{
-                  fontFamily: 'var(--font-heading)', fontSize: 'var(--fs-h4)',
-                  fontWeight: 600, color: '#fff', marginBottom: 8,
-                }}>{project.title}</h3>
-                <div style={{
-                  display: 'flex', alignItems: 'center', gap: 6,
-                  fontSize: 'var(--fs-small)', color: 'rgba(255,255,255,0.4)',
-                  marginBottom: 20,
-                }}>
-                  <MapPin size={13} /> {project.location}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '16px',
+                marginBottom: '24px',
+              }}>
+                <div>
+                  <div style={{ color: '#D4AF37', fontSize: '0.75rem', textTransform: 'uppercase', marginBottom: '4px' }}>Size</div>
+                  <div style={{ color: '#ddd', fontSize: '0.9rem', fontWeight: 500 }}>{project.seats}</div>
                 </div>
-
-                <div style={{
-                  display: 'grid', gridTemplateColumns: '1fr 1fr',
-                  gap: '12px 20px', marginBottom: 24,
-                }}>
-                  {[
-                    { label: 'Industry', value: project.industry },
-                    { label: 'Office Size', value: project.size },
-                    { label: 'Timeline', value: project.timeline },
-                    { label: 'Products', value: project.products },
-                  ].map(detail => (
-                    <div key={detail.label}>
-                      <div style={{ fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginBottom: 4 }}>{detail.label}</div>
-                      <div style={{ fontSize: 'var(--fs-small)', color: 'rgba(255,255,255,0.7)' }}>{detail.value}</div>
-                    </div>
-                  ))}
+                <div>
+                  <div style={{ color: '#D4AF37', fontSize: '0.75rem', textTransform: 'uppercase', marginBottom: '4px' }}>Timeline</div>
+                  <div style={{ color: '#ddd', fontSize: '0.9rem', fontWeight: 500 }}>{project.timeline}</div>
                 </div>
-
-                <Link to="/gallery" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.15em',
-                  textTransform: 'uppercase', color: 'var(--color-accent)',
-                  textDecoration: 'none', transition: 'gap 0.3s ease',
-                }}>
-                  View Project <ArrowRight size={14} />
-                </Link>
+                <div style={{ gridColumn: '1 / -1' }}>
+                  <div style={{ color: '#D4AF37', fontSize: '0.75rem', textTransform: 'uppercase', marginBottom: '4px' }}>Products Supplied</div>
+                  <div style={{ color: '#ddd', fontSize: '0.9rem', fontWeight: 500 }}>{project.products}</div>
+                </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
+
+              <div style={{ marginTop: 'auto' }}>
+                <a href="/gallery" style={{
+                  color: '#D4AF37',
+                  textDecoration: 'none',
+                  fontSize: '0.9rem',
+                  fontWeight: 600,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  transition: 'gap 0.3s ease',
+                }}>
+                  View Project <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
