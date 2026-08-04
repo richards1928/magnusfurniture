@@ -1,121 +1,57 @@
 import { Target, Eye } from 'lucide-react';
 
-export function MissionVision() {
-  const cards = [
-    {
-      icon: <Target size={34} />,
-      title: 'Our Mission',
-      text: 'To create inspiring office environments through premium furniture solutions that combine functionality, comfort, innovation and timeless aesthetics while delivering exceptional value to every client.',
-    },
-    {
-      icon: <Eye size={34} />,
-      title: 'Our Vision',
-      text: 'To become India’s most trusted office furniture brand by designing world-class workspaces that empower businesses, enhance productivity and redefine workplace experiences.',
-    },
-  ];
+const cards = [
+  {
+    icon: <Target size={34} />,
+    title: 'Our Mission',
+    text: 'To create inspiring office environments through premium furniture solutions that combine functionality, comfort, innovation and timeless aesthetics — delivering exceptional value to every client we partner with.',
+  },
+  {
+    icon: <Eye size={34} />,
+    title: 'Our Vision',
+    text: 'To become India\'s most trusted office furniture brand by designing world-class workspaces that empower businesses, enhance productivity and fundamentally redefine workplace experiences.',
+  },
+];
 
+export function MissionVision() {
   return (
-    <section
-      style={{
-        background: '#111',
-        padding: '120px 0',
-      }}
-    >
-      <div className="container">
-        <div
-          style={{
-            textAlign: 'center',
-            marginBottom: '70px',
-          }}
-        >
-          <div
-            style={{
-              color: 'var(--color-primary)',
-              textTransform: 'uppercase',
-              letterSpacing: '3px',
-              marginBottom: 18,
-              fontWeight: 600,
-            }}
-          >
-            Purpose & Direction
+    <section className="abt-section abt-mission">
+      {/* Ambient glows */}
+      <div className="abt-glow abt-glow--gold-center" />
+
+      <div className="abt-container">
+        {/* Section Header */}
+        <div className="abt-section-header abt-fade-in">
+          <div className="abt-overline">
+            <span className="abt-overline__line" />
+            Purpose &amp; Direction
+            <span className="abt-overline__line" />
           </div>
 
-          <h2
-            style={{
-              color: '#fff',
-              fontSize: 'clamp(2.5rem,5vw,4rem)',
-              marginBottom: 18,
-            }}
-          >
-            Mission & Vision
+          <h2 className="abt-heading abt-heading--xl abt-heading--dark">
+            Mission &amp; Vision
           </h2>
 
-          <p
-            style={{
-              color: 'rgba(255,255,255,.65)',
-              maxWidth: 700,
-              margin: '0 auto',
-              lineHeight: 1.8,
-            }}
-          >
+          <p className="abt-subtitle abt-subtitle--dark">
             Every workspace we design is driven by purpose, innovation and a
             commitment to creating environments where businesses thrive.
           </p>
         </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))',
-            gap: '32px',
-          }}
-        >
-          {cards.map((card) => (
+        {/* Cards */}
+        <div className="abt-mission__cards">
+          {cards.map((card, index) => (
             <div
               key={card.title}
-              style={{
-                background: 'rgba(255,255,255,.04)',
-                border: '1px solid rgba(212,175,55,.15)',
-                borderRadius: '24px',
-                padding: '48px',
-                transition: '.35s',
-                backdropFilter: 'blur(12px)',
-              }}
+              className={`abt-card abt-card--glass abt-mission__card abt-fade-in abt-delay-${index + 2}`}
             >
-              <div
-                style={{
-                  width: 70,
-                  height: 70,
-                  borderRadius: '18px',
-                  background: 'rgba(212,175,55,.12)',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  color: 'var(--color-primary)',
-                  marginBottom: 28,
-                }}
-              >
+              <div className="abt-icon-wrap abt-icon-wrap--gold">
                 {card.icon}
               </div>
 
-              <h3
-                style={{
-                  color: '#fff',
-                  fontSize: '1.7rem',
-                  marginBottom: 20,
-                }}
-              >
-                {card.title}
-              </h3>
+              <h3 className="abt-mission__card-title">{card.title}</h3>
 
-              <p
-                style={{
-                  color: 'rgba(255,255,255,.7)',
-                  lineHeight: 1.9,
-                }}
-              >
-                {card.text}
-              </p>
+              <p className="abt-mission__card-text">{card.text}</p>
             </div>
           ))}
         </div>

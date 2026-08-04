@@ -1,93 +1,65 @@
 export function AboutStory() {
   return (
-    <section
-      style={{
-        background: "#F8F6F2",
-        padding: "120px 0",
-      }}
-    >
-      <div
-        className="container"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "80px",
-          alignItems: "center",
-        }}
-      >
-        {/* Left */}
-        <div>
-          <div
-            style={{
-              width: "100%",
-              height: 520,
-              borderRadius: 28,
-              background:
-                "linear-gradient(135deg,#D4AF37 0%,#B68D2A 100%)",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "#fff",
-              fontSize: "2rem",
-              fontWeight: 700,
-            }}
-          >
-            Magnus Office
-          </div>
-        </div>
-
-        {/* Right */}
-        <div>
-          <div
-            style={{
-              color: "var(--color-primary)",
-              textTransform: "uppercase",
-              letterSpacing: "3px",
-              marginBottom: 20,
-              fontWeight: 600,
-            }}
-          >
-            Our Story
+    <section className="abt-section abt-section--warm abt-story">
+      <div className="abt-container">
+        <div className="abt-story__grid">
+          {/* Left — Image */}
+          <div className="abt-story__image-wrap abt-fade-in">
+            <div className="abt-story__image-frame" />
+            <img
+              src="/assets/about/workspace.png"
+              alt="Premium Magnus office workspace with executive furniture"
+              className="abt-story__image"
+              loading="lazy"
+            />
+            <div className="abt-story__image-badge">
+              ✦ Premium Quality
+            </div>
           </div>
 
-          <h2
-            style={{
-              fontSize: "3rem",
-              lineHeight: 1.1,
-              marginBottom: 28,
-              color: "#111",
-            }}
-          >
-            Designing Better
-            <br />
-            Workspaces.
-          </h2>
+          {/* Right — Text */}
+          <div className="abt-story__text abt-fade-in abt-delay-2">
+            <div className="abt-overline">
+              <span className="abt-overline__line" />
+              Our Story
+            </div>
 
-          <p
-            style={{
-              color: "#555",
-              lineHeight: 1.9,
-              marginBottom: 24,
-            }}
-          >
-            Magnus Office Furniture specializes in creating premium
-            office environments that inspire productivity,
-            collaboration and innovation. Our furniture combines
-            timeless aesthetics with ergonomic excellence to create
-            workspaces that people genuinely enjoy working in.
-          </p>
+            <h2 className="abt-heading abt-heading--lg abt-heading--light">
+              Designing Better<br />
+              Workspaces Since Day One.
+            </h2>
 
-          <p
-            style={{
-              color: "#555",
-              lineHeight: 1.9,
-            }}
-          >
-            From executive cabins and collaborative workstations to
-            reception areas and conference rooms, every Magnus
-            solution is designed with quality craftsmanship,
-            functionality and long-term durability in mind.
-          </p>
+            <p className="abt-story__paragraph">
+              Magnus Office Furniture specializes in creating premium
+              office environments that inspire productivity,
+              collaboration and innovation. Our furniture combines
+              timeless aesthetics with ergonomic excellence to create
+              workspaces that people genuinely enjoy working in.
+            </p>
+
+            <p className="abt-story__paragraph">
+              From executive cabins and collaborative workstations to
+              reception areas and conference rooms, every Magnus
+              solution is designed with quality craftsmanship,
+              functionality and long-term durability in mind.
+            </p>
+
+            <blockquote className="abt-story__quote">
+              "We don't just furnish offices — we create environments
+              where businesses thrive, teams collaborate, and
+              great ideas are born."
+            </blockquote>
+
+            <div className="abt-story__signature">
+              <div className="abt-story__sig-avatar">M</div>
+              <div>
+                <div className="abt-story__sig-name">Magnus Furniture</div>
+                <div className="abt-story__sig-role">
+                  Premium Office Solutions
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

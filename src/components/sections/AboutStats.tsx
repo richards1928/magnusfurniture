@@ -1,125 +1,106 @@
+import { useEffect, useRef, useState } from 'react';
+
+function AnimatedStatValue({ end, suffix = '' }: { end: number; suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          const duration = 2200;
+          const startTime = performance.now();
+          const animate = (now: number) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 4);
+            setCount(Math.floor(eased * end));
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [end]);
+
+  return <div ref={ref}>{count}{suffix}</div>;
+}
+
 const stats = [
   {
-    value: "116+",
-    title: "Premium Products",
-    description: "Complete office furniture catalogue",
+    value: 116,
+    suffix: '+',
+    title: 'Premium Products',
+    description: 'Complete office furniture catalogue',
   },
   {
-    value: "11",
-    title: "Product Categories",
-    description: "Solutions for every workspace",
+    value: 11,
+    suffix: '',
+    title: 'Product Categories',
+    description: 'Solutions for every workspace',
   },
   {
-    value: "100%",
-    title: "Customized Solutions",
-    description: "Tailored for every business",
+    value: 100,
+    suffix: '%',
+    title: 'Customized Solutions',
+    description: 'Tailored for every business need',
   },
   {
-    value: "Premium",
-    title: "Quality",
-    description: "Built for durability & elegance",
+    value: 5,
+    suffix: '★',
+    title: 'Quality Rating',
+    description: 'Built for durability & elegance',
   },
 ];
 
 export function AboutStats() {
   return (
-    <section
-      style={{
-        background: "#F8F6F2",
-        padding: "120px 0",
-      }}
-    >
-      <div className="container">
-        <div
-          style={{
-            textAlign: "center",
-            marginBottom: 70,
-          }}
-        >
-          <div
-            style={{
-              color: "var(--color-primary)",
-              letterSpacing: "3px",
-              textTransform: "uppercase",
-              fontWeight: 600,
-              marginBottom: 18,
-            }}
-          >
+    <section className="abt-section abt-stats">
+      {/* Ambient glow */}
+      <div className="abt-glow abt-glow--gold-center" />
+
+      <div className="abt-container">
+        {/* Section Header */}
+        <div className="abt-section-header abt-fade-in">
+          <div className="abt-overline">
+            <span className="abt-overline__line" />
             Magnus In Numbers
+            <span className="abt-overline__line" />
           </div>
 
-          <h2
-            style={{
-              fontSize: "clamp(2.5rem,5vw,4rem)",
-              color: "#111",
-              marginBottom: 20,
-            }}
-          >
-            Trusted Workspace
-            <br />
+          <h2 className="abt-heading abt-heading--xl abt-heading--dark">
+            Trusted Workspace<br />
             Solutions
           </h2>
 
-          <p
-            style={{
-              maxWidth: 720,
-              margin: "0 auto",
-              color: "#666",
-              lineHeight: 1.8,
-            }}
-          >
+          <p className="abt-subtitle abt-subtitle--dark">
             Every Magnus project reflects our commitment to craftsmanship,
             functionality and exceptional workplace experiences.
           </p>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
-            gap: 28,
-          }}
-        >
-          {stats.map((stat) => (
+        {/* Stats Grid */}
+        <div className="abt-stats__grid">
+          {stats.map((stat, index) => (
             <div
               key={stat.title}
-              style={{
-                background: "#fff",
-                borderRadius: 24,
-                padding: "42px 30px",
-                textAlign: "center",
-                border: "1px solid rgba(212,175,55,.12)",
-                boxShadow: "0 18px 40px rgba(0,0,0,.05)",
-              }}
+              className={`abt-stat-card abt-fade-in abt-delay-${index + 1}`}
             >
-              <div
-                style={{
-                  color: "var(--color-primary)",
-                  fontSize: "3rem",
-                  fontWeight: 700,
-                  marginBottom: 16,
-                }}
-              >
-                {stat.value}
+              <div className="abt-stat-card__value">
+                <AnimatedStatValue end={stat.value} suffix={stat.suffix} />
               </div>
 
-              <h3
-                style={{
-                  color: "#111",
-                  marginBottom: 12,
-                }}
-              >
-                {stat.title}
-              </h3>
+              <h3 className="abt-stat-card__title">{stat.title}</h3>
 
-              <p
-                style={{
-                  color: "#666",
-                  lineHeight: 1.8,
-                }}
-              >
-                {stat.description}
-              </p>
+              <p className="abt-stat-card__desc">{stat.description}</p>
             </div>
           ))}
         </div>
