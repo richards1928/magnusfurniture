@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, ArrowRight } from 'lucide-react';
 
-export default function CompletedProjects() {
+export function CompletedProjects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const containerStyle: React.CSSProperties = {
@@ -230,3 +230,5 @@ export default function CompletedProjects() {
     </section>
   );
 }
+
+export default CompletedProjects;

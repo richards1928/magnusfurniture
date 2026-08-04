@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-export default function WorkspaceInspiration() {
+export function WorkspaceInspiration() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const containerStyle: React.CSSProperties = {
@@ -42,15 +42,6 @@ export default function WorkspaceInspiration() {
     color: '#a0a0a0',
     fontSize: '1.1rem',
     lineHeight: 1.6,
-  };
-
-  const gridStyle: React.CSSProperties = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    gap: '24px',
-    width: '100%',
-    maxWidth: '1200px',
-    marginBottom: '40px',
   };
   
   // Custom bento grid via media queries isn't fully possible with only inline styles for auto placement,
@@ -288,3 +279,5 @@ export default function WorkspaceInspiration() {
     </section>
   );
 }
+
+export default WorkspaceInspiration;
