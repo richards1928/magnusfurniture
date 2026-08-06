@@ -34,7 +34,9 @@ export interface Category {
 
 // ── Raw catalog data ──
 
-const rawProducts: any[] = Object.values(catalog.products).flat();
+const rawProducts: any[] = Object.values(catalog.products)
+  .flat()
+  .filter((p: any) => p && p.status !== "Inactive" && p.status !== "Draft" && !p._disabled);
 
 // ── Category icon mapping ──
 

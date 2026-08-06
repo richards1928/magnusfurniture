@@ -13,10 +13,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/conferenceTables/vb-conveet.webp",
-      "thumbnail": "/assets/products/conferenceTables/vb-conveet.webp",
+      "hero": "/assets/products/conferenceTables/vb-conveet.jpeg",
+      "thumbnail": "/assets/products/conferenceTables/vb-conveet.jpeg",
       "gallery": [
-        "/assets/products/conferenceTables/vb-conveet.webp"
+        "/assets/products/conferenceTables/vb-conveet.jpeg"
       ]
     },
     "brochure": "",
@@ -38,10 +38,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/conferenceTables/vb-rectangle.webp",
-      "thumbnail": "/assets/products/conferenceTables/vb-rectangle.webp",
+      "hero": "/assets/products/conferenceTables/vb-rectangle.jpeg",
+      "thumbnail": "/assets/products/conferenceTables/vb-rectangle.jpeg",
       "gallery": [
-        "/assets/products/conferenceTables/vb-rectangle.webp"
+        "/assets/products/conferenceTables/vb-rectangle.jpeg"
       ]
     },
     "brochure": "",
@@ -63,10 +63,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/conferenceTables/vb-boat.webp",
-      "thumbnail": "/assets/products/conferenceTables/vb-boat.webp",
+      "hero": "/assets/products/conferenceTables/vb-boat.jpeg",
+      "thumbnail": "/assets/products/conferenceTables/vb-boat.jpeg",
       "gallery": [
-        "/assets/products/conferenceTables/vb-boat.webp"
+        "/assets/products/conferenceTables/vb-boat.jpeg"
       ]
     },
     "brochure": "",
@@ -88,10 +88,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/conferenceTables/vb-diamond.webp",
-      "thumbnail": "/assets/products/conferenceTables/vb-diamond.webp",
+      "hero": "/assets/products/conferenceTables/vb-diamond.jpeg",
+      "thumbnail": "/assets/products/conferenceTables/vb-diamond.jpeg",
       "gallery": [
-        "/assets/products/conferenceTables/vb-diamond.webp"
+        "/assets/products/conferenceTables/vb-diamond.jpeg"
       ]
     },
     "brochure": "",
@@ -120,7 +120,7 @@
     "brochure": "",
     "tags": [],
     "relatedProducts": [],
-    "status": "Active"
+    "status": "Inactive"
   },
   {
     "id": "MAG-CFT-006",
@@ -136,10 +136,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/conferenceTables/vb-edge.webp",
-      "thumbnail": "/assets/products/conferenceTables/vb-edge.webp",
+      "hero": "/assets/products/conferenceTables/vb-edge.jpeg",
+      "thumbnail": "/assets/products/conferenceTables/vb-edge.jpeg",
       "gallery": [
-        "/assets/products/conferenceTables/vb-edge.webp"
+        "/assets/products/conferenceTables/vb-edge.jpeg"
       ]
     },
     "brochure": "",
@@ -161,10 +161,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/conferenceTables/vb-destiny.webp",
-      "thumbnail": "/assets/products/conferenceTables/vb-destiny.webp",
+      "hero": "/assets/products/conferenceTables/vb-destiny.jpeg",
+      "thumbnail": "/assets/products/conferenceTables/vb-destiny.jpeg",
       "gallery": [
-        "/assets/products/conferenceTables/vb-destiny.webp"
+        "/assets/products/conferenceTables/vb-destiny.jpeg"
       ]
     },
     "brochure": "",
@@ -186,10 +186,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/conferenceTables/vb-shadow.webp",
-      "thumbnail": "/assets/products/conferenceTables/vb-shadow.webp",
+      "hero": "/assets/products/conferenceTables/vb-shadow.jpeg",
+      "thumbnail": "/assets/products/conferenceTables/vb-shadow.jpeg",
       "gallery": [
-        "/assets/products/conferenceTables/vb-shadow.webp"
+        "/assets/products/conferenceTables/vb-shadow.jpeg"
       ]
     },
     "brochure": "",
@@ -211,10 +211,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/conferenceTables/vb-tango.webp",
-      "thumbnail": "/assets/products/conferenceTables/vb-tango.webp",
+      "hero": "/assets/products/conferenceTables/vb-tango.jpeg",
+      "thumbnail": "/assets/products/conferenceTables/vb-tango.jpeg",
       "gallery": [
-        "/assets/products/conferenceTables/vb-tango.webp"
+        "/assets/products/conferenceTables/vb-tango.jpeg"
       ]
     },
     "brochure": "",
