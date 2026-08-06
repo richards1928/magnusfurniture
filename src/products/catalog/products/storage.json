@@ -13,10 +13,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/storage/storage.webp",
-      "thumbnail": "/assets/products/storage/storage.webp",
+      "hero": "/assets/products/storage/storage.png",
+      "thumbnail": "/assets/products/storage/storage.png",
       "gallery": [
-        "/assets/products/storage/storage.webp"
+        "/assets/products/storage/storage.png"
       ]
     },
     "brochure": "",
