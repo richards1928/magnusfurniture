@@ -45,6 +45,13 @@ import storageUnit from '../assets/products/storage/storage.webp';
 import storageDrawer from '../assets/products/storage/1-draw-1-door.webp';
 import storageCushion from '../assets/products/storage/cushion-with-2-draws.webp';
 
+import visitorBravo from '../assets/products/visitorChairs/bravo.webp';
+import visitorKabel from '../assets/products/visitorChairs/kabel-stand.webp';
+import managerTriangle from '../assets/products/mdTables/vb-triangle-leg.webp';
+import workstationBasicLinear from '../assets/products/workstations/vb-basic-linear.webp';
+import workstationBasicBackToBack from '../assets/products/workstations/vb-basic-back-to-back.webp';
+import heroShowroom from '../assets/hero.png';
+
 // ── Gallery Item Data ──
 
 interface GalleryItem {
@@ -68,6 +75,7 @@ const filterCategories = [
   { id: 'conference', label: 'Conference Tables' },
   { id: 'reception', label: 'Reception Desks' },
   { id: 'storage', label: 'Storage Cabinets' },
+  { id: 'location', label: '📍 Showroom Location' },
 ];
 
 const galleryItems: GalleryItem[] = [
@@ -341,6 +349,86 @@ const galleryItems: GalleryItem[] = [
     dimensions: 'W 40 × D 50 × H 55 cm',
     material: 'Steel Body, Padded Fabric Top',
     features: ['Dual Purpose Seating', 'Lockable Drawers', 'Caster Mobility']
+  },
+  {
+    id: 'item-25',
+    title: 'Bravo Executive Visitor Chair',
+    category: 'chairs',
+    categoryName: 'Office Chairs',
+    image: visitorBravo,
+    spanClass: 'span-4',
+    dimensions: 'W 60 × D 58 × H 95 cm',
+    material: 'Breathable Mesh, Cantilever Chrome Base',
+    features: ['Sleek Cantilever Frame', 'Padded Armrests', 'Anti-Tilt Base']
+  },
+  {
+    id: 'item-26',
+    title: 'Kabel Stand Visitor Lounge Chair',
+    category: 'chairs',
+    categoryName: 'Office Chairs',
+    image: visitorKabel,
+    spanClass: 'span-4',
+    dimensions: 'W 62 × D 60 × H 98 cm',
+    material: 'High-Density Foam, Sturdy Steel Frame',
+    features: ['Ergonomic Curve', 'Heavy-Duty Sled Base', 'Floor Protectors']
+  },
+  {
+    id: 'item-27',
+    title: 'Triangle-Leg Manager Desk',
+    category: 'executive',
+    categoryName: 'Executive Desks',
+    image: managerTriangle,
+    spanClass: 'span-8',
+    aspectClass: 'wide',
+    dimensions: 'W 210 × D 95 × H 75 cm',
+    material: 'Pre-laminated Oak Board, Triangular Steel Profile',
+    features: ['Integrated Cable Spine', 'Modesty Shield', 'Side Drawer Access']
+  },
+  {
+    id: 'item-28',
+    title: 'VB-Basic Linear Quad Workstation',
+    category: 'workstations',
+    categoryName: 'Workstations',
+    image: workstationBasicLinear,
+    spanClass: 'span-6',
+    dimensions: 'W 280 × D 70 × H 75 cm',
+    material: 'Powder-Coated Steel, Acoustic Glass Dividers',
+    features: ['Modularity System', 'Frosted Screen Panels', 'Wire Channels']
+  },
+  {
+    id: 'item-29',
+    title: 'VB-Basic Back-to-Back Workstation Cluster',
+    category: 'workstations',
+    categoryName: 'Workstations',
+    image: workstationBasicBackToBack,
+    spanClass: 'span-6',
+    dimensions: 'W 280 × D 140 × H 75 cm',
+    material: 'Heavy Duty Metal Frame, Pre-laminated Tops',
+    features: ['Shared Power Raceway', 'Dual Side Storage', 'High-Density Dividers']
+  },
+  {
+    id: 'item-30',
+    title: 'Magnus Office Furniture Flagship Showroom',
+    category: 'location',
+    categoryName: 'Showroom Location',
+    image: heroShowroom,
+    spanClass: 'span-8',
+    aspectClass: 'wide',
+    dimensions: '3rd Floor, M R Elite, Kondapur, Hyderabad',
+    material: 'Live Experience Zone & Corporate Display',
+    features: ['📍 Opposite Sarath City Capital Mall', 'Full Ergonomic Testing Bay', 'Custom Finishes & Material Samples']
+  },
+  {
+    id: 'item-31',
+    title: 'Kondapur Experience Center & Display Lounge',
+    category: 'location',
+    categoryName: 'Showroom Location',
+    image: reception7,
+    spanClass: 'span-4',
+    aspectClass: 'tall',
+    dimensions: 'Kondapur Main Road, Hyderabad – 500084',
+    material: 'Interactive Client Consultation Lounge',
+    features: ['Direct Google Maps Location', 'Walk-in Consultations Welcome', 'Open Mon-Sun 10 AM - 7 PM']
   }
 ];
 

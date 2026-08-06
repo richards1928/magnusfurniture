@@ -132,29 +132,86 @@ export const ContactPage = () => (
       </div>
 
       {/* Embedded Google Map */}
-      <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: 400, background: 'var(--color-cream)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-gray-200)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+      <a
+        href="https://maps.google.com/?q=Magnus+Office+Furniture+Kondapur+Hyderabad"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Click to open Magnus Office Furniture location on Google Maps"
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '100%',
+          minHeight: 440,
+          background: 'var(--color-cream)',
+          borderRadius: 'var(--radius-lg)',
+          border: '2px solid rgba(212, 175, 55, 0.3)',
+          boxShadow: '0 12px 36px rgba(0, 0, 0, 0.12)',
+          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
+          textDecoration: 'none',
+          cursor: 'pointer',
+          transition: 'all 0.4s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = 'var(--color-primary)';
+          e.currentTarget.style.boxShadow = '0 16px 44px rgba(212, 175, 55, 0.25)';
+          e.currentTarget.style.transform = 'translateY(-4px)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
+          e.currentTarget.style.boxShadow = '0 12px 36px rgba(0, 0, 0, 0.12)';
+          e.currentTarget.style.transform = 'translateY(0)';
+        }}
+      >
+        {/* Floating Google Maps Interactive Pill Header */}
+        <div style={{
+          position: 'absolute',
+          top: 14,
+          left: 14,
+          right: 14,
+          zIndex: 10,
+          background: 'rgba(26, 23, 20, 0.88)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          border: '1px solid rgba(212, 175, 55, 0.4)',
+          borderRadius: 'var(--radius-md)',
+          padding: '10px 16px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          color: '#ffffff',
+          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.25)',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 'var(--fs-small)', fontWeight: 'var(--fw-semibold)' }}>
+            <MapPin size={16} color="#D4AF37" />
+            <span>Magnus Office Furniture Showroom</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--fs-xs)', color: '#D4AF37', fontWeight: 'var(--fw-bold)' }}>
+            <span>Open in Google Maps</span>
+            <ExternalLink size={14} />
+          </div>
+        </div>
+
+        {/* Map iframe */}
         <iframe
           src="https://maps.google.com/maps?q=Magnus%20Office%20Furniture%20Kondapur%20Hyderabad&t=&z=16&ie=UTF8&iwloc=&output=embed"
-          style={{ border: 0, width: '100%', flex: 1, minHeight: 350 }}
-          allowFullScreen={false}
+          style={{ border: 0, width: '100%', flex: 1, minHeight: 380, pointerEvents: 'none' }}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Magnus Office Furniture Showroom Location"
+          title="Magnus Office Furniture Showroom Location Map"
         ></iframe>
-        <div style={{ padding: '12px 16px', background: 'var(--color-white)', borderTop: '1px solid var(--color-gray-200)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span style={{ fontSize: 'var(--fs-small)', color: 'var(--color-gray-600)', fontWeight: 'var(--fw-medium)' }}>
-            Magnus Office Furniture Showroom
+
+        {/* Bottom Banner */}
+        <div style={{ padding: '12px 18px', background: 'var(--color-white)', borderTop: '1px solid var(--color-gray-200)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={{ fontSize: 'var(--fs-small)', color: 'var(--color-gray-700)', fontWeight: 'var(--fw-medium)' }}>
+            📍 Kondapur, Hyderabad – Opposite Sarath City Capital Mall
           </span>
-          <a
-            href="https://maps.google.com/?q=Magnus+Office+Furniture+Kondapur+Hyderabad"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ fontSize: 'var(--fs-small)', color: 'var(--color-primary)', fontWeight: 'var(--fw-semibold)', display: 'flex', alignItems: 'center', gap: 4, textDecoration: 'none' }}
-          >
-            View Larger Map <ExternalLink size={14} />
-          </a>
+          <span style={{ fontSize: 'var(--fs-small)', color: 'var(--color-primary)', fontWeight: 'var(--fw-bold)', display: 'flex', alignItems: 'center', gap: 4 }}>
+            Direct Map Navigation <ExternalLink size={14} />
+          </span>
         </div>
-      </div>
+      </a>
     </div>
 
     {/* DIVIDER */}
