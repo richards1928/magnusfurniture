@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
+import { MagnusWordmark } from '../ui/MagnusLogo';
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -50,39 +51,8 @@ export function Navbar() {
           height: '100%',
         }}>
           {/* Logo */}
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-            <div style={{
-              width: 40,
-              height: 40,
-              background: 'var(--color-primary)',
-              borderRadius: 'var(--radius-sm)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#fff',
-              fontFamily: 'var(--font-heading)',
-              fontWeight: 'var(--fw-bold)',
-              fontSize: '1.25rem',
-            }}>M</div>
-            <div>
-              <div style={{
-                fontFamily: 'var(--font-heading)',
-                fontWeight: 'var(--fw-bold)',
-                fontSize: '1.25rem',
-                color: 'var(--color-dark)',
-                letterSpacing: 'var(--ls-wide)',
-                lineHeight: 1,
-              }}>MAGNUS</div>
-              <div style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: 'var(--fs-xs)',
-                color: 'var(--color-gray-500)',
-                letterSpacing: 'var(--ls-wider)',
-                textTransform: 'uppercase',
-                lineHeight: 1,
-                marginTop: 2,
-              }}>OFFICE FURNITURE</div>
-            </div>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <MagnusWordmark height={38} color="dark" />
           </Link>
 
           {/* Desktop Links */}

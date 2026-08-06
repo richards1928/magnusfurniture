@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Eye, FileText } from 'lucide-react';
 import { useState } from 'react';
 import type { Product } from '../../products/services/catalogService';
+import { MagnusMonogram } from '../ui/MagnusLogo';
 
 export function ProductCard({ product }: { product: Product }) {
   const [loaded, setLoaded] = useState(false);
@@ -65,6 +66,21 @@ export function ProductCard({ product }: { product: Product }) {
             {product.badge}
           </span>
         )}
+
+        {/* Subtle Magnus brand mark – bottom right of image area */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            bottom: 8,
+            left: 10,
+            opacity: 0.18,
+            pointerEvents: 'none',
+            zIndex: 2,
+          }}
+        >
+          <MagnusMonogram size={24} color="gold" />
+        </div>
 
         {/* Quick View Overlay */}
         <div className="premium-product-card__overlay">

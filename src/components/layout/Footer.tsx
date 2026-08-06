@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from 'lucide-react';
-// react-icons not needed in this component currently
+import { MagnusWordmark, MagnusWatermark } from '../ui/MagnusLogo';
 
 const footerLinks = {
   'Quick Links': [
@@ -36,6 +36,13 @@ export function Footer() {
     overflow: 'hidden',
   }}
 >
+  {/* Decorative watermark – large gold M in background */}
+  <MagnusWatermark
+    size={500}
+    color="gold"
+    opacity={0.03}
+    style={{ bottom: -60, right: -80 }}
+  />
   {/* Main Footer */}
 <div
   className="container"
@@ -49,51 +56,8 @@ export function Footer() {
 >
         {/* Brand Column */}
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: 'var(--space-6)' }}>
-            <div
-  style={{
-    width: 40,
-    height: 40,
-    background: 'linear-gradient(135deg, #D4AF37 0%, #B68D2A 100%)',
-    borderRadius: 'var(--radius-sm)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#111', // ✅ Dark letter for better contrast
-    fontFamily: 'var(--font-heading)',
-    fontWeight: 'var(--fw-bold)',
-    fontSize: '1.25rem',
-    boxShadow: '0 6px 18px rgba(212,175,55,.25)', // ✨ Premium touch
-  }}
->
-  M
-</div>
-            <div>
-              <div style={{
-                fontFamily: 'var(--font-heading)',
-                fontWeight: 'var(--fw-bold)',
-                fontSize: '1.1rem',
-                color: '#fff',
-                letterSpacing: 'var(--ls-wide)',
-              }}>MAGNUS</div>
-              <div style={{
-                fontSize: 'var(--fs-xs)',
-                letterSpacing: 'var(--ls-wider)',
-                textTransform: 'uppercase',
-                color: 'var(--color-gray-500)',
-              }}>OFFICE FURNITURE</div>
-              <div
-  style={{
-    marginTop: '6px',
-    fontSize: '0.72rem',
-    color: 'var(--color-primary)',
-    letterSpacing: '2px',
-    textTransform: 'uppercase',
-  }}
->
-  Premium Workspace Solutions
-</div>
-            </div>
+          <div style={{ marginBottom: 'var(--space-6)' }}>
+            <MagnusWordmark height={42} color="white" />
           </div>
           <p style={{ fontSize: 'var(--fs-body)', color: 'var(--color-gray-400)', lineHeight: 'var(--lh-relaxed)', marginBottom: 'var(--space-8)', maxWidth: 320 }}>
             Premium office furniture solutions that combine comfort, productivity, aesthetics, and durability for modern workspaces.

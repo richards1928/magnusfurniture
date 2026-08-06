@@ -1,9 +1,17 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { MagnusMonogram, MagnusWatermark } from '../ui/MagnusLogo';
 
 export function ContactPreview() {
   return (
-    <section className="section" style={{ background: 'var(--color-warm-white)' }}>
+    <section className="section" style={{ background: 'var(--color-warm-white)', position: 'relative', overflow: 'hidden' }}>
+      {/* Section watermark */}
+      <MagnusWatermark
+        size={360}
+        color="dark"
+        opacity={0.03}
+        style={{ left: -60, top: '50%', transform: 'translateY(-50%)' }}
+      />
       <div className="container" style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
@@ -81,15 +89,24 @@ export function ContactPreview() {
             width: '100%',
             aspectRatio: '1',
             borderRadius: 'var(--radius-xl)',
-            background: 'linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-cream) 100%)',
+            background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             border: '1px solid var(--color-gray-200)',
+            position: 'relative',
+            overflow: 'hidden',
           }}
         >
-          <div style={{ textAlign: 'center', color: 'var(--color-gray-400)' }}>
-            <MapPin size={48} />
-            <div style={{ marginTop: 12, fontFamily: 'var(--font-heading)', fontSize: 'var(--fs-small)', letterSpacing: 'var(--ls-wider)', textTransform: 'uppercase' }}>
+          {/* Background brand watermark */}
+          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.08 }}>
+            <MagnusMonogram size={220} color="gold" />
+          </div>
+          <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.85)', position: 'relative', zIndex: 1 }}>
+            <MagnusMonogram size={64} color="gold" style={{ margin: '0 auto 16px' }} />
+            <div style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--fs-small)', letterSpacing: 'var(--ls-wider)', textTransform: 'uppercase', color: 'rgba(212,175,55,0.9)' }}>
               Visit Our Showroom
+            </div>
+            <div style={{ fontSize: 'var(--fs-xs)', color: 'rgba(255,255,255,0.55)', marginTop: 8, lineHeight: 'var(--lh-relaxed)' }}>
+              M R Elite, 3rd Floor<br />Kondapur, Hyderabad
             </div>
           </div>
         </motion.div>
