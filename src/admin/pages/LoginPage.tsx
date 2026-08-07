@@ -39,13 +39,17 @@ export function LoginPage() {
       }}>
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
-          <div style={{
-            width: 48, height: 48, borderRadius: 12,
-            background: '#3E2723', color: '#D4AF37',
-            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-            fontWeight: 800, fontSize: 20, fontFamily: 'var(--font-heading)',
-            marginBottom: 16,
-          }}>M</div>
+          <img
+            src="/logomagnus.png"
+            alt="Magnus Logo"
+            style={{
+              width: 56,
+              height: 56,
+              objectFit: 'contain',
+              borderRadius: 12,
+              marginBottom: 16,
+            }}
+          />
           <h1 style={{
             fontFamily: 'var(--font-heading)', fontSize: 22, fontWeight: 700,
             color: '#1A1A1A', marginBottom: 4,

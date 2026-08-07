@@ -13,7 +13,7 @@ import {
   MessageSquare,
   Award
 } from 'lucide-react';
-import { MagnusMonogram, MagnusWatermark } from '../components/ui/MagnusLogo';
+import { MagnusMonogram } from '../components/ui/MagnusLogo';
 
 function SimplePage({ title, description, children }: { title: string, description: string, children?: ReactNode }) {
   return (
@@ -358,13 +358,7 @@ export const ContactPage = () => (
       position: 'relative',
       overflow: 'hidden',
     }}>
-      {/* Decorative brand watermark in CTA */}
-      <MagnusWatermark
-        size={340}
-        color="gold"
-        opacity={0.07}
-        style={{ right: -60, bottom: -80 }}
-      />
+
       <div style={{
         fontSize: 'var(--fs-xs)',
         fontWeight: 'var(--fw-semibold)',

@@ -62,24 +62,17 @@ export function AdminSidebar() {
           minHeight: 72,
         }}
       >
-        <div
+        <img
+          src="/logomagnus.png"
+          alt="Magnus Logo"
           style={{
             width: 36,
             height: 36,
+            objectFit: 'contain',
             borderRadius: 8,
-            background: '#D4AF37',
-            color: '#1A1612',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 800,
-            fontSize: 16,
-            fontFamily: 'var(--font-heading)',
             flexShrink: 0,
           }}
-        >
-          M
-        </div>
+        />
 
         {!collapsed && (
           <div>

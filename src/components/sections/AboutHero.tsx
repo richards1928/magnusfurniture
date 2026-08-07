@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, Award } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { MagnusWatermark } from '../ui/MagnusLogo';
+
 
 function AnimatedCounter({ end, suffix = '', duration = 2200 }: { end: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -43,13 +43,7 @@ export function AboutHero() {
       <div className="abt-glow abt-glow--gold-tr" />
       <div className="abt-glow abt-glow--gold-bl" />
 
-      {/* Magnus brand watermark – right side, very subtle */}
-      <MagnusWatermark
-        size={420}
-        color="gold"
-        opacity={0.04}
-        style={{ right: -40, top: '50%', transform: 'translateY(-50%)', zIndex: 0 }}
-      />
+
 
       {/* Decorative vertical lines */}
       <div className="abt-hero__deco">

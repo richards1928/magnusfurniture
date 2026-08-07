@@ -1,17 +1,10 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { MagnusMonogram, MagnusWatermark } from '../ui/MagnusLogo';
+import { MagnusMonogram } from '../ui/MagnusLogo';
 
 export function ContactPreview() {
   return (
     <section className="section" style={{ background: 'var(--color-warm-white)', position: 'relative', overflow: 'hidden' }}>
-      {/* Section watermark */}
-      <MagnusWatermark
-        size={360}
-        color="dark"
-        opacity={0.03}
-        style={{ left: -60, top: '50%', transform: 'translateY(-50%)' }}
-      />
       <div className="container" style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
@@ -96,10 +89,7 @@ export function ContactPreview() {
             overflow: 'hidden',
           }}
         >
-          {/* Background brand watermark */}
-          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.08 }}>
-            <MagnusMonogram size={220} color="gold" />
-          </div>
+
           <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.85)', position: 'relative', zIndex: 1 }}>
             <MagnusMonogram size={64} color="gold" style={{ margin: '0 auto 16px' }} />
             <div style={{ fontFamily: 'var(--font-heading)', fontSize: 'var(--fs-small)', letterSpacing: 'var(--ls-wider)', textTransform: 'uppercase', color: 'rgba(212,175,55,0.9)' }}>

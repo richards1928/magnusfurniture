@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from 'lucide-react';
-import { MagnusWordmark, MagnusWatermark } from '../ui/MagnusLogo';
+import { MagnusWordmark } from '../ui/MagnusLogo';
 
 const footerLinks = {
   'Quick Links': [
@@ -36,13 +36,7 @@ export function Footer() {
     overflow: 'hidden',
   }}
 >
-  {/* Decorative watermark – large gold M in background */}
-  <MagnusWatermark
-    size={500}
-    color="gold"
-    opacity={0.03}
-    style={{ bottom: -60, right: -80 }}
-  />
+
   {/* Main Footer */}
 <div
   className="container"

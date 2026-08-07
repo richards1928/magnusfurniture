@@ -1,100 +1,52 @@
 import type { CSSProperties } from 'react';
 
 /**
- * Magnus Office Furniture — Gold "M" Monogram SVG
- * A premium geometric "M" constructed from the brand's Walnut Charcoal + Champagne Gold palette.
+ * Magnus Office Furniture — Official Logo Component
+ * Renders the brand logo from /logomagnus.png with optional border radius
  */
 export function MagnusMonogram({
   size = 40,
-  color = 'gold',
+  borderRadius = 8,
   style,
   className,
 }: {
   size?: number;
+  borderRadius?: number | string;
   color?: 'gold' | 'white' | 'dark';
   style?: CSSProperties;
   className?: string;
 }) {
-  const fill =
-    color === 'gold'
-      ? '#D4AF37'
-      : color === 'white'
-      ? '#FFFFFF'
-      : '#3E2723';
-
-  const accent =
-    color === 'gold'
-      ? '#B8962E'
-      : color === 'white'
-      ? 'rgba(255,255,255,0.6)'
-      : '#5D4037';
-
   return (
-    <svg
+    <img
+      src="/logomagnus.png"
+      alt="Magnus Logo"
       width={size}
       height={size}
-      viewBox="0 0 100 100"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={style}
+      style={{
+        width: size,
+        height: size,
+        objectFit: 'contain',
+        borderRadius,
+        ...style,
+      }}
       className={className}
-      aria-label="Magnus Office Furniture Monogram"
-    >
-      {/* Outer hexagonal ring – premium frame */}
-      <polygon
-        points="50,4 93,27 93,73 50,96 7,73 7,27"
-        fill="none"
-        stroke={fill}
-        strokeWidth="2.5"
-        opacity="0.35"
-      />
-
-      {/* Inner letter M – bold geometric serif construction */}
-      {/* Left stem */}
-      <rect x="18" y="28" width="10" height="44" rx="1.5" fill={fill} />
-      {/* Right stem */}
-      <rect x="72" y="28" width="10" height="44" rx="1.5" fill={fill} />
-
-      {/* Left diagonal going down-right to center */}
-      <polygon
-        points="18,28 28,28 50,58 44,65"
-        fill={fill}
-      />
-      {/* Right diagonal going down-left to center */}
-      <polygon
-        points="82,28 72,28 50,58 56,65"
-        fill={fill}
-      />
-
-      {/* Center V notch – the valley of the M */}
-      <polygon
-        points="44,65 50,58 56,65 50,72"
-        fill={accent}
-        opacity="0.8"
-      />
-
-      {/* Top serif bars */}
-      <rect x="14" y="26" width="18" height="5" rx="1" fill={fill} opacity="0.6" />
-      <rect x="68" y="26" width="18" height="5" rx="1" fill={fill} opacity="0.6" />
-
-      {/* Bottom serif bars */}
-      <rect x="14" y="67" width="18" height="5" rx="1" fill={fill} opacity="0.6" />
-      <rect x="68" y="67" width="18" height="5" rx="1" fill={fill} opacity="0.6" />
-    </svg>
+    />
   );
 }
 
 /**
- * Full Magnus wordmark: gold monogram + MAGNUS / OFFICE FURNITURE text
+ * Full Magnus wordmark: Logo image + MAGNUS / OFFICE FURNITURE text
  * For use in Navbar, Footer, and brand identity contexts.
  */
 export function MagnusWordmark({
   height = 40,
+  borderRadius = 8,
   color = 'dark',
   style,
   className,
 }: {
   height?: number;
+  borderRadius?: number | string;
   color?: 'gold' | 'white' | 'dark';
   style?: CSSProperties;
   className?: string;
@@ -103,10 +55,10 @@ export function MagnusWordmark({
     color === 'white' ? '#FFFFFF' : color === 'gold' ? '#D4AF37' : '#1A1A1A';
   const subColor =
     color === 'white'
-      ? 'rgba(255,255,255,0.55)'
+      ? 'rgba(255,255,255,0.65)'
       : color === 'gold'
-      ? 'rgba(212,175,55,0.65)'
-      : '#888888';
+      ? 'rgba(212,175,55,0.75)'
+      : '#666666';
 
   return (
     <div
@@ -119,7 +71,18 @@ export function MagnusWordmark({
       }}
       className={className}
     >
-      <MagnusMonogram size={height} color={color === 'dark' ? 'gold' : color} />
+      <img
+        src="/logomagnus.png"
+        alt="Magnus Logo"
+        style={{
+          height: height,
+          width: 'auto',
+          maxHeight: '100%',
+          objectFit: 'contain',
+          display: 'block',
+          borderRadius,
+        }}
+      />
       <div>
         <div
           style={{
@@ -153,34 +116,10 @@ export function MagnusWordmark({
 }
 
 /**
- * Watermark – oversized, very low opacity monogram for section backgrounds.
- * Purely decorative; does not interfere with content or layout.
+ * Watermark – removed as requested.
  */
-export function MagnusWatermark({
-  size = 320,
-  color = 'gold',
-  opacity = 0.045,
-  style,
-}: {
-  size?: number;
-  color?: 'gold' | 'white' | 'dark';
-  opacity?: number;
-  style?: CSSProperties;
-}) {
-  return (
-    <div
-      aria-hidden="true"
-      style={{
-        position: 'absolute',
-        pointerEvents: 'none',
-        userSelect: 'none',
-        opacity,
-        ...style,
-      }}
-    >
-      <MagnusMonogram size={size} color={color} />
-    </div>
-  );
+export function MagnusWatermark() {
+  return null;
 }
 
 export default MagnusMonogram;

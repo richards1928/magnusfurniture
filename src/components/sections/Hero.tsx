@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Star, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useRef, useState, useEffect } from 'react';
-import { MagnusWatermark } from '../ui/MagnusLogo';
+
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -144,19 +144,7 @@ export function Hero() {
         transition={{ duration: 1 }}
       />
 
-      {/* ── Gold monogram watermark ── */}
-      <MagnusWatermark
-        size={460}
-        color="gold"
-        opacity={0.055}
-        style={{
-          right: '5%',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          zIndex: 1,
-          filter: 'blur(1px)',
-        }}
-      />
+
 
       {/* Warm gold accent glow */}
       <div
