@@ -15,28 +15,32 @@ export function SelectionScreen() {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '40px',
-      background: 'radial-gradient(circle at 50% -20%, var(--accent-bg), var(--bg))'
+      background: 'radial-gradient(circle at 50% 30%, #1a1e2e 0%, #0a0c14 100%)',
+      color: '#f8fafc'
     }}>
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ textAlign: 'center', marginBottom: '60px' }}
+        style={{ textAlign: 'center', marginBottom: '48px' }}
       >
-        <h1 style={{ fontSize: '3rem', marginBottom: '16px', background: 'linear-gradient(90deg, var(--text-h), var(--accent))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-          Design Your Perfect Space
+        <div style={{ fontSize: '12px', fontWeight: 700, color: '#38bdf8', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 12 }}>
+          3D Workspace Configurator
+        </div>
+        <h1 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '16px', background: 'linear-gradient(135deg, #ffffff 0%, #d4a853 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          Select Furniture Workspace
         </h1>
-        <p style={{ fontSize: '1.2rem', color: 'var(--text)', maxWidth: '600px', margin: '0 auto' }}>
-          Select a furniture type below to start customizing. Our interactive 3D builder lets you drag, drop, and design to your exact specifications.
+        <p style={{ fontSize: '1.1rem', color: '#94a3b8', maxWidth: '580px', margin: '0 auto', lineHeight: 1.6 }}>
+          Choose a baseline furniture configuration to customize dimensions, materials, finishes, and storage layout in real-time 3D.
         </p>
       </motion.div>
 
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-        gap: '32px',
+        gap: '28px',
         width: '100%',
-        maxWidth: '1200px'
+        maxWidth: '1100px'
       }}>
         {furnitureTypes.map((ft, i) => (
           <motion.div
@@ -48,25 +52,35 @@ export function SelectionScreen() {
             whileTap={{ scale: 0.98 }}
             onClick={() => selectFurniture(ft.id)}
             style={{
-              background: 'rgba(255, 255, 255, 0.6)',
-              backdropFilter: 'blur(16px)',
-              border: '1px solid var(--border)',
+              background: 'rgba(15, 23, 42, 0.8)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
               borderRadius: '24px',
-              padding: '32px',
+              padding: '36px 28px',
               cursor: 'pointer',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               textAlign: 'center',
-              boxShadow: 'var(--shadow)',
-              transition: 'box-shadow 0.3s ease'
+              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
+              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(56, 189, 248, 0.4)';
+              e.currentTarget.style.boxShadow = '0 24px 50px rgba(56, 189, 248, 0.15)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
             }}
           >
-            <div style={{ fontSize: '4rem', marginBottom: '24px' }}>
+            <div style={{ fontSize: '3.5rem', marginBottom: '20px', filter: 'drop-shadow(0 8px 16px rgba(0,0,0,0.4))' }}>
               {ft.icon}
             </div>
-            <h2 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>{ft.name}</h2>
-            <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: 1.5 }}>
+            <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#f8fafc', marginBottom: '10px' }}>
+              {ft.name}
+            </h2>
+            <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>
               {ft.description}
             </p>
           </motion.div>

@@ -45,7 +45,11 @@ export const designerStore = proxy<DesignerState>({
   history: {
     past: [],
     future: []
-  }
+  },
+  snapEnabled: true,
+  snapGridSize: 5,
+  layersOpen: false,
+  leftPanelCollapsed: false
 });
 
 // Helper to push history state
@@ -293,3 +297,20 @@ export const redo = () => {
 export const toggleExplodedView = () => {
   designerStore.explodedView = !designerStore.explodedView;
 };
+
+export const toggleSnap = () => {
+  designerStore.snapEnabled = !designerStore.snapEnabled;
+};
+
+export const setSnapGridSize = (size: number) => {
+  designerStore.snapGridSize = size;
+};
+
+export const toggleLayers = () => {
+  designerStore.layersOpen = !designerStore.layersOpen;
+};
+
+export const toggleLeftPanelCollapsed = () => {
+  designerStore.leftPanelCollapsed = !designerStore.leftPanelCollapsed;
+};
+

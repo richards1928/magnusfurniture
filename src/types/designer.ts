@@ -45,6 +45,13 @@ export interface DesignerState {
     past: ComponentInstance[][];
     future: ComponentInstance[][];
   };
+  /** Snap settings */
+  snapEnabled: boolean;
+  snapGridSize: number;
+  /** Layers popover open state */
+  layersOpen: boolean;
+  /** Left sidebar collapsed state */
+  leftPanelCollapsed: boolean;
 }
 
 export type DesignerPhase = 

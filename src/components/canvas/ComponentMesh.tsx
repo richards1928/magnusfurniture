@@ -2,13 +2,22 @@ import { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { TransformControls } from '@react-three/drei';
 import * as THREE from 'three';
+import { useSnapshot } from 'valtio';
 import { selectComponent, updateComponentPosition, finalizeComponentPosition, designerStore } from '../../store/designerStore';
 import { getMaterial } from '../../data/materials';
 import { applyMagneticSnap } from '../../engine/snapEngine';
 import { validateScene } from '../../engine/validationEngine';
 import { getFurnitureType } from '../../data/furniture-types';
 
-export function ComponentMesh({ component, isExploded, index }: { component: any, isExploded: boolean, index: number }) {
+interface ComponentMeshProps {
+  component: any;
+  isExploded: boolean;
+  index: number;
+  onDoubleClick?: () => void;
+}
+
+export function ComponentMesh({ component, isExploded, index, onDoubleClick }: ComponentMeshProps) {
+  const state = useSnapshot(designerStore);
   const meshRef = useRef<THREE.Mesh>(null);
   const [isDragging, setIsDragging] = useState(false);
   
@@ -33,14 +42,20 @@ export function ComponentMesh({ component, isExploded, index }: { component: any
 
   const materialDef = getMaterial(component.material);
   const color = materialDef?.colorVariants?.find(v => v.id === component.color)?.hex || materialDef?.color || '#cccccc';
+  const isGlass = materialDef?.category === 'glass' || component.material === 'tempered-glass';
 
   const renderGeometry = () => {
-    if (component.definitionId.includes('leg')) {
-      return <cylinderGeometry args={[dim.width/2, dim.depth/2, dim.height, 32]} />;
-    } else if (component.geometryType === 'drawer-unit' || component.definitionId.includes('drawer')) {
+    const isSteelLoop = component.definitionId?.includes('steel-loop');
+    const isHairpin = component.definitionId?.includes('hairpin');
+    const isLeg = component.definitionId?.includes('leg');
+
+    if (isSteelLoop) {
+      // Render O-Loop metal leg frame (hollow rectangle frame)
       return <boxGeometry args={[dim.width, dim.height, dim.depth]} />;
-    } else if (component.geometryType === 'shelf') {
-      return <boxGeometry args={[dim.width, dim.height, dim.depth]} />;
+    } else if (isHairpin) {
+      return <cylinderGeometry args={[dim.width / 3, dim.width / 2, dim.height, 16]} />;
+    } else if (isLeg && !component.definitionId?.includes('panel')) {
+      return <cylinderGeometry args={[dim.width / 2, dim.depth / 2, dim.height, 32]} />;
     } else {
       return <boxGeometry args={[dim.width, dim.height, dim.depth]} />;
     }
@@ -53,7 +68,7 @@ export function ComponentMesh({ component, isExploded, index }: { component: any
     <>
       <mesh
         ref={meshRef}
-        castShadow
+        castShadow={!isGlass}
         receiveShadow
         position={[pos.x, pos.y, pos.z]}
         rotation={[
@@ -65,22 +80,45 @@ export function ComponentMesh({ component, isExploded, index }: { component: any
           e.stopPropagation();
           selectComponent(component.instanceId);
         }}
-        onPointerMissed={(e) => {
-          if (e.type === 'click') selectComponent(null);
+        onDoubleClick={(e) => {
+          e.stopPropagation();
+          selectComponent(component.instanceId);
+          if (onDoubleClick) onDoubleClick();
         }}
       >
         {renderGeometry()}
-        <meshStandardMaterial 
-          color={isValid ? color : '#ff4444'} 
-          roughness={materialDef?.textureType === 'glossy' ? 0.1 : 0.8} 
-          metalness={materialDef?.category === 'metal' ? 0.8 : 0.1}
-          emissive={isValid ? '#000000' : '#440000'}
-        />
+
+        {isGlass ? (
+          <meshPhysicalMaterial
+            color={isValid ? color : '#ef4444'}
+            transmission={0.92}
+            opacity={0.8}
+            transparent
+            roughness={0.05}
+            metalness={0.1}
+            ior={1.5}
+            thickness={dim.height || 2}
+            clearcoat={1}
+            clearcoatRoughness={0.1}
+          />
+        ) : (
+          <meshStandardMaterial 
+            color={isValid ? color : '#ef4444'} 
+            roughness={materialDef?.textureType === 'glossy' ? 0.1 : 0.65} 
+            metalness={materialDef?.category === 'metal' ? 0.85 : 0.08}
+            emissive={isValid ? '#000000' : '#440000'}
+          />
+        )}
         
         {isSelected && (
-          <mesh scale={1.02}>
+          <mesh scale={1.015}>
             {renderGeometry()}
-            <meshBasicMaterial color={isValid ? "#f59e0b" : "#ff0000"} wireframe />
+            <meshBasicMaterial 
+              color={isValid ? "#38bdf8" : "#ef4444"} 
+              wireframe 
+              transparent 
+              opacity={0.75}
+            />
           </mesh>
         )}
       </mesh>
@@ -89,7 +127,8 @@ export function ComponentMesh({ component, isExploded, index }: { component: any
         <TransformControls
           object={meshRef as any}
           mode="translate"
-          size={0.75}
+          size={0.7}
+          translationSnap={state.snapEnabled ? state.snapGridSize : undefined}
           onMouseDown={() => setIsDragging(true)}
           onMouseUp={() => {
             setIsDragging(false);
@@ -128,4 +167,3 @@ export function ComponentMesh({ component, isExploded, index }: { component: any
     </>
   );
 }
-

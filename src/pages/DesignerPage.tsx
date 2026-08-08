@@ -18,28 +18,35 @@ export function DesignerPage() {
   }, []);
 
   return (
-    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', position: 'relative' }}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', position: 'relative', background: '#0d0f17' }}>
       
-      {/* Custom Back Button overlayed on top of the designer */}
-      <div style={{ position: 'absolute', top: 20, left: 20, zIndex: 1000 }}>
-        <Link to="/custom-furniture" style={{ textDecoration: 'none' }}>
-          <button style={{
-            display: 'flex', alignItems: 'center', gap: 8,
-            padding: '8px 16px', borderRadius: 'var(--radius-full)',
-            background: 'var(--color-white)',
-            border: '1px solid var(--color-gray-200)',
-            boxShadow: 'var(--shadow-sm)',
-            color: 'var(--color-dark)',
-            fontSize: 'var(--fs-small)',
-            fontWeight: 'var(--fw-semibold)',
-            cursor: 'pointer',
-          }}>
-            <ArrowLeft size={16} /> Exit Workspace Designer
-          </button>
-        </Link>
-      </div>
+      {/* Custom Back Button overlayed only on Selection phase to prevent overlapping workspace sidebar */}
+      {state.phase === 'selection' && (
+        <div style={{ position: 'absolute', top: 20, left: 20, zIndex: 1000 }}>
+          <Link to="/custom-furniture" style={{ textDecoration: 'none' }}>
+            <button style={{
+              display: 'flex', alignItems: 'center', gap: 8,
+              padding: '10px 18px', borderRadius: '9999px',
+              background: 'rgba(15, 23, 42, 0.85)',
+              backdropFilter: 'blur(16px)',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)',
+              color: '#f8fafc',
+              fontSize: '13px',
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all 0.15s ease'
+            }}
+            onMouseOver={(e) => e.currentTarget.style.background = 'rgba(15, 23, 42, 0.95)'}
+            onMouseOut={(e) => e.currentTarget.style.background = 'rgba(15, 23, 42, 0.85)'}
+            >
+              <ArrowLeft size={16} /> Exit Designer
+            </button>
+          </Link>
+        </div>
+      )}
 
-      {/* Render the original standalone application components */}
+      {/* Main Designer Components */}
       {state.phase === 'selection' ? <SelectionScreen /> : <Workspace />}
     </div>
   );
