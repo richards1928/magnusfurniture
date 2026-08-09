@@ -9,6 +9,8 @@ export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoReady, setVideoReady] = useState(false);
   const [textVisible, setTextVisible] = useState(false);
+  const [_isPlaying, setIsPlaying] = useState(false);
+  const [_hasEnded, setHasEnded] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -18,14 +20,25 @@ export function Hero() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
   const contentY = useTransform(scrollYProgress, [0, 0.7], ['0px', '-60px']);
 
-  // Trigger text animation ~0.8s after video starts playing
+  // Handle video play/pause/ended state tracking
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
     const handlePlay = () => {
       setVideoReady(true);
+      setIsPlaying(true);
+      setHasEnded(false);
       setTimeout(() => setTextVisible(true), 600);
+    };
+
+    const handlePause = () => {
+      setIsPlaying(false);
+    };
+
+    const handleEnded = () => {
+      setIsPlaying(false);
+      setHasEnded(true);
     };
 
     // If video already playing (e.g. cached)
@@ -35,14 +48,38 @@ export function Hero() {
       video.addEventListener('playing', handlePlay, { once: true });
     }
 
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
+    video.addEventListener('ended', handleEnded);
+
     // Fallback: show text after 1.5s regardless
     const fallback = setTimeout(() => setTextVisible(true), 1500);
 
     return () => {
       video.removeEventListener('playing', handlePlay);
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
+      video.removeEventListener('ended', handleEnded);
       clearTimeout(fallback);
     };
   }, []);
+
+  const handleVideoClick = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused || video.ended) {
+      if (video.ended) {
+        video.currentTime = 0;
+      }
+      video.play().catch(() => {});
+      setIsPlaying(true);
+      setHasEnded(false);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
 
   // Stagger variants for left-side text
   const containerVariants = {
@@ -100,13 +137,18 @@ export function Hero() {
           src="/assets/Home/Transform.mp4"
           autoPlay
           muted
-          loop
           playsInline
+          onEnded={() => {
+            setIsPlaying(false);
+            setHasEnded(true);
+          }}
+          onClick={handleVideoClick}
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
             objectPosition: 'center',
+            cursor: 'pointer',
           }}
         />
         {/* Left-side scrim only — keeps video crystal-clear on the right */}
@@ -116,6 +158,7 @@ export function Hero() {
             inset: 0,
             background:
               'linear-gradient(to right, rgba(12,10,9,0.82) 0%, rgba(12,10,9,0.55) 38%, rgba(12,10,9,0.12) 58%, rgba(12,10,9,0.0) 75%)',
+            pointerEvents: 'none',
           }}
         />
         {/* Subtle bottom vignette */}
@@ -127,6 +170,7 @@ export function Hero() {
             right: 0,
             height: 140,
             background: 'linear-gradient(to top, rgba(12,10,9,0.55) 0%, transparent 100%)',
+            pointerEvents: 'none',
           }}
         />
       </motion.div>
@@ -143,8 +187,6 @@ export function Hero() {
         animate={{ opacity: videoReady ? 0 : 1 }}
         transition={{ duration: 1 }}
       />
-
-
 
       {/* Warm gold accent glow */}
       <div
@@ -174,6 +216,7 @@ export function Hero() {
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
+          pointerEvents: 'none',
         }}
       >
         <AnimatePresence>
@@ -182,7 +225,7 @@ export function Hero() {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              style={{ width: '100%' }}
+              style={{ width: '100%', pointerEvents: 'auto' }}
             >
               {/* Overline */}
               <motion.div
@@ -377,6 +420,7 @@ export function Hero() {
           alignItems: 'center',
           gap: 8,
           zIndex: 3,
+          pointerEvents: 'none',
         }}
       >
         <span
@@ -406,3 +450,5 @@ export function Hero() {
     </section>
   );
 }
+
+
