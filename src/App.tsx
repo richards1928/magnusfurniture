@@ -16,6 +16,8 @@ import {
   FaqPage,
   ContactPage,
 } from './pages/ContentPages';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { TermsAndConditionsPage } from './pages/TermsAndConditionsPage';
 
 // Placeholder component for unimplemented pages
 function Placeholder({ title }: { title: string }) {
@@ -97,6 +99,8 @@ function App() {
           />
           <Route path="faq" element={<FaqPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="terms-and-conditions" element={<TermsAndConditionsPage />} />
 
           {/* Portals */}
           <Route

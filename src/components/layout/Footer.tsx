@@ -522,16 +522,19 @@ export function Footer() {
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span
-                title="Coming soon"
+              <Link
+                to="/privacy-policy"
                 style={{
                   fontSize: '0.82rem',
                   color: 'rgba(255,255,255,0.3)',
-                  cursor: 'default',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s ease',
                 }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#D4AF37'; }}
+                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.3)'; }}
               >
                 Privacy Policy
-              </span>
+              </Link>
               <span
                 style={{
                   width: 1,
@@ -540,16 +543,19 @@ export function Footer() {
                   display: 'inline-block',
                 }}
               />
-              <span
-                title="Coming soon"
+              <Link
+                to="/terms-and-conditions"
                 style={{
                   fontSize: '0.82rem',
                   color: 'rgba(255,255,255,0.3)',
-                  cursor: 'default',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s ease',
                 }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#D4AF37'; }}
+                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.3)'; }}
               >
                 Terms &amp; Conditions
-              </span>
+              </Link>
             </div>
           </div>
         </div>
