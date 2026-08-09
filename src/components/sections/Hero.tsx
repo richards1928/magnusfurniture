@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 import { ArrowRight, Star, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useRef, useState, useEffect } from 'react';
@@ -11,6 +11,9 @@ export function Hero() {
   const [textVisible, setTextVisible] = useState(false);
   const [_isPlaying, setIsPlaying] = useState(false);
   const [_hasEnded, setHasEnded] = useState(false);
+
+  const isHeroInView = useInView(ref, { amount: 0.3 });
+  const wasInViewRef = useRef(false);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -63,6 +66,27 @@ export function Hero() {
       clearTimeout(fallback);
     };
   }, []);
+
+  // Replay video when scrolling back up into view
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isHeroInView) {
+      if (!wasInViewRef.current) {
+        wasInViewRef.current = true;
+        if (video.paused || video.ended) {
+          video.currentTime = 0;
+          video.play().catch(() => {});
+        }
+      }
+    } else {
+      wasInViewRef.current = false;
+      if (!video.paused) {
+        video.pause();
+      }
+    }
+  }, [isHeroInView]);
 
   const handleVideoClick = () => {
     const video = videoRef.current;
