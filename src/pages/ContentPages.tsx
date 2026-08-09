@@ -59,7 +59,7 @@ export const FaqPage = () => <SimplePage title="Frequently Asked Questions" desc
 export const ContactPage = () => (
   <SimplePage title="Contact Us" description="Get in touch with our corporate sales and support team.">
     {/* TOP SECTION: CONTACT DETAILS AND MAP */}
-    <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-12)', marginBottom: 'var(--space-12)' }}>
+    <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-12)', marginBottom: 'var(--space-12)', alignItems: 'stretch' }}>
       <div>
         <h3 style={{ fontSize: 'var(--fs-h3)', fontFamily: 'var(--font-heading)', marginBottom: 'var(--space-4)', color: 'var(--color-dark)', display: 'flex', alignItems: 'center', gap: 12 }}>
           <MagnusMonogram size={32} color="gold" style={{ opacity: 0.85, flexShrink: 0 }} />
@@ -131,87 +131,212 @@ export const ContactPage = () => (
         </div>
       </div>
 
-      {/* Embedded Google Map */}
-      <a
-        href="https://maps.google.com/?q=Magnus+Office+Furniture+Kondapur+Hyderabad"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Click to open Magnus Office Furniture location on Google Maps"
-        style={{
-          position: 'relative',
-          width: '100%',
-          height: '100%',
-          minHeight: 440,
-          background: 'var(--color-cream)',
-          borderRadius: 'var(--radius-lg)',
-          border: '2px solid rgba(212, 175, 55, 0.3)',
-          boxShadow: '0 12px 36px rgba(0, 0, 0, 0.12)',
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column',
-          textDecoration: 'none',
-          cursor: 'pointer',
-          transition: 'all 0.4s ease',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.borderColor = 'var(--color-primary)';
-          e.currentTarget.style.boxShadow = '0 16px 44px rgba(212, 175, 55, 0.25)';
-          e.currentTarget.style.transform = 'translateY(-4px)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
-          e.currentTarget.style.boxShadow = '0 12px 36px rgba(0, 0, 0, 0.12)';
-          e.currentTarget.style.transform = 'translateY(0)';
-        }}
-      >
-        {/* Floating Google Maps Interactive Pill Header */}
-        <div style={{
-          position: 'absolute',
-          top: 14,
-          left: 14,
-          right: 14,
-          zIndex: 10,
-          background: 'rgba(26, 23, 20, 0.88)',
-          backdropFilter: 'blur(10px)',
-          WebkitBackdropFilter: 'blur(10px)',
-          border: '1px solid rgba(212, 175, 55, 0.4)',
-          borderRadius: 'var(--radius-md)',
-          padding: '10px 16px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          color: '#ffffff',
-          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.25)',
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 'var(--fs-small)', fontWeight: 'var(--fw-semibold)' }}>
-            <MapPin size={16} color="#D4AF37" />
-            <span>Magnus Office Furniture Showroom</span>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--fs-xs)', color: '#D4AF37', fontWeight: 'var(--fw-bold)' }}>
-            <span>Open in Google Maps</span>
-            <ExternalLink size={14} />
-          </div>
-        </div>
+      {/* Premium Magnus Showroom Location Card */}
+      {/* ── Ambient glow wrapper — does not clip the card ── */}
+      <div style={{ position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+        {/* Soft champagne ambient glow behind the card */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: -24,
+            background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,175,55,0.10) 0%, transparent 70%)',
+            filter: 'blur(20px)',
+            pointerEvents: 'none',
+            zIndex: 0,
+            borderRadius: 32,
+          }}
+        />
 
-        {/* Map iframe */}
-        <iframe
-          src="https://maps.google.com/maps?q=Magnus%20Office%20Furniture%20Kondapur%20Hyderabad&t=&z=16&ie=UTF8&iwloc=&output=embed"
-          style={{ border: 0, width: '100%', flex: 1, minHeight: 380, pointerEvents: 'none' }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Magnus Office Furniture Showroom Location Map"
-        ></iframe>
+        {/* ── Card shell ── */}
+        <div
+          className="magnus-map-card"
+          style={{
+            position: 'relative',
+            zIndex: 1,
+            height: '100%',
+            minHeight: 520,
+            borderRadius: 20,
+            border: '1px solid rgba(212,175,55,0.30)',
+            boxShadow:
+              '0 2px 6px rgba(62,39,35,0.04), 0 10px 32px rgba(62,39,35,0.10), 0 0 0 1px rgba(212,175,55,0.06)',
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
+            transition:
+              'border-color 400ms var(--ease-in-out), box-shadow 400ms var(--ease-in-out), transform 400ms var(--ease-in-out)',
+            background: '#fff',
+          }}
+          onMouseEnter={(e) => {
+            const el = e.currentTarget as HTMLDivElement;
+            el.style.borderColor = 'rgba(212,175,55,0.72)';
+            el.style.boxShadow =
+              '0 4px 12px rgba(62,39,35,0.06), 0 22px 55px rgba(62,39,35,0.18), 0 0 0 1px rgba(212,175,55,0.18)';
+            el.style.transform = 'translateY(-4px)';
+            const dirLink = el.querySelector<HTMLElement>('.map-dir-link');
+            if (dirLink) dirLink.style.color = '#D4AF37';
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget as HTMLDivElement;
+            el.style.borderColor = 'rgba(212,175,55,0.30)';
+            el.style.boxShadow =
+              '0 2px 6px rgba(62,39,35,0.04), 0 10px 32px rgba(62,39,35,0.10), 0 0 0 1px rgba(212,175,55,0.06)';
+            el.style.transform = 'translateY(0)';
+            const dirLink = el.querySelector<HTMLElement>('.map-dir-link');
+            if (dirLink) dirLink.style.color = 'var(--color-primary)';
+          }}
+        >
 
-        {/* Bottom Banner */}
-        <div style={{ padding: '12px 18px', background: 'var(--color-white)', borderTop: '1px solid var(--color-gray-200)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span style={{ fontSize: 'var(--fs-small)', color: 'var(--color-gray-700)', fontWeight: 'var(--fw-medium)' }}>
-            📍 Kondapur, Hyderabad – Opposite Sarath City Capital Mall
-          </span>
-          <span style={{ fontSize: 'var(--fs-small)', color: 'var(--color-primary)', fontWeight: 'var(--fw-bold)', display: 'flex', alignItems: 'center', gap: 4 }}>
-            Direct Map Navigation <ExternalLink size={14} />
-          </span>
+          {/* ── Header: Walnut Charcoal ── */}
+          <div style={{
+            background: 'linear-gradient(135deg, #130f0c 0%, #1e1814 60%, #2a2118 100%)',
+            borderBottom: '1px solid rgba(212,175,55,0.18)',
+            padding: '14px 18px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 12,
+            flexShrink: 0,
+          }}>
+            {/* Left: Monogram + Location text */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <MagnusMonogram
+                size={28}
+                borderRadius={6}
+                style={{ flexShrink: 0, opacity: 0.92 }}
+              />
+              <div>
+                <div style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  color: '#D4AF37',
+                  lineHeight: 1,
+                  marginBottom: 3,
+                }}>
+                  Magnus Showroom
+                </div>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 4,
+                  fontSize: '0.78rem',
+                  color: 'rgba(255,255,255,0.55)',
+                  lineHeight: 1,
+                }}>
+                  <MapPin size={11} color="rgba(212,175,55,0.65)" strokeWidth={2} />
+                  Kondapur, Hyderabad
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Open in Maps */}
+            <a
+              href="https://maps.google.com/?q=Magnus+Office+Furniture+Kondapur+Hyderabad"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 5,
+                padding: '6px 12px',
+                background: 'rgba(212,175,55,0.10)',
+                border: '1px solid rgba(212,175,55,0.28)',
+                borderRadius: 'var(--radius-full)',
+                fontSize: '0.72rem',
+                fontWeight: 600,
+                letterSpacing: '0.04em',
+                color: '#D4AF37',
+                textDecoration: 'none',
+                whiteSpace: 'nowrap',
+                transition: 'background 250ms ease, border-color 250ms ease',
+                flexShrink: 0,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(212,175,55,0.20)';
+                e.currentTarget.style.borderColor = 'rgba(212,175,55,0.55)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(212,175,55,0.10)';
+                e.currentTarget.style.borderColor = 'rgba(212,175,55,0.28)';
+              }}
+            >
+              Open in Google Maps <ExternalLink size={11} strokeWidth={2.5} />
+            </a>
+          </div>
+
+          {/* ── Map iframe (unchanged) ── */}
+          <iframe
+            src="https://maps.google.com/maps?q=Magnus%20Office%20Furniture%20Kondapur%20Hyderabad&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            style={{ border: 0, width: '100%', flex: 1, minHeight: 430, display: 'block', pointerEvents: 'none' }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Magnus Office Furniture Showroom Location Map"
+          ></iframe>
+
+          {/* ── Bottom bar ── */}
+          <a
+            href="https://maps.google.com/?q=Magnus+Office+Furniture+Kondapur+Hyderabad"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: 12,
+              padding: '13px 18px',
+              background: '#FDFCF8',
+              borderTop: '1px solid rgba(212,175,55,0.14)',
+              textDecoration: 'none',
+              flexShrink: 0,
+            }}
+          >
+            <div>
+              <div style={{
+                fontFamily: 'var(--font-heading)',
+                fontSize: '0.82rem',
+                fontWeight: 600,
+                color: 'var(--color-dark)',
+                lineHeight: 1.3,
+                marginBottom: 2,
+              }}>
+                Magnus Office Furniture
+              </div>
+              <div style={{
+                fontSize: '0.75rem',
+                color: 'var(--color-gray-500)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 4,
+                lineHeight: 1,
+              }}>
+                <MapPin size={11} color="var(--color-gray-400)" strokeWidth={2} />
+                Kondapur, Hyderabad · Opposite Sarath City
+              </div>
+            </div>
+            <div
+              className="map-dir-link"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 5,
+                fontSize: '0.8rem',
+                fontWeight: 700,
+                color: 'var(--color-primary)',
+                whiteSpace: 'nowrap',
+                transition: 'color 400ms var(--ease-in-out)',
+                letterSpacing: '0.01em',
+              }}
+            >
+              Get Directions <ExternalLink size={13} strokeWidth={2.5} />
+            </div>
+          </a>
         </div>
-      </a>
+      </div>
     </div>
 
     {/* DIVIDER */}
