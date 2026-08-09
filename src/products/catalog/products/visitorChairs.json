@@ -13,10 +13,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/visitorChairs/bravo.webp",
-      "thumbnail": "/assets/products/visitorChairs/bravo.webp",
+      "hero": "/assets/products/visitorChairs/bravo.png",
+      "thumbnail": "/assets/products/visitorChairs/bravo.png",
       "gallery": [
-        "/assets/products/visitorChairs/bravo.webp"
+        "/assets/products/visitorChairs/bravo.png"
       ]
     },
     "brochure": "",
@@ -38,10 +38,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/visitorChairs/visitor.webp",
-      "thumbnail": "/assets/products/visitorChairs/visitor.webp",
+      "hero": "/assets/products/visitorChairs/visitor.png",
+      "thumbnail": "/assets/products/visitorChairs/visitor.png",
       "gallery": [
-        "/assets/products/visitorChairs/visitor.webp"
+        "/assets/products/visitorChairs/visitor.png"
       ]
     },
     "brochure": "",
@@ -63,10 +63,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/visitorChairs/robo.webp",
-      "thumbnail": "/assets/products/visitorChairs/robo.webp",
+      "hero": "/assets/products/visitorChairs/robo.png",
+      "thumbnail": "/assets/products/visitorChairs/robo.png",
       "gallery": [
-        "/assets/products/visitorChairs/robo.webp"
+        "/assets/products/visitorChairs/robo.png"
       ]
     },
     "brochure": "",
@@ -88,10 +88,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/visitorChairs/kabel.webp",
-      "thumbnail": "/assets/products/visitorChairs/kabel.webp",
+      "hero": "/assets/products/visitorChairs/kabel.png",
+      "thumbnail": "/assets/products/visitorChairs/kabel.png",
       "gallery": [
-        "/assets/products/visitorChairs/kabel.webp"
+        "/assets/products/visitorChairs/kabel.png"
       ]
     },
     "brochure": "",
@@ -113,10 +113,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/visitorChairs/navy.webp",
-      "thumbnail": "/assets/products/visitorChairs/navy.webp",
+      "hero": "/assets/products/visitorChairs/navy.png",
+      "thumbnail": "/assets/products/visitorChairs/navy.png",
       "gallery": [
-        "/assets/products/visitorChairs/navy.webp"
+        "/assets/products/visitorChairs/navy.png"
       ]
     },
     "brochure": "",
@@ -138,10 +138,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/visitorChairs/eco.webp",
-      "thumbnail": "/assets/products/visitorChairs/eco.webp",
+      "hero": "/assets/products/visitorChairs/eco.png",
+      "thumbnail": "/assets/products/visitorChairs/eco.png",
       "gallery": [
-        "/assets/products/visitorChairs/eco.webp"
+        "/assets/products/visitorChairs/eco.png"
       ]
     },
     "brochure": "",
@@ -163,10 +163,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/visitorChairs/kabel-stand.webp",
-      "thumbnail": "/assets/products/visitorChairs/kabel-stand.webp",
+      "hero": "/assets/products/visitorChairs/kabel-stand.png",
+      "thumbnail": "/assets/products/visitorChairs/kabel-stand.png",
       "gallery": [
-        "/assets/products/visitorChairs/kabel-stand.webp"
+        "/assets/products/visitorChairs/kabel-stand.png"
       ]
     },
     "brochure": "",
@@ -188,10 +188,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/visitorChairs/navy-stand.webp",
-      "thumbnail": "/assets/products/visitorChairs/navy-stand.webp",
+      "hero": "/assets/products/visitorChairs/navy-stand.png",
+      "thumbnail": "/assets/products/visitorChairs/navy-stand.png",
       "gallery": [
-        "/assets/products/visitorChairs/navy-stand.webp"
+        "/assets/products/visitorChairs/navy-stand.png"
       ]
     },
     "brochure": "",
@@ -213,10 +213,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/visitorChairs/eco-stand.webp",
-      "thumbnail": "/assets/products/visitorChairs/eco-stand.webp",
+      "hero": "/assets/products/visitorChairs/eco-stand.png",
+      "thumbnail": "/assets/products/visitorChairs/eco-stand.png",
       "gallery": [
-        "/assets/products/visitorChairs/eco-stand.webp"
+        "/assets/products/visitorChairs/eco-stand.png"
       ]
     },
     "brochure": "",

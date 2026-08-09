@@ -13,10 +13,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/aura-full-leather-tan.webp",
-      "thumbnail": "/assets/products/executiveChairs/aura-full-leather-tan.webp",
+      "hero": "/assets/products/executiveChairs/aura-full-leather-tan.png",
+      "thumbnail": "/assets/products/executiveChairs/aura-full-leather-tan.png",
       "gallery": [
-        "/assets/products/executiveChairs/aura-full-leather-tan.webp"
+        "/assets/products/executiveChairs/aura-full-leather-tan.png"
       ]
     },
     "brochure": "",
@@ -38,10 +38,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/aura-ultra-black-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/aura-ultra-black-hb.webp",
+      "hero": "/assets/products/executiveChairs/aura-ultra-black-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/aura-ultra-black-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/aura-ultra-black-hb.webp"
+        "/assets/products/executiveChairs/aura-ultra-black-hb.png"
       ]
     },
     "brochure": "",
@@ -63,10 +63,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/armani-office-chair.webp",
-      "thumbnail": "/assets/products/executiveChairs/armani-office-chair.webp",
+      "hero": "/assets/products/executiveChairs/armani-office-chair.png",
+      "thumbnail": "/assets/products/executiveChairs/armani-office-chair.png",
       "gallery": [
-        "/assets/products/executiveChairs/armani-office-chair.webp"
+        "/assets/products/executiveChairs/armani-office-chair.png"
       ]
     },
     "brochure": "",
@@ -88,10 +88,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/moon-leather-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/moon-leather-hb.webp",
+      "hero": "/assets/products/executiveChairs/moon-leather-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/moon-leather-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/moon-leather-hb.webp"
+        "/assets/products/executiveChairs/moon-leather-hb.png"
       ]
     },
     "brochure": "",
@@ -113,10 +113,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/moon-leather-mb.webp",
-      "thumbnail": "/assets/products/executiveChairs/moon-leather-mb.webp",
+      "hero": "/assets/products/executiveChairs/moon-leather-mb.png",
+      "thumbnail": "/assets/products/executiveChairs/moon-leather-mb.png",
       "gallery": [
-        "/assets/products/executiveChairs/moon-leather-mb.webp"
+        "/assets/products/executiveChairs/moon-leather-mb.png"
       ]
     },
     "brochure": "",
@@ -138,10 +138,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/aqua-eco-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/aqua-eco-hb.webp",
+      "hero": "/assets/products/executiveChairs/aqua-eco-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/aqua-eco-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/aqua-eco-hb.webp"
+        "/assets/products/executiveChairs/aqua-eco-hb.png"
       ]
     },
     "brochure": "",
@@ -163,10 +163,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/aqua-eco-mb.webp",
-      "thumbnail": "/assets/products/executiveChairs/aqua-eco-mb.webp",
+      "hero": "/assets/products/executiveChairs/aqua-eco-mb.png",
+      "thumbnail": "/assets/products/executiveChairs/aqua-eco-mb.png",
       "gallery": [
-        "/assets/products/executiveChairs/aqua-eco-mb.webp"
+        "/assets/products/executiveChairs/aqua-eco-mb.png"
       ]
     },
     "brochure": "",
@@ -188,10 +188,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/boston-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/boston-hb.webp",
+      "hero": "/assets/products/executiveChairs/boston-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/boston-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/boston-hb.webp"
+        "/assets/products/executiveChairs/boston-hb.png"
       ]
     },
     "brochure": "",
@@ -213,10 +213,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/boston-mb.webp",
-      "thumbnail": "/assets/products/executiveChairs/boston-mb.webp",
+      "hero": "/assets/products/executiveChairs/boston-mb.png",
+      "thumbnail": "/assets/products/executiveChairs/boston-mb.png",
       "gallery": [
-        "/assets/products/executiveChairs/boston-mb.webp"
+        "/assets/products/executiveChairs/boston-mb.png"
       ]
     },
     "brochure": "",
@@ -238,10 +238,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/parker.webp",
-      "thumbnail": "/assets/products/executiveChairs/parker.webp",
+      "hero": "/assets/products/executiveChairs/parker.jpeg",
+      "thumbnail": "/assets/products/executiveChairs/parker.jpeg",
       "gallery": [
-        "/assets/products/executiveChairs/parker.webp"
+        "/assets/products/executiveChairs/parker.jpeg"
       ]
     },
     "brochure": "",
@@ -263,10 +263,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/ashley.webp",
-      "thumbnail": "/assets/products/executiveChairs/ashley.webp",
+      "hero": "/assets/products/executiveChairs/ashley.jpeg",
+      "thumbnail": "/assets/products/executiveChairs/ashley.jpeg",
       "gallery": [
-        "/assets/products/executiveChairs/ashley.webp"
+        "/assets/products/executiveChairs/ashley.jpeg"
       ]
     },
     "brochure": "",
@@ -288,10 +288,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/milano-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/milano-hb.webp",
+      "hero": "/assets/products/executiveChairs/milano-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/milano-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/milano-hb.webp"
+        "/assets/products/executiveChairs/milano-hb.png"
       ]
     },
     "brochure": "",
@@ -313,10 +313,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/milano-mb.webp",
-      "thumbnail": "/assets/products/executiveChairs/milano-mb.webp",
+      "hero": "/assets/products/executiveChairs/milano-mb.png",
+      "thumbnail": "/assets/products/executiveChairs/milano-mb.png",
       "gallery": [
-        "/assets/products/executiveChairs/milano-mb.webp"
+        "/assets/products/executiveChairs/milano-mb.png"
       ]
     },
     "brochure": "",
@@ -338,10 +338,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/h2.webp",
-      "thumbnail": "/assets/products/executiveChairs/h2.webp",
+      "hero": "/assets/products/executiveChairs/h2.png",
+      "thumbnail": "/assets/products/executiveChairs/h2.png",
       "gallery": [
-        "/assets/products/executiveChairs/h2.webp"
+        "/assets/products/executiveChairs/h2.png"
       ]
     },
     "brochure": "",
@@ -363,10 +363,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/optima-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/optima-hb.webp",
+      "hero": "/assets/products/executiveChairs/optima-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/optima-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/optima-hb.webp"
+        "/assets/products/executiveChairs/optima-hb.png"
       ]
     },
     "brochure": "",
@@ -388,10 +388,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/glanza-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/glanza-hb.webp",
+      "hero": "/assets/products/executiveChairs/glanza-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/glanza-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/glanza-hb.webp"
+        "/assets/products/executiveChairs/glanza-hb.png"
       ]
     },
     "brochure": "",
@@ -413,10 +413,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/glanza-mb.webp",
-      "thumbnail": "/assets/products/executiveChairs/glanza-mb.webp",
+      "hero": "/assets/products/executiveChairs/glanza-mb.png",
+      "thumbnail": "/assets/products/executiveChairs/glanza-mb.png",
       "gallery": [
-        "/assets/products/executiveChairs/glanza-mb.webp"
+        "/assets/products/executiveChairs/glanza-mb.png"
       ]
     },
     "brochure": "",
@@ -438,10 +438,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/feather-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/feather-hb.webp",
+      "hero": "/assets/products/executiveChairs/feather-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/feather-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/feather-hb.webp"
+        "/assets/products/executiveChairs/feather-hb.png"
       ]
     },
     "brochure": "",
@@ -463,10 +463,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/feather-mb.webp",
-      "thumbnail": "/assets/products/executiveChairs/feather-mb.webp",
+      "hero": "/assets/products/executiveChairs/feather-mb.png",
+      "thumbnail": "/assets/products/executiveChairs/feather-mb.png",
       "gallery": [
-        "/assets/products/executiveChairs/feather-mb.webp"
+        "/assets/products/executiveChairs/feather-mb.png"
       ]
     },
     "brochure": "",
@@ -488,10 +488,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/butterfly-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/butterfly-hb.webp",
+      "hero": "/assets/products/executiveChairs/butterfly-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/butterfly-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/butterfly-hb.webp"
+        "/assets/products/executiveChairs/butterfly-hb.png"
       ]
     },
     "brochure": "",
@@ -513,10 +513,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/butterfly-mb.webp",
-      "thumbnail": "/assets/products/executiveChairs/butterfly-mb.webp",
+      "hero": "/assets/products/executiveChairs/butterfly-mb.png",
+      "thumbnail": "/assets/products/executiveChairs/butterfly-mb.png",
       "gallery": [
-        "/assets/products/executiveChairs/butterfly-mb.webp"
+        "/assets/products/executiveChairs/butterfly-mb.png"
       ]
     },
     "brochure": "",
@@ -538,10 +538,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/jazz-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/jazz-hb.webp",
+      "hero": "/assets/products/executiveChairs/jazz-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/jazz-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/jazz-hb.webp"
+        "/assets/products/executiveChairs/jazz-hb.png"
       ]
     },
     "brochure": "",
@@ -563,10 +563,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/jazz-mb.webp",
-      "thumbnail": "/assets/products/executiveChairs/jazz-mb.webp",
+      "hero": "/assets/products/executiveChairs/jazz-mb.png",
+      "thumbnail": "/assets/products/executiveChairs/jazz-mb.png",
       "gallery": [
-        "/assets/products/executiveChairs/jazz-mb.webp"
+        "/assets/products/executiveChairs/jazz-mb.png"
       ]
     },
     "brochure": "",
@@ -588,10 +588,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/sky-black.webp",
-      "thumbnail": "/assets/products/executiveChairs/sky-black.webp",
+      "hero": "/assets/products/executiveChairs/sky-black.png",
+      "thumbnail": "/assets/products/executiveChairs/sky-black.png",
       "gallery": [
-        "/assets/products/executiveChairs/sky-black.webp"
+        "/assets/products/executiveChairs/sky-black.png"
       ]
     },
     "brochure": "",
@@ -613,10 +613,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/sky-bgrey.webp",
-      "thumbnail": "/assets/products/executiveChairs/sky-bgrey.webp",
+      "hero": "/assets/products/executiveChairs/sky-bgrey.png",
+      "thumbnail": "/assets/products/executiveChairs/sky-bgrey.png",
       "gallery": [
-        "/assets/products/executiveChairs/sky-bgrey.webp"
+        "/assets/products/executiveChairs/sky-bgrey.png"
       ]
     },
     "brochure": "",
@@ -638,10 +638,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/futuristic.webp",
-      "thumbnail": "/assets/products/executiveChairs/futuristic.webp",
+      "hero": "/assets/products/executiveChairs/futuristic.png",
+      "thumbnail": "/assets/products/executiveChairs/futuristic.png",
       "gallery": [
-        "/assets/products/executiveChairs/futuristic.webp"
+        "/assets/products/executiveChairs/futuristic.png"
       ]
     },
     "brochure": "",
@@ -663,10 +663,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/marvel-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/marvel-hb.webp",
+      "hero": "/assets/products/executiveChairs/marvel-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/marvel-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/marvel-hb.webp"
+        "/assets/products/executiveChairs/marvel-hb.png"
       ]
     },
     "brochure": "",
@@ -688,10 +688,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/marvel-mb.webp",
-      "thumbnail": "/assets/products/executiveChairs/marvel-mb.webp",
+      "hero": "/assets/products/executiveChairs/marvel-mb.png",
+      "thumbnail": "/assets/products/executiveChairs/marvel-mb.png",
       "gallery": [
-        "/assets/products/executiveChairs/marvel-mb.webp"
+        "/assets/products/executiveChairs/marvel-mb.png"
       ]
     },
     "brochure": "",
@@ -713,10 +713,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/tokyo-hb-white.webp",
-      "thumbnail": "/assets/products/executiveChairs/tokyo-hb-white.webp",
+      "hero": "/assets/products/executiveChairs/tokyo-hb-white.png",
+      "thumbnail": "/assets/products/executiveChairs/tokyo-hb-white.png",
       "gallery": [
-        "/assets/products/executiveChairs/tokyo-hb-white.webp"
+        "/assets/products/executiveChairs/tokyo-hb-white.png"
       ]
     },
     "brochure": "",
@@ -738,10 +738,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/tokyo-mb-white.webp",
-      "thumbnail": "/assets/products/executiveChairs/tokyo-mb-white.webp",
+      "hero": "/assets/products/executiveChairs/tokyo-mb-white.png",
+      "thumbnail": "/assets/products/executiveChairs/tokyo-mb-white.png",
       "gallery": [
-        "/assets/products/executiveChairs/tokyo-mb-white.webp"
+        "/assets/products/executiveChairs/tokyo-mb-white.png"
       ]
     },
     "brochure": "",
@@ -763,10 +763,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/tokyo-hb-black.webp",
-      "thumbnail": "/assets/products/executiveChairs/tokyo-hb-black.webp",
+      "hero": "/assets/products/executiveChairs/tokyo-hb-black.png",
+      "thumbnail": "/assets/products/executiveChairs/tokyo-hb-black.png",
       "gallery": [
-        "/assets/products/executiveChairs/tokyo-hb-black.webp"
+        "/assets/products/executiveChairs/tokyo-hb-black.png"
       ]
     },
     "brochure": "",
@@ -788,10 +788,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/tokyo-mb-black.webp",
-      "thumbnail": "/assets/products/executiveChairs/tokyo-mb-black.webp",
+      "hero": "/assets/products/executiveChairs/tokyo-mb-black.png",
+      "thumbnail": "/assets/products/executiveChairs/tokyo-mb-black.png",
       "gallery": [
-        "/assets/products/executiveChairs/tokyo-mb-black.webp"
+        "/assets/products/executiveChairs/tokyo-mb-black.png"
       ]
     },
     "brochure": "",
@@ -813,10 +813,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/hilite-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/hilite-hb.webp",
+      "hero": "/assets/products/executiveChairs/hilite-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/hilite-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/hilite-hb.webp"
+        "/assets/products/executiveChairs/hilite-hb.png"
       ]
     },
     "brochure": "",
@@ -838,10 +838,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/hilite-mb.webp",
-      "thumbnail": "/assets/products/executiveChairs/hilite-mb.webp",
+      "hero": "/assets/products/executiveChairs/hilite-mb.png",
+      "thumbnail": "/assets/products/executiveChairs/hilite-mb.png",
       "gallery": [
-        "/assets/products/executiveChairs/hilite-mb.webp"
+        "/assets/products/executiveChairs/hilite-mb.png"
       ]
     },
     "brochure": "",
@@ -863,10 +863,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/yaris-hb.webp",
-      "thumbnail": "/assets/products/executiveChairs/yaris-hb.webp",
+      "hero": "/assets/products/executiveChairs/yaris-hb.png",
+      "thumbnail": "/assets/products/executiveChairs/yaris-hb.png",
       "gallery": [
-        "/assets/products/executiveChairs/yaris-hb.webp"
+        "/assets/products/executiveChairs/yaris-hb.png"
       ]
     },
     "brochure": "",
@@ -888,10 +888,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/executiveChairs/yaris-mb.webp",
-      "thumbnail": "/assets/products/executiveChairs/yaris-mb.webp",
+      "hero": "/assets/products/executiveChairs/yaris-mb.png",
+      "thumbnail": "/assets/products/executiveChairs/yaris-mb.png",
       "gallery": [
-        "/assets/products/executiveChairs/yaris-mb.webp"
+        "/assets/products/executiveChairs/yaris-mb.png"
       ]
     },
     "brochure": "",
