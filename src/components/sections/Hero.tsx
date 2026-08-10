@@ -175,8 +175,9 @@ export function Hero() {
             cursor: 'pointer',
           }}
         />
-        {/* Left-side scrim only — keeps video crystal-clear on the right */}
+        {/* Left-side scrim — expands smoothly on mobile screens */}
         <div
+          className="mf-hero-scrim"
           style={{
             position: 'absolute',
             inset: 0,
@@ -226,6 +227,7 @@ export function Hero() {
 
       {/* ── Left Panel Content ── */}
       <motion.div
+        className="mf-hero-panel"
         style={{
           opacity: contentOpacity,
           y: contentY,
@@ -324,6 +326,7 @@ export function Hero() {
               {/* CTAs */}
               <motion.div
                 variants={slideUp}
+                className="mf-hero-cta"
                 style={{
                   display: 'flex',
                   gap: 14,
@@ -465,10 +468,29 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Responsive */}
+      {/* Responsive Styles */}
       <style>{`
         @media (max-width: 768px) {
           section { min-height: 100svh !important; }
+          .mf-hero-panel {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 0 clamp(20px, 5vw, 32px) !important;
+          }
+          .mf-hero-scrim {
+            background: linear-gradient(to bottom, rgba(12,10,9,0.85) 0%, rgba(12,10,9,0.65) 60%, rgba(12,10,9,0.4) 100%) !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .mf-hero-cta {
+            flex-direction: column !important;
+            width: 100% !important;
+          }
+          .mf-hero-cta a, .mf-hero-cta span {
+            width: 100% !important;
+            justify-content: center !important;
+            box-sizing: border-box !important;
+          }
         }
       `}</style>
     </section>

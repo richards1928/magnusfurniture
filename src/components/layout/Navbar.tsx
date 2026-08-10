@@ -52,7 +52,7 @@ export function Navbar() {
         }}>
           {/* Logo */}
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <MagnusWordmark height={38} color="dark" />
+            <MagnusWordmark height={38} color={isScrolled ? 'dark' : 'white'} />
           </Link>
 
           {/* Desktop Links */}
@@ -71,7 +71,9 @@ export function Navbar() {
                   style={{
                     fontSize: 'var(--fs-small)',
                     fontWeight: isActive ? 'var(--fw-semibold)' : 'var(--fw-medium)',
-                    color: isActive ? 'var(--color-primary)' : 'var(--color-gray-700)',
+                    color: isActive
+                      ? (isScrolled ? 'var(--color-primary)' : '#D4AF37')
+                      : (isScrolled ? 'var(--color-gray-700)' : 'rgba(255,255,255,0.88)'),
                     textDecoration: 'none',
                     position: 'relative',
                     paddingBottom: 4,
@@ -139,7 +141,10 @@ export function Navbar() {
                 height: 44,
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'var(--color-dark)',
+                color: isScrolled ? 'var(--color-dark)' : '#ffffff',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
               }}
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}

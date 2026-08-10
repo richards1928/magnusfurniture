@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, ArrowUpRight, ArrowUp, MessageCircle } from 'lucide-react';
 import { MagnusWordmark } from '../ui/MagnusLogo';
+import { InstagramIcon, YoutubeIcon, LinkedinIcon, FacebookIcon } from '../ui/SocialIcons';
 
 /* ─── Static data ─────────────────────────────────────────────── */
 
@@ -15,8 +16,16 @@ const quickLinks = [
   { label: 'Contact',          path: '/contact' },
 ];
 
+const socialLinks = [
+  { label: 'Instagram', href: 'https://www.instagram.com/magnusofficefurniture?igsh=dnFiNG92NWt0d3Vs', icon: InstagramIcon },
+  { label: 'YouTube',   href: 'https://youtube.com/@magnusofficefurniture?si=zBJOfreHx3hGS2Lv', icon: YoutubeIcon },
+  { label: 'LinkedIn',  href: 'https://www.linkedin.com/company/magnus-office-furniture/', icon: LinkedinIcon },
+  { label: 'Facebook',  href: 'https://www.facebook.com/magnusofficefurniture/', icon: FacebookIcon },
+  { label: 'WhatsApp',  href: 'https://wa.me/919090626209', icon: MessageCircle },
+];
+
 const MAPS_URL =
-  'https://maps.google.com/?q=M+R+Elite+3rd+Floor+Above+BKP+Homes+Opposite+Sarath+City+Kondapur+Hyderabad+500084';
+  'https://maps.app.goo.gl/sarkq9UVLQWZoDXJ9';
 
 /* ─── Tiny helper: uppercase gold column heading ──────────────── */
 
@@ -192,12 +201,18 @@ export function Footer() {
         @media (max-width: 640px) {
           .mf-grid {
             grid-template-columns: 1fr !important;
+            padding-top: 60px !important;
+            padding-bottom: 60px !important;
           }
           .mf-col-brand {
             grid-column: auto !important;
             padding-bottom: 48px !important;
           }
           .mf-col-links {
+            border-right: none !important;
+            padding-right: 0 !important;
+          }
+          .mf-col-contact {
             border-right: none !important;
             padding-right: 0 !important;
           }
@@ -209,6 +224,19 @@ export function Footer() {
           .mf-col-links,
           .mf-col-contact {
             padding-top: 40px !important;
+          }
+          /* Social icons — larger touch targets on mobile */
+          .mf-social {
+            width: 44px !important;
+            height: 44px !important;
+          }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 380px) {
+          .mf-grid {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
           }
         }
       `}</style>
@@ -290,7 +318,7 @@ export function Footer() {
                 hello@magnusofficefurniture.com
               </ContactLine>
 
-              <ContactLine icon={<MapPin size={14} />}>
+              <ContactLine href={MAPS_URL} icon={<MapPin size={14} />}>
                 M R Elite, 3rd Floor,
                 <br />
                 Above BKP Homes, Opposite Sarath City,
@@ -301,31 +329,35 @@ export function Footer() {
               </ContactLine>
             </div>
 
-            {/* Social — WhatsApp (only confirmed real link) */}
-            <div style={{ display: 'flex', gap: 10 }}>
-              <a
-                href="https://wa.me/919090626209"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="mf-social"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: 40,
-                  height: 40,
-                  borderRadius: '50%',
-                  background: 'rgba(212,175,55,0.08)',
-                  border: '1px solid rgba(212,175,55,0.22)',
-                  color: '#D4AF37',
-                  textDecoration: 'none',
-                  transition: 'all 0.25s ease',
-                  flexShrink: 0,
-                }}
-              >
-                <MessageCircle size={17} />
-              </a>
+            {/* Social Channels */}
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+              {socialLinks.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  title={label}
+                  className="mf-social"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: 40,
+                    height: 40,
+                    borderRadius: '50%',
+                    background: 'rgba(212,175,55,0.08)',
+                    border: '1px solid rgba(212,175,55,0.22)',
+                    color: '#D4AF37',
+                    textDecoration: 'none',
+                    transition: 'all 0.25s ease',
+                    flexShrink: 0,
+                  }}
+                >
+                  <Icon size={17} />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -374,7 +406,7 @@ export function Footer() {
                   lineHeight: 1.5,
                 }}
               >
-                Kondapur, Hyderabad
+                Gachibowli, Hyderabad
               </p>
               <a
                 href={MAPS_URL}

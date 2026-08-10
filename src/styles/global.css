@@ -18,6 +18,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 body {
@@ -27,17 +28,22 @@ body {
   color: var(--color-gray-700);
   background-color: var(--color-warm-white);
   overflow-x: hidden;
+  /* Never lock vertical scroll on main website */
+  overflow-y: auto;
+  height: auto;
+  min-height: 100svh;
 }
 
 #root {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  text-align: left;
-  border: none;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  text-align: left !important;
+  border: none !important;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 /* ── Typography ── */
@@ -113,6 +119,14 @@ ul, ol {
   .section {
     padding-top: var(--space-12);
     padding-bottom: var(--space-12);
+  }
+}
+
+/* ── Global responsive grids ── */
+@media (max-width: 768px) {
+  /* Contact page grid */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 

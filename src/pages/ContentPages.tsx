@@ -14,6 +14,7 @@ import {
   Award
 } from 'lucide-react';
 import { MagnusMonogram } from '../components/ui/MagnusLogo';
+import { InstagramIcon, YoutubeIcon, LinkedinIcon, FacebookIcon } from '../components/ui/SocialIcons';
 
 function SimplePage({ title, description, children }: { title: string, description: string, children?: ReactNode }) {
   return (
@@ -123,10 +124,27 @@ export const ContactPage = () => (
               ))}
             </div>
           </div>
-          <div style={{ marginTop: 'var(--space-2)' }}>
-            <a href="https://wa.me/919090626209" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#25D366', color: '#fff', padding: '12px 24px', borderRadius: 'var(--radius-md)', fontWeight: 'var(--fw-semibold)', textDecoration: 'none' }}>
-              <MessageSquare size={18} fill="#fff" /> Chat on WhatsApp
-            </a>
+          <div style={{ marginTop: 'var(--space-4)', display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div style={{ fontSize: 'var(--fs-xs)', textTransform: 'uppercase', color: 'var(--color-gray-400)', letterSpacing: 'var(--ls-wider)' }}>
+              Follow Us
+            </div>
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+              <a href="https://wa.me/919090626209" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#25D366', color: '#fff', padding: '10px 20px', borderRadius: 'var(--radius-md)', fontWeight: 'var(--fw-semibold)', textDecoration: 'none', fontSize: 'var(--fs-small)' }}>
+                <MessageSquare size={16} fill="#fff" /> WhatsApp
+              </a>
+              <a href="https://www.instagram.com/magnusofficefurniture?igsh=dnFiNG92NWt0d3Vs" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: '#fff', padding: '10px 20px', borderRadius: 'var(--radius-md)', fontWeight: 'var(--fw-semibold)', textDecoration: 'none', fontSize: 'var(--fs-small)' }}>
+                <InstagramIcon size={16} /> Instagram
+              </a>
+              <a href="https://youtube.com/@magnusofficefurniture?si=zBJOfreHx3hGS2Lv" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#FF0000', color: '#fff', padding: '10px 20px', borderRadius: 'var(--radius-md)', fontWeight: 'var(--fw-semibold)', textDecoration: 'none', fontSize: 'var(--fs-small)' }}>
+                <YoutubeIcon size={16} /> YouTube
+              </a>
+              <a href="https://www.linkedin.com/company/magnus-office-furniture/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#0A66C2', color: '#fff', padding: '10px 20px', borderRadius: 'var(--radius-md)', fontWeight: 'var(--fw-semibold)', textDecoration: 'none', fontSize: 'var(--fs-small)' }}>
+                <LinkedinIcon size={16} /> LinkedIn
+              </a>
+              <a href="https://www.facebook.com/magnusofficefurniture/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#1877F2', color: '#fff', padding: '10px 20px', borderRadius: 'var(--radius-md)', fontWeight: 'var(--fw-semibold)', textDecoration: 'none', fontSize: 'var(--fs-small)' }}>
+                <FacebookIcon size={16} /> Facebook
+              </a>
+            </div>
           </div>
         </div>
       </div>
