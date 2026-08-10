@@ -38,11 +38,13 @@ export function Navbar() {
         right: 0,
         height: 'var(--nav-height)',
         zIndex: 'var(--z-sticky)',
-        background: isScrolled ? 'rgba(255, 253, 248, 0.85)' : 'transparent',
-        backdropFilter: isScrolled ? 'blur(16px) saturate(180%)' : 'none',
-        borderBottom: isScrolled ? '1px solid rgba(0,0,0,0.05)' : '1px solid transparent',
+        background: isScrolled
+          ? 'rgba(255, 253, 248, 0.97)'
+          : 'rgba(255, 253, 248, 0.92)',
+        backdropFilter: 'blur(16px) saturate(180%)',
+        borderBottom: '1px solid rgba(0,0,0,0.07)',
         transition: 'all var(--duration-normal) var(--ease-in-out)',
-        boxShadow: isScrolled ? '0 4px 30px rgba(0, 0, 0, 0.03)' : 'none',
+        boxShadow: isScrolled ? '0 4px 30px rgba(0, 0, 0, 0.06)' : '0 1px 12px rgba(0,0,0,0.04)',
       }}>
         <div className="container" style={{
           display: 'flex',
@@ -52,7 +54,7 @@ export function Navbar() {
         }}>
           {/* Logo */}
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <MagnusWordmark height={38} color={isScrolled ? 'dark' : 'white'} />
+            <MagnusWordmark height={38} color="dark" />
           </Link>
 
           {/* Desktop Links */}
@@ -71,9 +73,7 @@ export function Navbar() {
                   style={{
                     fontSize: 'var(--fs-small)',
                     fontWeight: isActive ? 'var(--fw-semibold)' : 'var(--fw-medium)',
-                    color: isActive
-                      ? (isScrolled ? 'var(--color-primary)' : '#D4AF37')
-                      : (isScrolled ? 'var(--color-gray-700)' : 'rgba(255,255,255,0.88)'),
+                    color: isActive ? 'var(--color-primary)' : 'var(--color-gray-700)',
                     textDecoration: 'none',
                     position: 'relative',
                     paddingBottom: 4,
@@ -141,7 +141,7 @@ export function Navbar() {
                 height: 44,
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: isScrolled ? 'var(--color-dark)' : '#ffffff',
+                color: 'var(--color-dark)',
                 background: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
