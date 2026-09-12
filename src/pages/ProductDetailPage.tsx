@@ -5,6 +5,8 @@ import { ArrowLeft, Check, Shield, Truck, Settings } from 'lucide-react';
 import { getProductBySlug } from '../products/services/catalogService';
 import { Button } from '../components/ui/Button';
 
+const PLACEHOLDER_IMAGE = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'><rect width='100%' height='100%' fill='%23f8f6f0'/><g transform='translate(200, 220)'><rect width='200' height='140' rx='12' fill='%23e2ded4'/><path d='M30 100 L80 50 L120 80 L170 30 L190 100 Z' fill='%23c5bea8'/><circle cx='60' cy='40' r='16' fill='%23d3ccba'/></g><text x='50%' y='410' font-family='sans-serif' font-size='22' font-weight='600' fill='%23666666' text-anchor='middle'>MAGNUS</text><text x='50%' y='440' font-family='sans-serif' font-size='15' fill='%23999999' text-anchor='middle'>Product Image Coming Soon</text></svg>";
+
 export function ProductDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -19,30 +21,16 @@ export function ProductDetailPage() {
   const uniqueImages = Array.from(new Set(images));
   const [activeImage, setActiveImage] = useState(uniqueImages[0] || "");
   const [loaded, setLoaded] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     if (uniqueImages.length > 0) {
       setActiveImage(uniqueImages[0] || "");
       setLoaded(false);
+      setImgError(false);
     }
   }, [product?.id]);
 
-  const getCategoryIcon = (category: string): string => {
-    const icons: Record<string, string> = {
-      'MD Tables': '🖥️',
-      'Manager Tables': '🖥️',
-      'Workstations': '💻',
-      'Conference Tables': '🤝',
-      'Reception Tables': '🏢',
-      'Storages and Pedestals': '🗄️',
-      'Discussion Tables': '🤝',
-      'Executive Chairs': '💺',
-      'Visitor Chairs': '🪑',
-      'Cafeteria Furniture': '☕',
-      'High Counter Tables': '🖥️',
-    };
-    return icons[category] || '📦';
-  };
 
   if (!product) {
     return (
@@ -52,6 +40,16 @@ export function ProductDetailPage() {
       </div>
     );
   }
+
+  const currentImgSrc = (imgError || !activeImage) ? PLACEHOLDER_IMAGE : activeImage;
+  const displayFeatures = product.features && product.features.length > 0
+    ? product.features
+    : [
+        'Ergonomic & Modern Office Design',
+        'Premium Commercial Grade Construction',
+        'Integrated Cable & Wire Management',
+        'Scratch-Resistant & Easy-to-Clean Finish',
+      ];
 
   return (
     <div style={{ background: 'var(--color-white)', paddingBottom: 'var(--space-20)' }}>
@@ -82,25 +80,24 @@ export function ProductDetailPage() {
               position: 'relative',
               overflow: 'hidden',
             }}>
-              {activeImage ? (
-                <img
-                  src={activeImage}
-                  alt={product.name}
-                  loading="lazy"
-                  onLoad={() => setLoaded(true)}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    opacity: loaded ? 1 : 0,
-                    transition: 'opacity 0.5s ease-in-out',
-                  }}
-                />
-              ) : (
-                <span style={{ fontSize: 72, opacity: 0.15 }}>
-                  {getCategoryIcon(product.category)}
-                </span>
-              )}
+              <img
+                src={currentImgSrc}
+                alt={product.name}
+                loading="lazy"
+                onLoad={() => setLoaded(true)}
+                onError={() => {
+                  setImgError(true);
+                  setLoaded(true);
+                }}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                  padding: imgError || !activeImage ? '20px' : '0',
+                  opacity: loaded ? 1 : 0,
+                  transition: 'opacity 0.5s ease-in-out',
+                }}
+              />
               {product.badge && (
                 <span style={{
                   position: 'absolute', top: 16, left: 16,
@@ -117,7 +114,7 @@ export function ProductDetailPage() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-4)' }}>
                 {uniqueImages.map((img, idx) => (
                   <div key={idx} 
-                    onClick={() => { setActiveImage(img); setLoaded(false); }}
+                    onClick={() => { setActiveImage(img); setLoaded(false); setImgError(false); }}
                     style={{
                       aspectRatio: '1', borderRadius: 'var(--radius-md)',
                       background: 'var(--color-gray-100)', 
@@ -134,6 +131,9 @@ export function ProductDetailPage() {
                       alt={`${product.name} thumbnail ${idx + 1}`}
                       loading="lazy"
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = PLACEHOLDER_IMAGE;
+                      }}
                     />
                   </div>
                 ))}
@@ -152,9 +152,9 @@ export function ProductDetailPage() {
             
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
               <span style={{ fontSize: 'var(--fs-h1)', fontWeight: 'var(--fw-bold)', color: 'var(--color-dark)' }}>
-                ₹{product.price.toLocaleString('en-IN')}
+                {product.price > 0 ? `₹${product.price.toLocaleString('en-IN')}` : 'Request Quote'}
               </span>
-              {product.originalPrice && (
+              {product.price > 0 && product.originalPrice && (
                 <span style={{ fontSize: 'var(--fs-h4)', color: 'var(--color-gray-400)', textDecoration: 'line-through' }}>
                   ₹{product.originalPrice.toLocaleString('en-IN')}
                 </span>
@@ -162,13 +162,13 @@ export function ProductDetailPage() {
             </div>
 
             <p style={{ fontSize: 'var(--fs-body-lg)', color: 'var(--color-gray-600)', lineHeight: 'var(--lh-relaxed)', marginBottom: 'var(--space-8)' }}>
-              {product.description}
+              {product.description || 'High-quality office furniture designed for modern workplaces.'}
             </p>
 
             <div style={{ padding: 'var(--space-6)', background: 'var(--color-cream)', borderRadius: 'var(--radius-lg)', marginBottom: 'var(--space-8)' }}>
               <h3 style={{ fontSize: 'var(--fs-body-lg)', marginBottom: 'var(--space-4)', color: 'var(--color-dark)' }}>Key Features</h3>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-                {product.features.map((f, i) => (
+                {displayFeatures.map((f, i) => (
                   <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', color: 'var(--color-gray-700)' }}>
                     <div style={{ width: 24, height: 24, borderRadius: '50%', background: 'var(--color-primary-bg)', color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <Check size={14} />
@@ -192,11 +192,15 @@ export function ProductDetailPage() {
             <div style={{ marginTop: 'var(--space-10)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-6)', borderTop: '1px solid var(--color-gray-200)', paddingTop: 'var(--space-8)' }}>
               <div>
                 <div style={{ fontSize: 'var(--fs-xs)', color: 'var(--color-gray-500)', textTransform: 'uppercase', letterSpacing: 'var(--ls-wider)', marginBottom: 4 }}>Dimensions</div>
-                <div style={{ color: 'var(--color-dark)', fontWeight: 'var(--fw-medium)' }}>{product.dimensions}</div>
+                <div style={{ color: 'var(--color-dark)', fontWeight: 'var(--fw-medium)' }}>
+                  {product.dimensions || 'Standard / Custom Sizes Available'}
+                </div>
               </div>
               <div>
                 <div style={{ fontSize: 'var(--fs-xs)', color: 'var(--color-gray-500)', textTransform: 'uppercase', letterSpacing: 'var(--ls-wider)', marginBottom: 4 }}>Material</div>
-                <div style={{ color: 'var(--color-dark)', fontWeight: 'var(--fw-medium)' }}>{product.material}</div>
+                <div style={{ color: 'var(--color-dark)', fontWeight: 'var(--fw-medium)' }}>
+                  {product.material || 'Commercial Grade Engineered Wood / Metal'}
+                </div>
               </div>
             </div>
             

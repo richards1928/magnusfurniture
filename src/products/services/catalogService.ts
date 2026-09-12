@@ -69,7 +69,8 @@ function mapProduct(raw: any): Product {
     name: raw.name,
     category: raw.category,
     categorySlug: toSlug(raw.category),
-    price: 0,
+    price: raw.price || 0,
+    originalPrice: raw.originalPrice,
     description: raw.description || "",
     shortDescription: raw.shortDescription || "",
     dimensions: Array.isArray(raw.dimensions)
@@ -77,11 +78,12 @@ function mapProduct(raw: any): Product {
       : raw.dimensions || "",
     material: Array.isArray(raw.materials)
       ? raw.materials.join(", ")
-      : raw.materials || "",
+      : raw.materials || (Array.isArray(raw.material) ? raw.material.join(", ") : raw.material || ""),
     features: raw.features || [],
     images: raw.images?.gallery || [],
-    hero: raw.images?.hero || "",
-    thumbnail: raw.images?.thumbnail || "",
+    hero: raw.images?.hero || (typeof raw.images === "string" ? raw.images : ""),
+    thumbnail: raw.images?.thumbnail || (typeof raw.images === "string" ? raw.images : ""),
+    badge: raw.badge || "",
     inStock: raw.status === "Active",
   };
 }

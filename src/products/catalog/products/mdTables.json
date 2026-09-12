@@ -6,15 +6,29 @@
     "name": "VB Brook",
     "category": "MD Tables",
     "brand": "Magnus Office Furniture",
-    "shortDescription": "Executive MD table.",
-    "description": "Premium executive office table from the Magnus MD Tables collection.",
-    "materials": [],
-    "dimensions": [],
+    "price": 48990,
+    "originalPrice": 54990,
+    "shortDescription": "Executive MD table with side credenza and integrated cable management.",
+    "description": "Premium executive office table from the Magnus MD Tables collection. Crafted with high-grade engineered wood, featuring integrated wire management and an executive side credenza.",
+    "materials": [
+      "High-Grade Engineered Wood",
+      "Premium Melamine Finish",
+      "Powder-Coated Steel Frame"
+    ],
+    "dimensions": [
+      "W 200 × D 100 × H 75 cm"
+    ],
     "applications": [
       "Managing Director Cabin",
       "Executive Office"
     ],
-    "features": [],
+    "features": [
+      "Integrated Cable Management Grommets",
+      "Side Credenza with Lockable Storage",
+      "Heavy-Duty Steel Legs with Adjustable Levelers",
+      "Scratch & Stain Resistant Surface",
+      "Ergonomic Beveled Edges"
+    ],
     "images": {
       "hero": "/assets/products/mdTables/vb-brook.webp",
       "thumbnail": "/assets/products/mdTables/vb-brook.webp",

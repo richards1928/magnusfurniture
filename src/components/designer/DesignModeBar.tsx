@@ -4,7 +4,7 @@ import { designerStore, selectFurniture, commitHistory } from '../../store/desig
 import { furnitureTypes } from '../../data/furniture-types';
 import { tablePresets, applyPreset } from '../../data/table-presets';
 import { validateScene } from '../../engine/validationEngine';
-import { Layers, Palette, Ruler, Sparkles, ChevronDown, Check } from 'lucide-react';
+import { Layers, Palette, Ruler, Sparkles, ChevronDown, Check, Box } from 'lucide-react';
 import { Tooltip } from '../ui/Tooltip';
 
 export function DesignModeBar() {
@@ -59,8 +59,8 @@ export function DesignModeBar() {
             transition: 'all 0.15s ease'
           }}
         >
-          <span>{currentType?.icon || '🪑'}</span>
-          <span>{currentType?.name || 'Select Table'}</span>
+          <Box size={15} />
+          <span>{currentType?.name || 'Select Model'}</span>
           <ChevronDown size={14} />
         </button>
 
@@ -74,7 +74,7 @@ export function DesignModeBar() {
             border: '1px solid rgba(255, 255, 255, 0.15)',
             borderRadius: 14,
             padding: 6,
-            minWidth: 200,
+            minWidth: 220,
             boxShadow: '0 16px 36px rgba(0, 0, 0, 0.5)',
             zIndex: 40,
             display: 'flex',
@@ -106,7 +106,7 @@ export function DesignModeBar() {
                 onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)'}
                 onMouseOut={(e) => e.currentTarget.style.background = state.selectedFurnitureType === type.id ? 'rgba(56, 189, 248, 0.2)' : 'transparent'}
               >
-                <span>{type.icon}</span>
+                <Box size={14} opacity={0.7} />
                 <span>{type.name}</span>
                 {state.selectedFurnitureType === type.id && <Check size={14} style={{ marginLeft: 'auto' }} />}
               </button>
