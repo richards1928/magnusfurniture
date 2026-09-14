@@ -1,9 +1,9 @@
-[
+﻿[
   {
     "id": "MAG-MGR-001",
     "sku": "MAG-MGR-VBFUSION",
     "slug": "vb-fusion",
-    "name": "VB Fusion",
+    "name": "MOF Fusion",
     "category": "Manager Tables",
     "brand": "Magnus Office Furniture",
     "shortDescription": "",
@@ -28,7 +28,7 @@
     "id": "MAG-MGR-002",
     "sku": "MAG-MGR-VBHEXA",
     "slug": "vb-hexa",
-    "name": "VB-HEXA",
+    "name": "MOF-HEXA",
     "category": "Manager Tables",
     "brand": "Magnus Office Furniture",
     "shortDescription": "",

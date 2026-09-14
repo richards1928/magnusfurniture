@@ -214,30 +214,6 @@ export function ServicesPage() {
         <div className="services-hero-glow-2" />
 
         <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
-          {/* Overline Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 8,
-              padding: '6px 18px',
-              borderRadius: 'var(--radius-full)',
-              background: 'rgba(212, 175, 55, 0.12)',
-              border: '1px solid rgba(212, 175, 55, 0.3)',
-              color: 'var(--color-accent)',
-              fontSize: 'var(--fs-xs)',
-              fontWeight: 'var(--fw-semibold)',
-              letterSpacing: 'var(--ls-wider)',
-              textTransform: 'uppercase',
-              marginBottom: 'var(--space-6)'
-            }}
-          >
-            <Sparkles size={14} /> End-to-End Corporate Execution
-          </motion.div>
-
           {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
@@ -274,67 +250,45 @@ export function ServicesPage() {
             From workspace planning to complete office execution, Magnus provides end-to-end office furniture solutions that combine functionality, aesthetics, quality, and long-term support.
           </motion.p>
 
-          {/* Action Buttons */}
+          {/* Single Prominent Direct Contact CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}
+            style={{ display: 'flex', justifyContent: 'center' }}
           >
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => handleOpenQuoteModal()}
+            <a
+              href="tel:9090626207"
+              aria-label="Call 9090626207"
+              id="hero-call-cta"
               style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '12px',
+                padding: '16px 36px',
+                borderRadius: 'var(--radius-full)',
                 background: 'linear-gradient(135deg, var(--color-accent) 0%, #b8932b 100%)',
                 color: 'var(--color-dark)',
+                fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
                 fontWeight: 'var(--fw-bold)',
-                boxShadow: '0 8px 25px rgba(212, 175, 55, 0.3)'
+                fontFamily: 'var(--font-heading)',
+                letterSpacing: '0.5px',
+                textDecoration: 'none',
+                boxShadow: '0 8px 25px rgba(212, 175, 55, 0.35)',
+                transition: 'all 0.25s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 12px 30px rgba(212, 175, 55, 0.45)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(212, 175, 55, 0.35)';
               }}
             >
-              Get a Free Quote <ArrowRight size={18} />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => {
-                document.getElementById('services-grid')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              style={{
-                borderColor: 'rgba(255, 255, 255, 0.3)',
-                color: '#FFFFFF'
-              }}
-            >
-              Explore All Services
-            </Button>
-          </motion.div>
-
-          {/* Trust Metrics Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="hero-stats-row"
-          >
-            <div className="hero-stat-item">
-              <div className="hero-stat-number">500+</div>
-              <div className="hero-stat-label">Offices<br />Executed</div>
-            </div>
-            <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.15)' }} />
-            <div className="hero-stat-item">
-              <div className="hero-stat-number">100%</div>
-              <div className="hero-stat-label">Custom<br />Tailoring</div>
-            </div>
-            <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.15)' }} />
-            <div className="hero-stat-item">
-              <div className="hero-stat-number">10-Yr</div>
-              <div className="hero-stat-label">Warranty<br />Coverage</div>
-            </div>
-            <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.15)' }} />
-            <div className="hero-stat-item">
-              <div className="hero-stat-number">Pan-IN</div>
-              <div className="hero-stat-label">Delivery &<br />Installation</div>
-            </div>
+              <PhoneCall size={22} style={{ color: 'var(--color-dark)' }} />
+              <span>Call 9090626207</span>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -578,7 +532,7 @@ export function ServicesPage() {
           >
             <div className="highlight-image-wrapper">
               <img
-                src="/assets/services/workspace_solutions.png"
+                src="/assets/services/workspace_solutions.webp"
                 alt="End-to-End Workspace Solutions"
                 loading="lazy"
               />
@@ -609,7 +563,7 @@ export function ServicesPage() {
           >
             <div className="highlight-image-wrapper">
               <img
-                src="/assets/services/custom_furniture.jpeg"
+                src="/assets/services/custom_furniture.webp"
                 alt="Custom Furniture Expertise"
                 loading="lazy"
               />
@@ -640,7 +594,7 @@ export function ServicesPage() {
           >
             <div className="highlight-image-wrapper">
               <img
-                src="/assets/services/corporate_projects.jpeg"
+                src="/assets/services/corporate_projects.webp"
                 alt="Corporate Project Specialists"
                 loading="lazy"
               />
@@ -768,13 +722,13 @@ export function ServicesPage() {
             <Button
               variant="outline"
               size="lg"
-              href="tel:+919090626209"
+              href="tel:9090626207"
               style={{
                 borderColor: 'rgba(255,255,255,0.3)',
                 color: '#FFFFFF'
               }}
             >
-              <PhoneCall size={18} /> Call Sales (+91 90906 26209)
+              <PhoneCall size={18} /> Call Sales (9090626207)
             </Button>
           </motion.div>
         </div>

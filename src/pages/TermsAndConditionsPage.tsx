@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const LAST_UPDATED = 'August 9, 2026';
 
@@ -71,7 +71,7 @@ const SECTIONS = [
   {
     id: 'contact',
     title: '14. Contact Us',
-    body: `If you have any questions regarding these Terms & Conditions, please contact us:\n\nMagnus Office Furniture\nBP Raju Marg, M R Elite, 3rd Floor\nAbove BKP Homes, Opposite Sarath City\nRatnadeep Right Side Lane, Kondapur\nHyderabad, Telangana – 500084\n\nPhone: +91 90906 26209\nEmail: hello@magnusofficefurniture.com`,
+    body: `If you have any questions regarding these Terms & Conditions, please contact us:\n\nMagnus Office Furniture\nBP Raju Marg, M R Elite, 3rd Floor\nAbove BKP Homes, Opposite Sarath City\nRatnadeep Right Side Lane, Kondapur\nHyderabad, Telangana – 500084\n\nPhone: +91 90906 26207\nEmail: magnusofficefurniture@gmail.com`,
   },
 ];
 
@@ -209,17 +209,17 @@ export function TermsAndConditionsPage() {
           </p>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
             <a
-              href="tel:+919090626209"
+              href="tel:9090626207"
               style={{ fontSize: '0.92rem', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}
             >
-              +91 90906 26209
+              9090626207
             </a>
             <span style={{ color: 'var(--color-gray-300)' }}>|</span>
             <a
-              href="mailto:hello@magnusofficefurniture.com"
+              href="mailto:magnusofficefurniture@gmail.com"
               style={{ fontSize: '0.92rem', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}
             >
-              hello@magnusofficefurniture.com
+              magnusofficefurniture@gmail.com
             </a>
           </div>
         </div>

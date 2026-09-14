@@ -103,7 +103,7 @@ export function Navbar() {
           {/* CTA + Mobile Toggle */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
             <a
-              href="tel:+919090626209"
+              href="tel:9090626207"
               className="nav-desktop"
               style={{
                 display: 'flex',
@@ -202,7 +202,7 @@ export function Navbar() {
               );
             })}
             <a
-              href="tel:+919090626209"
+              href="tel:9090626207"
               style={{
                 display: 'flex',
                 alignItems: 'center',

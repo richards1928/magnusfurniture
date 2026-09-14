@@ -71,6 +71,8 @@ export function CompletedProjects() {
       timeline: '6 Weeks',
       products: 'Workstations, Chairs, Conference Tables',
       gradient: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
+      // Realistic temporary AI reference photo — replace with real project photo when available
+      image: '/assets/projects/project-techstar.webp',
     },
     {
       id: 2,
@@ -81,6 +83,8 @@ export function CompletedProjects() {
       timeline: '3 Weeks',
       products: 'Executive Desks, Cabins, Storage',
       gradient: 'linear-gradient(135deg, #114357 0%, #F29492 100%)',
+      // Realistic temporary AI reference photo — replace with real project photo when available
+      image: '/assets/projects/project-greenfield.webp',
     },
     {
       id: 3,
@@ -91,6 +95,8 @@ export function CompletedProjects() {
       timeline: '2 Weeks',
       products: 'Open Plan, Collaborative Tables',
       gradient: 'linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%)',
+      // Realistic temporary AI reference photo — replace with real project photo when available
+      image: '/assets/projects/project-novadesign.webp',
     }
   ];
 
@@ -163,8 +169,35 @@ export function CompletedProjects() {
               background: project.gradient,
               position: 'relative',
               padding: '16px',
+              overflow: 'hidden',
             }}>
+              {/* Temporary catalog image — swap src for real project photo when available */}
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  loading="lazy"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                    zIndex: 0,
+                  }}
+                />
+              )}
+              {/* Dark overlay to keep industry badge readable */}
               <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 100%)',
+                zIndex: 1,
+              }} />
+              <div style={{
+                position: 'relative',
+                zIndex: 2,
                 background: 'rgba(255, 255, 255, 0.1)',
                 backdropFilter: 'blur(10px)',
                 WebkitBackdropFilter: 'blur(10px)',

@@ -90,13 +90,13 @@ export const ContactPage = () => (
             <div style={{ fontSize: 'var(--fs-xs)', textTransform: 'uppercase', color: 'var(--color-gray-400)', letterSpacing: 'var(--ls-wider)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
               <Phone size={14} color="var(--color-primary)" /> Call Us
             </div>
-            <a href="tel:+919090626209" style={{ color: 'var(--color-primary)', fontWeight: 'var(--fw-medium)', textDecoration: 'none' }}>+91 90906 26209</a>
+            <a href="tel:9090626207" style={{ color: 'var(--color-primary)', fontWeight: 'var(--fw-medium)', textDecoration: 'none' }}>9090626207</a>
           </div>
           <div>
             <div style={{ fontSize: 'var(--fs-xs)', textTransform: 'uppercase', color: 'var(--color-gray-400)', letterSpacing: 'var(--ls-wider)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
               <Mail size={14} color="var(--color-primary)" /> Email
             </div>
-            <a href="mailto:hello@magnusofficefurniture.com" style={{ color: 'var(--color-primary)', fontWeight: 'var(--fw-medium)', textDecoration: 'none' }}>hello@magnusofficefurniture.com</a>
+            <a href="mailto:magnusofficefurniture@gmail.com" style={{ color: 'var(--color-primary)', fontWeight: 'var(--fw-medium)', textDecoration: 'none' }}>magnusofficefurniture@gmail.com</a>
           </div>
           <div>
             <div style={{ fontSize: 'var(--fs-xs)', textTransform: 'uppercase', color: 'var(--color-gray-400)', letterSpacing: 'var(--ls-wider)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -129,7 +129,7 @@ export const ContactPage = () => (
               Follow Us
             </div>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-              <a href="https://wa.me/919090626209" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#25D366', color: '#fff', padding: '10px 20px', borderRadius: 'var(--radius-md)', fontWeight: 'var(--fw-semibold)', textDecoration: 'none', fontSize: 'var(--fs-small)' }}>
+              <a href="https://wa.me/919090626207" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#25D366', color: '#fff', padding: '10px 20px', borderRadius: 'var(--radius-md)', fontWeight: 'var(--fw-semibold)', textDecoration: 'none', fontSize: 'var(--fs-small)' }}>
                 <MessageSquare size={16} fill="#fff" /> WhatsApp
               </a>
               <a href="https://www.instagram.com/magnusofficefurniture?igsh=dnFiNG92NWt0d3Vs" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: '#fff', padding: '10px 20px', borderRadius: 'var(--radius-md)', fontWeight: 'var(--fw-semibold)', textDecoration: 'none', fontSize: 'var(--fs-small)' }}>
@@ -540,13 +540,13 @@ export const ContactPage = () => (
         <Button
           variant="primary"
           style={{ background: 'var(--color-white)', color: 'var(--color-primary)' }}
-          href="tel:+919090626209"
+          href="tel:9090626207"
         >
           <Phone size={16} /> Call Sales Team
         </Button>
         <Button
           variant="whatsapp"
-          href="https://wa.me/919090626209"
+          href="https://wa.me/919090626207"
           target="_blank"
         >
           <MessageSquare size={16} /> Chat on WhatsApp
@@ -554,7 +554,7 @@ export const ContactPage = () => (
         <Button
           variant="outline"
           style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}
-          href="mailto:hello@magnusofficefurniture.com?subject=Office%20Furniture%20Consultation%20Request"
+          href="mailto:magnusofficefurniture@gmail.com?subject=Office%20Furniture%20Consultation%20Request"
         >
           <Mail size={16} /> Schedule Consultation
         </Button>

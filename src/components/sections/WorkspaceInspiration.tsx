@@ -58,7 +58,9 @@ export function WorkspaceInspiration() {
       title: 'Modern Startup Office',
       category: 'Open Plan',
       gradient: 'linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%)',
-      colSpan: 2,
+      colSpan: 1,
+      // Realistic temporary AI reference photo — replace with real project photo when available
+      image: '/assets/inspiration/modern-startup-office.webp',
     },
     {
       id: 2,
@@ -66,6 +68,8 @@ export function WorkspaceInspiration() {
       category: 'Private Cabin',
       gradient: 'linear-gradient(135deg, #3E2723 0%, #1B0000 100%)',
       colSpan: 1,
+      // Realistic temporary AI reference photo — replace with real project photo when available
+      image: '/assets/inspiration/executive-suite.webp',
     },
     {
       id: 3,
@@ -73,13 +77,17 @@ export function WorkspaceInspiration() {
       category: 'Meeting Space',
       gradient: 'linear-gradient(135deg, #37474F 0%, #263238 100%)',
       colSpan: 1,
+      // Realistic temporary AI reference photo — replace with real project photo when available
+      image: '/assets/inspiration/conference-room.webp',
     },
     {
       id: 4,
       title: 'Reception Lobby',
       category: 'Lounge',
       gradient: 'linear-gradient(135deg, #4E342E 0%, #3E2723 100%)',
-      colSpan: 2,
+      colSpan: 1,
+      // Realistic temporary AI reference photo — replace with real project photo when available
+      image: '/assets/inspiration/reception-lobby.webp',
     },
   ];
 
@@ -148,8 +156,8 @@ export function WorkspaceInspiration() {
       </motion.div>
 
       <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
         gap: '24px',
         width: '100%',
         maxWidth: '1200px',
@@ -165,16 +173,35 @@ export function WorkspaceInspiration() {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             style={{
-              flex: card.colSpan === 2 ? '1 1 calc(60% - 12px)' : '1 1 calc(40% - 12px)',
-              minWidth: '280px',
-              height: '300px',
+              width: '100%',
+              height: '320px',
               borderRadius: '16px',
               position: 'relative',
               overflow: 'hidden',
               cursor: 'pointer',
               background: card.gradient,
+              border: '1px solid rgba(255, 255, 255, 0.08)',
             }}
           >
+            {/* Catalog image as temporary visual fill — swap src for real project photo later */}
+            {card.image && (
+              <img
+                src={card.image}
+                alt={card.title}
+                loading="lazy"
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  zIndex: 0,
+                  transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                  transform: hoveredIndex === index ? 'scale(1.06)' : 'scale(1)',
+                }}
+              />
+            )}
             <motion.div 
               style={{
                 position: 'absolute',

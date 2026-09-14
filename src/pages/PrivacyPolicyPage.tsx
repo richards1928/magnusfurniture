@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const LAST_UPDATED = 'August 9, 2026';
 
@@ -46,7 +46,7 @@ const SECTIONS = [
   {
     id: 'your-rights',
     title: '9. Your Rights',
-    body: `Subject to applicable law, you may have the right to:\n\n• Request access to the personal information we hold about you.\n• Request correction of inaccurate or incomplete information.\n• Request deletion of your personal information, where we are not legally required to retain it.\n• Withdraw consent, where processing is based on your consent.\n\nTo exercise any of these rights, please contact us at hello@magnusofficefurniture.com.\n\n[Business/Legal Note: Rights available to individuals are subject to applicable Indian law, including the Digital Personal Data Protection Act, 2023. Legal review is recommended to confirm specific obligations.]`,
+    body: `Subject to applicable law, you may have the right to:\n\n• Request access to the personal information we hold about you.\n• Request correction of inaccurate or incomplete information.\n• Request deletion of your personal information, where we are not legally required to retain it.\n• Withdraw consent, where processing is based on your consent.\n\nTo exercise any of these rights, please contact us at magnusofficefurniture@gmail.com.\n\n[Business/Legal Note: Rights available to individuals are subject to applicable Indian law, including the Digital Personal Data Protection Act, 2023. Legal review is recommended to confirm specific obligations.]`,
   },
   {
     id: 'childrens',
@@ -61,7 +61,7 @@ const SECTIONS = [
   {
     id: 'contact',
     title: '12. Contact Us',
-    body: `If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:\n\nMagnus Office Furniture\nBP Raju Marg, M R Elite, 3rd Floor\nAbove BKP Homes, Opposite Sarath City\nRatnadeep Right Side Lane, Kondapur\nHyderabad, Telangana – 500084\n\nPhone: +91 90906 26209\nEmail: hello@magnusofficefurniture.com`,
+    body: `If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:\n\nMagnus Office Furniture\nBP Raju Marg, M R Elite, 3rd Floor\nAbove BKP Homes, Opposite Sarath City\nRatnadeep Right Side Lane, Kondapur\nHyderabad, Telangana – 500084\n\nPhone: +91 90906 26207\nEmail: magnusofficefurniture@gmail.com`,
   },
 ];
 
@@ -199,17 +199,17 @@ export function PrivacyPolicyPage() {
           </p>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
             <a
-              href="tel:+919090626209"
+              href="tel:9090626207"
               style={{ fontSize: '0.92rem', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}
             >
-              +91 90906 26209
+              9090626207
             </a>
             <span style={{ color: 'var(--color-gray-300)' }}>|</span>
             <a
-              href="mailto:hello@magnusofficefurniture.com"
+              href="mailto:magnusofficefurniture@gmail.com"
               style={{ fontSize: '0.92rem', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}
             >
-              hello@magnusofficefurniture.com
+              magnusofficefurniture@gmail.com
             </a>
           </div>
         </div>

@@ -50,14 +50,14 @@ export function ContactPreview() {
                 <Phone size={24} />
               </div>
               <h4 style={{ fontSize: 'var(--fs-body-lg)', fontWeight: 'var(--fw-semibold)', color: 'var(--color-dark)' }}>Call Us</h4>
-              <p style={{ color: 'var(--color-gray-500)', fontSize: 'var(--fs-small)', textAlign: 'center' }}>+91 90906 26209</p>
+              <a href="tel:9090626207" style={{ color: 'var(--color-gray-500)', fontSize: 'var(--fs-small)', textAlign: 'center', textDecoration: 'none' }}>9090626207</a>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-4)' }}>
               <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--color-primary-bg)', color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Mail size={24} />
               </div>
               <h4 style={{ fontSize: 'var(--fs-body-lg)', fontWeight: 'var(--fw-semibold)', color: 'var(--color-dark)' }}>Email Us</h4>
-              <p style={{ color: 'var(--color-gray-500)', fontSize: 'var(--fs-small)', textAlign: 'center' }}>hello@magnusofficefurniture.com</p>
+              <a href="mailto:magnusofficefurniture@gmail.com" style={{ color: 'var(--color-gray-500)', fontSize: 'var(--fs-small)', textAlign: 'center', textDecoration: 'none' }}>magnusofficefurniture@gmail.com</a>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-4)' }}>
               <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--color-primary-bg)', color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

@@ -21,7 +21,7 @@ const socialLinks = [
   { label: 'YouTube',   href: 'https://youtube.com/@magnusofficefurniture?si=zBJOfreHx3hGS2Lv', icon: YoutubeIcon },
   { label: 'LinkedIn',  href: 'https://www.linkedin.com/company/magnus-office-furniture/', icon: LinkedinIcon },
   { label: 'Facebook',  href: 'https://www.facebook.com/magnusofficefurniture/', icon: FacebookIcon },
-  { label: 'WhatsApp',  href: 'https://wa.me/919090626209', icon: MessageCircle },
+  { label: 'WhatsApp',  href: 'https://wa.me/919090626207', icon: MessageCircle },
 ];
 
 const MAPS_URL =
@@ -310,12 +310,12 @@ export function Footer() {
 
             {/* Contact details */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginBottom: 44 }}>
-              <ContactLine href="tel:+919090626209" icon={<Phone size={14} />}>
-                +91 90906 26209
+              <ContactLine href="tel:9090626207" icon={<Phone size={14} />}>
+                9090626207
               </ContactLine>
 
-              <ContactLine href="mailto:hello@magnusofficefurniture.com" icon={<Mail size={14} />}>
-                hello@magnusofficefurniture.com
+              <ContactLine href="mailto:magnusofficefurniture@gmail.com" icon={<Mail size={14} />}>
+                magnusofficefurniture@gmail.com
               </ContactLine>
 
               <ContactLine href={MAPS_URL} icon={<MapPin size={14} />}>
@@ -443,7 +443,7 @@ export function Footer() {
             <div style={{ marginBottom: 24 }}>
               <BlockLabel>Phone</BlockLabel>
               <a
-                href="tel:+919090626209"
+                href="tel:9090626207"
                 style={{
                   fontSize: '0.975rem',
                   color: 'rgba(255,255,255,0.72)',
@@ -455,7 +455,7 @@ export function Footer() {
                 onMouseEnter={e => { e.currentTarget.style.color = '#D4AF37'; }}
                 onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.72)'; }}
               >
-                +91 90906 26209
+                9090626207
               </a>
             </div>
 
@@ -463,7 +463,7 @@ export function Footer() {
             <div style={{ marginBottom: 28 }}>
               <BlockLabel>Email</BlockLabel>
               <a
-                href="mailto:hello@magnusofficefurniture.com"
+                href="mailto:magnusofficefurniture@gmail.com"
                 style={{
                   fontSize: '0.92rem',
                   color: 'rgba(255,255,255,0.72)',
@@ -476,7 +476,7 @@ export function Footer() {
                 onMouseEnter={e => { e.currentTarget.style.color = '#D4AF37'; }}
                 onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.72)'; }}
               >
-                hello@magnusofficefurniture.com
+                magnusofficefurniture@gmail.com
               </a>
             </div>
 

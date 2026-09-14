@@ -5,9 +5,9 @@ export function SettingsPage() {
   const [settings, setSettings] = useState({
     businessName: 'Magnus Office Furniture',
     tagline: 'Premium Office Furniture in Hyderabad',
-    phone: '+91 90906 26209',
-    email: 'hello@magnusofficefurniture.com',
-    whatsapp: '919090626209',
+    phone: '9090626207',
+    email: 'magnusofficefurniture@gmail.com',
+    whatsapp: '919090626207',
     address: 'M R Elite, 3rd Floor, Opposite Sarath City, Kondapur, Hyderabad 500084',
     seoTitle: 'Magnus Office Furniture | Premium Office Furniture in Hyderabad',
     seoDescription: 'Transform your workspace with Magnus Office Furniture. Premium office chairs, workstations, and conference tables in Hyderabad.',

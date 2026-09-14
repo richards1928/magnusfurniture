@@ -1,9 +1,9 @@
-[
+﻿[
   {
     "id": "MAG-DST-001",
     "sku": "MAG-DST-VBBEN",
     "slug": "vb-ben",
-    "name": "VB-BEN",
+    "name": "MOF-BEN",
     "category": "Discussion Tables",
     "brand": "Magnus Office Furniture",
     "shortDescription": "",
@@ -28,7 +28,7 @@
     "id": "MAG-DST-002",
     "sku": "MAG-DST-VBCORAL",
     "slug": "vb-coral",
-    "name": "VB-CORAL",
+    "name": "MOF-CORAL",
     "category": "Discussion Tables",
     "brand": "Magnus Office Furniture",
     "shortDescription": "",
@@ -53,7 +53,7 @@
     "id": "MAG-DST-003",
     "sku": "MAG-DST-VBMEET",
     "slug": "vb-meet",
-    "name": "VB-MEET",
+    "name": "MOF-MEET",
     "category": "Discussion Tables",
     "brand": "Magnus Office Furniture",
     "shortDescription": "",
@@ -78,7 +78,7 @@
     "id": "MAG-DST-004",
     "sku": "MAG-DST-VBOAK",
     "slug": "vb-oak",
-    "name": "VB-OAK",
+    "name": "MOF-OAK",
     "category": "Discussion Tables",
     "brand": "Magnus Office Furniture",
     "shortDescription": "",

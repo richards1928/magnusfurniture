@@ -183,7 +183,7 @@ export function ProductDetailPage() {
               <Button variant="primary" size="lg" style={{ width: '100%' }}>
                 Request Quote
               </Button>
-              <Button variant="whatsapp" size="lg" style={{ width: '100%' }} href={`https://wa.me/919090626209?text=I'm interested in the ${product.name}`}>
+              <Button variant="whatsapp" size="lg" style={{ width: '100%' }} href={`https://wa.me/919090626207?text=I'm interested in the ${product.name}`}>
                 Inquire on WhatsApp
               </Button>
             </div>

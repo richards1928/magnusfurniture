@@ -1,4 +1,4 @@
-import type { Product } from "../types";
+﻿import type { Product } from "../types";
 
 export const mdTables: Product[] = [
   {
@@ -7,7 +7,7 @@ export const mdTables: Product[] = [
 
     category: "MD Tables",
 
-    name: "VB Prestige",
+    name: "MOF Prestige",
 
     shortDescription: "Premium executive MD table.",
 
