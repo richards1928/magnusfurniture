@@ -119,8 +119,6 @@ export function ProductsPage() {
             </div>
             <select className="products-sort-select">
               <option>Recommended</option>
-              <option>Price: Low to High</option>
-              <option>Price: High to Low</option>
               <option>Newest Arrivals</option>
             </select>
           </div>

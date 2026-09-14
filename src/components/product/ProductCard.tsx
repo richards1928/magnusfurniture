@@ -30,7 +30,7 @@ export function ProductCard({ product }: { product: Product }) {
   const imgSrc = product.hero || product.thumbnail || "";
 
   return (
-    <Link to={`/products/${product.slug}`} className="premium-product-card">
+    <Link to={`/products/${product.slug}`} state={{ image: imgSrc }} className="premium-product-card">
       {/* Image Area */}
       <div className="premium-product-card__image-wrap">
         <div className={`premium-product-card__image-bg${imgSrc && !loaded ? ' is-loading' : ''}`}>
@@ -39,6 +39,11 @@ export function ProductCard({ product }: { product: Product }) {
               src={imgSrc}
               alt={product.name}
               loading="lazy"
+              ref={(el) => {
+                if (el && el.complete && !loaded) {
+                  setLoaded(true);
+                }
+              }}
               onLoad={() => setLoaded(true)}
               style={{
                 width: '100%',
@@ -46,8 +51,8 @@ export function ProductCard({ product }: { product: Product }) {
                 objectFit: 'contain',
                 padding: '10px',
                 background: '#ffffff',
-                opacity: loaded ? 1 : 0,
-                transition: 'opacity 0.6s ease-in-out',
+                opacity: loaded ? 1 : 1,
+                transition: 'opacity 0.4s ease-in-out',
               }}
             />
           ) : (
@@ -109,21 +114,9 @@ export function ProductCard({ product }: { product: Product }) {
         </p>
 
         {/* Footer */}
-        <div className="premium-product-card__footer">
-          <div className="premium-product-card__price-group">
-            {product.originalPrice && (
-              <span className="premium-product-card__original-price">
-                ₹{product.originalPrice.toLocaleString('en-IN')}
-              </span>
-            )}
-            <span className="premium-product-card__price">
-              {product.price > 0
-                ? `₹${product.price.toLocaleString('en-IN')}`
-                : 'Request Quote'}
-            </span>
-          </div>
-          <span className="premium-product-card__quote-btn">
-            <FileText size={12} />
+        <div className="premium-product-card__footer" style={{ justifyContent: 'flex-end' }}>
+          <span className="premium-product-card__quote-btn" style={{ width: '100%', justifyContent: 'center', padding: '10px 16px' }}>
+            <FileText size={13} />
             Details
           </span>
         </div>

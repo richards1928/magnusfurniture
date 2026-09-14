@@ -144,7 +144,13 @@ export function getCategoryBySlug(slug: string): Category | undefined {
 }
 
 export function getProductBySlug(slug: string): Product | undefined {
-  return products.find((p) => p.slug === slug);
+  if (!slug) return undefined;
+  const normalized = slug.toLowerCase().trim();
+  return products.find((p) => 
+    p.slug?.toLowerCase() === normalized || 
+    p.id?.toLowerCase() === normalized || 
+    toSlug(p.name) === normalized
+  );
 }
 
 export function getProductsByCategory(categorySlug: string): Product[] {

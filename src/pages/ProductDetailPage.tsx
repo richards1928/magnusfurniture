@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Check, Shield, Truck, Settings } from 'lucide-react';
@@ -9,27 +9,29 @@ const PLACEHOLDER_IMAGE = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org
 
 export function ProductDetailPage() {
   const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
   const navigate = useNavigate();
   const product = getProductBySlug(slug!);
+  const passedImage = (location.state as any)?.image;
 
   const images = product ? [
+    passedImage,
     product.hero,
     product.thumbnail,
     ...(product.images || [])
-  ].filter(Boolean) as string[] : [];
+  ].filter(Boolean) as string[] : (passedImage ? [passedImage] : []);
   
   const uniqueImages = Array.from(new Set(images));
-  const [activeImage, setActiveImage] = useState(uniqueImages[0] || "");
-  const [loaded, setLoaded] = useState(false);
+  const [activeImage, setActiveImage] = useState(passedImage || uniqueImages[0] || "");
   const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
-    if (uniqueImages.length > 0) {
-      setActiveImage(uniqueImages[0] || "");
-      setLoaded(false);
+    const target = passedImage || uniqueImages[0] || "";
+    if (target) {
+      setActiveImage(target);
       setImgError(false);
     }
-  }, [product?.id]);
+  }, [product?.id, slug, passedImage]);
 
 
   if (!product) {
@@ -74,28 +76,30 @@ export function ProductDetailPage() {
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
             <div style={{
               width: '100%', aspectRatio: '1', borderRadius: 'var(--radius-lg)',
-              background: 'linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-cream) 100%)',
+              background: '#ffffff',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               border: '1px solid var(--color-gray-200)', marginBottom: 'var(--space-4)',
               position: 'relative',
               overflow: 'hidden',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
             }}>
               <img
+                key={currentImgSrc}
                 src={currentImgSrc}
                 alt={product.name}
-                loading="lazy"
-                onLoad={() => setLoaded(true)}
+                loading="eager"
                 onError={() => {
-                  setImgError(true);
-                  setLoaded(true);
+                  if (activeImage !== product.hero && product.hero) {
+                    setActiveImage(product.hero);
+                  } else {
+                    setImgError(true);
+                  }
                 }}
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'contain',
-                  padding: imgError || !activeImage ? '20px' : '0',
-                  opacity: loaded ? 1 : 0,
-                  transition: 'opacity 0.5s ease-in-out',
+                  padding: imgError || !activeImage ? '20px' : '16px',
                 }}
               />
               {product.badge && (
@@ -114,23 +118,24 @@ export function ProductDetailPage() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-4)' }}>
                 {uniqueImages.map((img, idx) => (
                   <div key={idx} 
-                    onClick={() => { setActiveImage(img); setLoaded(false); setImgError(false); }}
+                    onClick={() => { setActiveImage(img); setImgError(false); }}
                     style={{
                       aspectRatio: '1', borderRadius: 'var(--radius-md)',
-                      background: 'var(--color-gray-100)', 
+                      background: '#ffffff', 
                       border: `2px solid ${activeImage === img ? 'var(--color-primary)' : 'var(--color-gray-200)'}`,
                       cursor: 'pointer',
                       overflow: 'hidden',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
+                      padding: 6,
                       transition: 'all 0.2s ease',
                     }}>
                     <img
                       src={img}
                       alt={`${product.name} thumbnail ${idx + 1}`}
                       loading="lazy"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = PLACEHOLDER_IMAGE;
                       }}
@@ -150,16 +155,6 @@ export function ProductDetailPage() {
               {product.name}
             </h1>
             
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-              <span style={{ fontSize: 'var(--fs-h1)', fontWeight: 'var(--fw-bold)', color: 'var(--color-dark)' }}>
-                {product.price > 0 ? `₹${product.price.toLocaleString('en-IN')}` : 'Request Quote'}
-              </span>
-              {product.price > 0 && product.originalPrice && (
-                <span style={{ fontSize: 'var(--fs-h4)', color: 'var(--color-gray-400)', textDecoration: 'line-through' }}>
-                  ₹{product.originalPrice.toLocaleString('en-IN')}
-                </span>
-              )}
-            </div>
 
             <p style={{ fontSize: 'var(--fs-body-lg)', color: 'var(--color-gray-600)', lineHeight: 'var(--lh-relaxed)', marginBottom: 'var(--space-8)' }}>
               {product.description || 'High-quality office furniture designed for modern workplaces.'}

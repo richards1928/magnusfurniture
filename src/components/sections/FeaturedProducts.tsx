@@ -217,6 +217,7 @@ export function FeaturedProducts() {
                 >
                   <Link
                     to={`/products/${product.slug}`}
+                    state={{ image: imgSrc }}
                     style={{ textDecoration: 'none', display: 'block' }}
                   >
                     <div style={{
@@ -405,25 +406,13 @@ export function FeaturedProducts() {
                           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                         }}>
                           <div>
-                            {product.originalPrice && (
-                              <div style={{
-                                fontSize: '11px',
-                                color: 'rgba(255,255,255,0.28)',
-                                textDecoration: 'line-through',
-                                marginBottom: 2,
-                              }}>
-                                ₹{product.originalPrice.toLocaleString('en-IN')}
-                              </div>
-                            )}
                             <div style={{
-                              fontSize: product.price > 0 ? '1.05rem' : '0.85rem',
-                              fontWeight: 700,
-                              color: product.price > 0 ? '#D4AF37' : 'rgba(255,255,255,0.55)',
-                              letterSpacing: product.price > 0 ? '-0.01em' : '0.02em',
+                              fontSize: '0.85rem',
+                              fontWeight: 600,
+                              color: '#D4AF37',
+                              letterSpacing: '0.02em',
                             }}>
-                              {product.price > 0
-                                ? `₹${product.price.toLocaleString('en-IN')}`
-                                : 'Request a Quote'}
+                              Request a Quote
                             </div>
                           </div>
 

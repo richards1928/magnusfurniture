@@ -72,7 +72,7 @@ export function CompletedProjects() {
       products: 'Workstations, Chairs, Conference Tables',
       gradient: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
       // Realistic temporary AI reference photo — replace with real project photo when available
-      image: '/assets/projects/project-techstar.webp',
+      image: '/assets/projects/project-techstar.jpg',
     },
     {
       id: 2,
@@ -84,7 +84,7 @@ export function CompletedProjects() {
       products: 'Executive Desks, Cabins, Storage',
       gradient: 'linear-gradient(135deg, #114357 0%, #F29492 100%)',
       // Realistic temporary AI reference photo — replace with real project photo when available
-      image: '/assets/projects/project-greenfield.webp',
+      image: '/assets/projects/project-greenfield.jpg',
     },
     {
       id: 3,
@@ -96,7 +96,7 @@ export function CompletedProjects() {
       products: 'Open Plan, Collaborative Tables',
       gradient: 'linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%)',
       // Realistic temporary AI reference photo — replace with real project photo when available
-      image: '/assets/projects/project-novadesign.webp',
+      image: '/assets/projects/project-novadesign.jpg',
     }
   ];
 
@@ -165,13 +165,11 @@ export function CompletedProjects() {
           >
             <div style={{
               width: '100%',
-              aspectRatio: '16/9',
-              background: project.gradient,
+              height: '240px',
+              backgroundColor: '#111',
               position: 'relative',
-              padding: '16px',
               overflow: 'hidden',
             }}>
-              {/* Temporary catalog image — swap src for real project photo when available */}
               {project.image && (
                 <img
                   src={project.image}
@@ -179,11 +177,13 @@ export function CompletedProjects() {
                   loading="lazy"
                   style={{
                     position: 'absolute',
-                    inset: 0,
+                    top: 0,
+                    left: 0,
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'center',
+                    display: 'block',
                     zIndex: 0,
                   }}
                 />
@@ -192,24 +192,28 @@ export function CompletedProjects() {
               <div style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 100%)',
+                background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 100%)',
                 zIndex: 1,
               }} />
               <div style={{
                 position: 'relative',
                 zIndex: 2,
-                background: 'rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
-                padding: '6px 12px',
-                borderRadius: '20px',
-                display: 'inline-block',
-                fontSize: '0.75rem',
-                fontWeight: 600,
-                color: '#fff',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
+                padding: '16px',
               }}>
-                {project.industry}
+                <div style={{
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  padding: '6px 12px',
+                  borderRadius: '20px',
+                  display: 'inline-block',
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  color: '#fff',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                }}>
+                  {project.industry}
+                </div>
               </div>
             </div>
 
