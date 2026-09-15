@@ -131,9 +131,10 @@ export function PropertiesPanel() {
         <div style={{ fontSize: 16, fontWeight: 700, color: '#f8fafc' }}>
           {selectedComp.name}
         </div>
-        <div style={{ fontSize: 13, color: '#38bdf8', fontWeight: 600, marginTop: 4 }}>
+        {/* Base Price commented out for variable market rates */}
+        {/* <div style={{ fontSize: 13, color: '#38bdf8', fontWeight: 600, marginTop: 4 }}>
           Base Price: ₹{selectedComp.price?.toLocaleString('en-IN')}
-        </div>
+        </div> */}
       </div>
 
       {/* Material Selector */}

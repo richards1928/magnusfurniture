@@ -273,9 +273,10 @@ export function DesignModeBar() {
                     <div style={{ fontSize: 11, color: '#94a3b8' }}>{preset.category}</div>
                   </div>
                 </div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: '#38bdf8' }}>
+                {/* Price commented out for variable market rates */}
+                {/* <div style={{ fontSize: 12, fontWeight: 700, color: '#38bdf8' }}>
                   ₹{preset.price.toLocaleString('en-IN')}
-                </div>
+                </div> */}
               </button>
             ))}
           </div>

@@ -267,7 +267,8 @@ export function Workspace() {
 
         <div style={{ width: 1, height: 24, background: 'rgba(255, 255, 255, 0.12)' }} />
 
-        {/* Total Price Display */}
+        {/* Total Price Display commented out for variable market rates */}
+        {/*
         <div style={{
           display: 'flex',
           flexDirection: 'column',
@@ -284,6 +285,7 @@ export function Workspace() {
         </div>
 
         <div style={{ width: 1, height: 24, background: 'rgba(255, 255, 255, 0.12)' }} />
+        */}
 
         {/* Actions (Save / Load / Share) */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>

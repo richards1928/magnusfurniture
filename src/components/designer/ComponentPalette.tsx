@@ -67,7 +67,9 @@ export function ComponentPalette() {
             </div>
 
             {category.components.map(comp => (
-              <Tooltip key={comp.id} content={`+ Add ${comp.name} (₹${comp.basePrice.toLocaleString('en-IN')})`} position="right">
+              // Price commented out for market rate variations
+              // Original: `+ Add ${comp.name} (₹${comp.basePrice.toLocaleString('en-IN')})`
+              <Tooltip key={comp.id} content={`+ Add ${comp.name}`} position="right">
                 <button
                   onClick={() => addComponent(comp as any)}
                   style={{
@@ -189,9 +191,10 @@ export function ComponentPalette() {
                       <div style={{ fontWeight: 600, fontSize: 14, color: '#f8fafc' }}>
                         {comp.name}
                       </div>
-                      <div style={{ fontSize: 13, color: '#38bdf8', fontWeight: 600, marginTop: 4 }}>
+                      {/* Price commented out for variable market rates */}
+                      {/* <div style={{ fontSize: 13, color: '#38bdf8', fontWeight: 600, marginTop: 4 }}>
                         ₹{comp.basePrice.toLocaleString('en-IN')}
-                      </div>
+                      </div> */}
                     </div>
 
                     <div style={{
