@@ -146,7 +146,7 @@ export function Hero() {
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
-        background: '#0C0A09',
+        background: 'var(--color-walnut-dark, #32140D)',
       }}
     >
       {/* ── Video Background ── */}
@@ -182,11 +182,11 @@ export function Hero() {
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(to right, rgba(12,10,9,0.82) 0%, rgba(12,10,9,0.55) 38%, rgba(12,10,9,0.12) 58%, rgba(12,10,9,0.0) 75%)',
+              'linear-gradient(to right, rgba(50,20,13,0.88) 0%, rgba(50,20,13,0.65) 38%, rgba(50,20,13,0.2) 58%, rgba(50,20,13,0.0) 75%)',
             pointerEvents: 'none',
           }}
         />
-        {/* Subtle bottom vignette */}
+        {/* Subtle bottom vignette into walnut */}
         <div
           style={{
             position: 'absolute',
@@ -194,19 +194,19 @@ export function Hero() {
             left: 0,
             right: 0,
             height: 140,
-            background: 'linear-gradient(to top, rgba(12,10,9,0.55) 0%, transparent 100%)',
+            background: 'linear-gradient(to top, rgba(74,31,18,0.75) 0%, transparent 100%)',
             pointerEvents: 'none',
           }}
         />
       </motion.div>
 
-      {/* Fallback dark bg while video loads */}
+      {/* Fallback dark walnut bg while video loads */}
       <motion.div
         style={{
           position: 'absolute',
           inset: 0,
           background:
-            'linear-gradient(160deg, #1A1612 0%, #2A2219 30%, #1A1612 60%, #0C0A09 100%)',
+            'linear-gradient(160deg, #4A1F12 0%, #5A2919 30%, #4A1F12 60%, #32140D 100%)',
           zIndex: videoReady ? -1 : 0,
         }}
         animate={{ opacity: videoReady ? 0 : 1 }}
@@ -341,8 +341,8 @@ export function Hero() {
                       alignItems: 'center',
                       gap: 10,
                       padding: '15px 34px',
-                      background: '#FFFFFF',
-                      color: '#0C0A09',
+                      background: 'var(--color-accent, #D4AF37)',
+                      color: 'var(--color-walnut-dark, #32140D)',
                       borderRadius: 'var(--radius-full)',
                       fontSize: '0.88rem',
                       fontWeight: 700,
@@ -353,7 +353,7 @@ export function Hero() {
                     }}
                     onMouseEnter={e => {
                       e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)';
-                      e.currentTarget.style.boxShadow = '0 10px 40px rgba(255,255,255,0.18)';
+                      e.currentTarget.style.boxShadow = '0 10px 30px rgba(212,175,55,0.4)';
                     }}
                     onMouseLeave={e => {
                       e.currentTarget.style.transform = 'translateY(0) scale(1)';
@@ -372,8 +372,8 @@ export function Hero() {
                       gap: 10,
                       padding: '15px 34px',
                       background: 'transparent',
-                      color: 'rgba(255,255,255,0.82)',
-                      border: '1px solid rgba(255,255,255,0.22)',
+                      color: 'var(--color-text-cream, #F5F1E8)',
+                      border: '1px solid rgba(212,175,55,0.35)',
                       borderRadius: 'var(--radius-full)',
                       fontSize: '0.88rem',
                       fontWeight: 500,
@@ -383,8 +383,8 @@ export function Hero() {
                       whiteSpace: 'nowrap',
                     }}
                     onMouseEnter={e => {
-                      e.currentTarget.style.background = 'rgba(255,255,255,0.09)';
-                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.42)';
+                      e.currentTarget.style.background = 'rgba(212,175,55,0.1)';
+                      e.currentTarget.style.borderColor = 'rgba(212,175,55,0.6)';
                       e.currentTarget.style.transform = 'translateY(-2px)';
                     }}
                     onMouseLeave={e => {

@@ -1,0 +1,289 @@
+/* ============================================================
+   Magnus Office Furniture — Master Responsive Overhaul
+   Zero horizontal overflow, reflowing grids, touch-friendly UI
+   Breakpoints: 1200px, 992px, 768px, 560px, 480px, 380px
+   ============================================================ */
+
+/* ── Prevent horizontal overflow everywhere ── */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Ensure images and media never breach containers */
+img, video, svg, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Global Container Adjustments ── */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  .section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}
+
+/* ── 1. The Magnus Advantage (WhyChooseUs) ── */
+@media (max-width: 960px) {
+  .wcu-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .wcu-sticky-panel {
+    position: static !important;
+    top: auto !important;
+    max-width: 100% !important;
+  }
+
+  .wcu-sticky-panel p {
+    max-width: 100% !important;
+  }
+
+  .wcu-features {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .wcu-grid {
+    gap: 32px !important;
+  }
+
+  .wcu-features {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .wcu-feature-card {
+    padding: 20px 18px !important;
+  }
+}
+
+/* ── 2. Featured Products ── */
+@media (max-width: 768px) {
+  .featured-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-products-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .featured-tabs-container {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    flex-wrap: nowrap !important;
+    width: 100%;
+  }
+
+  .featured-tabs-container button {
+    flex-shrink: 0 !important;
+  }
+}
+
+/* ── 3. Craftsmanship / Process ── */
+@media (max-width: 960px) {
+  .craft-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .craft-connecting-line {
+    display: none !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .craft-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .craft-card {
+    padding: 24px 20px !important;
+  }
+}
+
+/* ── 4. Workspace Inspiration ── */
+@media (max-width: 768px) {
+  .workspace-insp-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .workspace-stats-bar {
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding: 20px 16px !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .workspace-stat-divider {
+    display: none !important;
+  }
+}
+
+/* ── 5. Company Intro ── */
+@media (max-width: 900px) {
+  .company-intro-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+/* ── 6. Design Your Own Section ── */
+@media (max-width: 960px) {
+  .design-your-own-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .design-preview-box {
+    max-width: 100% !important;
+    min-height: 280px !important;
+  }
+}
+
+/* ── 7. Testimonials Carousel ── */
+@media (max-width: 768px) {
+  .testimonials-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .testimonial-card {
+    padding: 24px 20px !important;
+  }
+}
+
+/* ── 8. Contact Preview / Newsletter ── */
+@media (max-width: 768px) {
+  .contact-preview-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .newsletter-form {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .newsletter-form input {
+    width: 100% !important;
+  }
+
+  .newsletter-form button {
+    width: 100% !important;
+  }
+}
+
+/* ── 9. Navbar & Mobile Menu ── */
+@media (max-width: 768px) {
+  .header-cta-btn {
+    display: none !important;
+  }
+
+  .header-contact-phone {
+    display: none !important;
+  }
+}
+
+/* ── 10. Hero Section ── */
+@media (max-width: 768px) {
+  .hero-content-wrapper {
+    padding-top: 30px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 7vw, 2.8rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-cta-group {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .hero-cta-group a,
+  .hero-cta-group button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .hero-stats-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+/* ── 11. Custom Furniture Page ── */
+@media (max-width: 900px) {
+  .custom-furniture-builder-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── 12. Products Page & Detail Page ── */
+@media (max-width: 960px) {
+  .products-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .products-filter-sidebar {
+    display: none !important;
+  }
+
+  .product-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* ── 13. General Utility for safe horizontal bounds ── */
+.no-x-overflow {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+.flex-wrap-mobile {
+  flex-wrap: wrap !important;
+}

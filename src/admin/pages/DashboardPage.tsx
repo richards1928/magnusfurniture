@@ -62,10 +62,10 @@ export function DashboardPage() {
             <a key={action.label} href={action.href} style={{
               padding: '10px 20px', borderRadius: 10,
               border: '1px solid #E5E5E5', background: '#fff',
-              fontSize: 13, fontWeight: 600, color: '#3E2723',
+              fontSize: 13, fontWeight: 600, color: '#5A321C',
               textDecoration: 'none', transition: 'all 0.2s ease',
             }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = '#3E2723'; e.currentTarget.style.background = 'rgba(62,39,35,0.03)'; }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = '#5A321C'; e.currentTarget.style.background = 'rgba(90,50,28,0.03)'; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = '#E5E5E5'; e.currentTarget.style.background = '#fff'; }}
             >{action.label}</a>
           ))}

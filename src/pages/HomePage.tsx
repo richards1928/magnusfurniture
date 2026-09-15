@@ -3,7 +3,7 @@ import { FeaturedProducts } from '../components/sections/FeaturedProducts';
 import { WhyChooseUs } from '../components/sections/WhyChooseUs';
 import { Craftsmanship } from '../components/sections/Craftsmanship';
 import { WorkspaceInspiration } from '../components/sections/WorkspaceInspiration';
-import { CompletedProjects } from '../components/sections/CompletedProjects';
+// import { CompletedProjects } from '../components/sections/CompletedProjects';
 import { DesignYourOwn } from '../components/sections/DesignYourOwn';
 import { TestimonialsCarousel } from '../components/sections/TestimonialsCarousel';
 import { Newsletter } from '../components/sections/Newsletter';
@@ -26,8 +26,8 @@ export function HomePage() {
       {/* 5. Workspace Inspiration */}
       <WorkspaceInspiration />
 
-      {/* 6. Completed Projects */}
-      <CompletedProjects />
+      {/* 6. Completed Projects - temporarily disabled */}
+      {/* <CompletedProjects /> */}
 
       {/* 7. Workspace Designer CTA */}
       <DesignYourOwn />

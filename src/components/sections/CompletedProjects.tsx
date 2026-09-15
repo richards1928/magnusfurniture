@@ -6,9 +6,9 @@ export function CompletedProjects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const containerStyle: React.CSSProperties = {
-    backgroundColor: '#080604',
+    backgroundColor: 'var(--color-walnut, #4A1F12)',
     padding: '80px 20px',
-    color: '#ffffff',
+    color: 'var(--color-text-cream, #F5F1E8)',
     fontFamily: '"Inter", sans-serif',
     display: 'flex',
     flexDirection: 'column',
@@ -36,10 +36,11 @@ export function CompletedProjects() {
     fontWeight: 700,
     marginBottom: '20px',
     lineHeight: 1.2,
+    color: 'var(--color-text-cream, #F5F1E8)',
   };
 
   const subtitleStyle: React.CSSProperties = {
-    color: '#a0a0a0',
+    color: 'var(--color-text-muted-warm, #C8BDB3)',
     fontSize: '1.1rem',
     lineHeight: 1.6,
   };
@@ -70,7 +71,7 @@ export function CompletedProjects() {
       seats: '120 Seats',
       timeline: '6 Weeks',
       products: 'Workstations, Chairs, Conference Tables',
-      gradient: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
+      gradient: 'linear-gradient(135deg, #5A2919 0%, #32140D 100%)',
       // Realistic temporary AI reference photo — replace with real project photo when available
       image: '/assets/projects/project-techstar.jpg',
     },
@@ -82,7 +83,7 @@ export function CompletedProjects() {
       seats: '45 Seats',
       timeline: '3 Weeks',
       products: 'Executive Desks, Cabins, Storage',
-      gradient: 'linear-gradient(135deg, #114357 0%, #F29492 100%)',
+      gradient: 'linear-gradient(135deg, #6B3522 0%, #4A1F12 100%)',
       // Realistic temporary AI reference photo — replace with real project photo when available
       image: '/assets/projects/project-greenfield.jpg',
     },
@@ -94,7 +95,7 @@ export function CompletedProjects() {
       seats: '30 Seats',
       timeline: '2 Weeks',
       products: 'Open Plan, Collaborative Tables',
-      gradient: 'linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%)',
+      gradient: 'linear-gradient(135deg, #5A2919 0%, #1E0D08 100%)',
       // Realistic temporary AI reference photo — replace with real project photo when available
       image: '/assets/projects/project-novadesign.jpg',
     }
@@ -151,14 +152,14 @@ export function CompletedProjects() {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             style={{
-              backgroundColor: 'rgba(255,255,255,0.02)',
+              backgroundColor: 'var(--color-walnut-light, #5A2919)',
               borderRadius: '16px',
               border: '1px solid',
-              borderColor: hoveredIndex === index ? 'rgba(212, 175, 55, 0.4)' : 'rgba(255, 255, 255, 0.05)',
+              borderColor: hoveredIndex === index ? 'rgba(212, 175, 55, 0.5)' : 'rgba(212, 175, 55, 0.15)',
               overflow: 'hidden',
               display: 'flex',
               flexDirection: 'column',
-              boxShadow: hoveredIndex === index ? '0 10px 40px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.1)' : 'none',
+              boxShadow: hoveredIndex === index ? '0 10px 40px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.15)' : '0 4px 20px rgba(0,0,0,0.25)',
               transform: hoveredIndex === index ? 'translateY(-8px)' : 'translateY(0)',
               transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
             }}

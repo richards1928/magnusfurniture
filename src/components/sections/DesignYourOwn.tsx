@@ -6,7 +6,7 @@ import customDeskImage from '../../assets/products/mdTables/vb-alaska.webp';
 export function DesignYourOwn() {
   return (
     <section style={{
-      background: 'radial-gradient(circle at 50% 0%, #2A1D1A 0%, #150E0C 60%, #0A0706 100%)',
+      background: 'radial-gradient(circle at 50% 0%, #5A2919 0%, #4A1F12 50%, #32140D 100%)',
       padding: 'var(--space-24) 0',
       position: 'relative',
       overflow: 'hidden',
@@ -104,7 +104,7 @@ export function DesignYourOwn() {
                   gap: 10,
                   padding: '16px 36px',
                   background: 'linear-gradient(135deg, var(--color-accent) 0%, #b8932b 100%)',
-                  color: 'var(--color-dark)',
+                  color: 'var(--color-walnut-dark, #32140D)',
                   borderRadius: 'var(--radius-full)',
                   fontSize: '0.95rem',
                   fontWeight: 'var(--fw-bold)',
@@ -128,7 +128,7 @@ export function DesignYourOwn() {
             ].map((f) => {
               const FIcon = f.icon;
               return (
-                <div key={f.title} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: 'var(--radius-lg)', padding: 'var(--space-3) var(--space-4)' }}>
+                <div key={f.title} style={{ background: 'rgba(90, 41, 25, 0.45)', border: '1px solid rgba(212, 175, 55, 0.18)', borderRadius: 'var(--radius-lg)', padding: 'var(--space-3) var(--space-4)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 'var(--fs-xs)', color: 'var(--color-accent)', fontWeight: 'bold', marginBottom: 2 }}>
                     <FIcon size={13} /> {f.title}
                   </div>

@@ -37,7 +37,7 @@ export function FormField({ label, type = 'text', value, onChange, placeholder, 
           required={required}
           rows={rows}
           style={{ ...inputStyle, resize: 'vertical', minHeight: 100 }}
-          onFocus={e => e.currentTarget.style.borderColor = '#3E2723'}
+          onFocus={e => e.currentTarget.style.borderColor = '#5A321C'}
           onBlur={e => e.currentTarget.style.borderColor = '#E5E5E5'}
         />
       ) : type === 'select' ? (
@@ -60,7 +60,7 @@ export function FormField({ label, type = 'text', value, onChange, placeholder, 
           placeholder={placeholder}
           required={required}
           style={inputStyle}
-          onFocus={e => e.currentTarget.style.borderColor = '#3E2723'}
+          onFocus={e => e.currentTarget.style.borderColor = '#5A321C'}
           onBlur={e => e.currentTarget.style.borderColor = '#E5E5E5'}
         />
       )}

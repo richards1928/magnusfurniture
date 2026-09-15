@@ -68,7 +68,7 @@ export const ContactPage = () => (
         </h3>
         
         {/* Google Rating Badge */}
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 12px', borderRadius: 'var(--radius-full)', background: 'var(--color-primary-bg)', color: 'var(--color-primary)', border: '1px solid rgba(62, 39, 35, 0.1)', marginBottom: 'var(--space-6)' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 12px', borderRadius: 'var(--radius-full)', background: 'var(--color-primary-bg)', color: 'var(--color-primary)', border: '1px solid rgba(90, 50, 28, 0.1)', marginBottom: 'var(--space-6)' }}>
           <Star size={16} fill="var(--color-accent)" stroke="var(--color-accent)" />
           <span style={{ fontWeight: 'var(--fw-bold)' }}>4.9 / 5</span>
           <span style={{ color: 'var(--color-gray-500)', fontSize: 'var(--fs-small)' }}>Based on 17 Google Reviews</span>
@@ -79,7 +79,7 @@ export const ContactPage = () => (
             <div style={{ fontSize: 'var(--fs-xs)', textTransform: 'uppercase', color: 'var(--color-gray-400)', letterSpacing: 'var(--ls-wider)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
               <MapPin size={14} color="var(--color-primary)" /> Visit Our Showroom
             </div>
-            <div style={{ color: 'var(--color-dark)', lineHeight: 'var(--lh-relaxed)' }}>
+            <div style={{ color: 'var(--color-gray-700)', lineHeight: 'var(--lh-relaxed)' }}>
               BP Raju Marg, M R Elite, 3rd Floor,<br />
               Above BKP Homes, Opposite Sarath City,<br />
               Ratnadeep Right Side Lane, Kondapur,<br />
@@ -177,19 +177,19 @@ export const ContactPage = () => (
             borderRadius: 20,
             border: '1px solid rgba(212,175,55,0.30)',
             boxShadow:
-              '0 2px 6px rgba(62,39,35,0.04), 0 10px 32px rgba(62,39,35,0.10), 0 0 0 1px rgba(212,175,55,0.06)',
+              '0 2px 6px rgba(90,50,28,0.04), 0 10px 32px rgba(90,50,28,0.10), 0 0 0 1px rgba(212,175,55,0.06)',
             overflow: 'hidden',
             display: 'flex',
             flexDirection: 'column',
             transition:
               'border-color 400ms var(--ease-in-out), box-shadow 400ms var(--ease-in-out), transform 400ms var(--ease-in-out)',
-            background: '#fff',
+            background: 'var(--color-walnut-light, #5A2919)',
           }}
           onMouseEnter={(e) => {
             const el = e.currentTarget as HTMLDivElement;
             el.style.borderColor = 'rgba(212,175,55,0.72)';
             el.style.boxShadow =
-              '0 4px 12px rgba(62,39,35,0.06), 0 22px 55px rgba(62,39,35,0.18), 0 0 0 1px rgba(212,175,55,0.18)';
+              '0 4px 12px rgba(90,50,28,0.06), 0 22px 55px rgba(90,50,28,0.18), 0 0 0 1px rgba(212,175,55,0.18)';
             el.style.transform = 'translateY(-4px)';
             const dirLink = el.querySelector<HTMLElement>('.map-dir-link');
             if (dirLink) dirLink.style.color = '#D4AF37';
@@ -198,7 +198,7 @@ export const ContactPage = () => (
             const el = e.currentTarget as HTMLDivElement;
             el.style.borderColor = 'rgba(212,175,55,0.30)';
             el.style.boxShadow =
-              '0 2px 6px rgba(62,39,35,0.04), 0 10px 32px rgba(62,39,35,0.10), 0 0 0 1px rgba(212,175,55,0.06)';
+              '0 2px 6px rgba(90,50,28,0.04), 0 10px 32px rgba(90,50,28,0.10), 0 0 0 1px rgba(212,175,55,0.06)';
             el.style.transform = 'translateY(0)';
             const dirLink = el.querySelector<HTMLElement>('.map-dir-link');
             if (dirLink) dirLink.style.color = 'var(--color-primary)';
@@ -207,7 +207,7 @@ export const ContactPage = () => (
 
           {/* ── Header: Walnut Charcoal ── */}
           <div style={{
-            background: 'linear-gradient(135deg, #130f0c 0%, #1e1814 60%, #2a2118 100%)',
+            background: 'linear-gradient(135deg, #32140D 0%, #4A1F12 60%, #5A2919 100%)',
             borderBottom: '1px solid rgba(212,175,55,0.18)',
             padding: '14px 18px',
             display: 'flex',
@@ -307,7 +307,7 @@ export const ContactPage = () => (
               justifyContent: 'space-between',
               gap: 12,
               padding: '13px 18px',
-              background: '#FDFCF8',
+              background: 'var(--color-walnut-surface, #3E1A0F)',
               borderTop: '1px solid rgba(212,175,55,0.14)',
               textDecoration: 'none',
               flexShrink: 0,
@@ -318,7 +318,7 @@ export const ContactPage = () => (
                 fontFamily: 'var(--font-heading)',
                 fontSize: '0.82rem',
                 fontWeight: 600,
-                color: 'var(--color-dark)',
+                color: 'var(--color-text-cream, #F5F1E8)',
                 lineHeight: 1.3,
                 marginBottom: 2,
               }}>
@@ -380,7 +380,7 @@ export const ContactPage = () => (
             <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
               <span style={{ color: 'var(--color-accent)', fontWeight: 'bold', fontSize: 18, marginTop: -2 }}>•</span>
               <div>
-                <div style={{ fontWeight: 'var(--fw-semibold)', color: 'var(--color-dark)', fontSize: 'var(--fs-body)' }}>{item.title}</div>
+                <div style={{ fontWeight: 'var(--fw-semibold)', color: 'var(--color-text-cream, #F5F1E8)', fontSize: 'var(--fs-body)' }}>{item.title}</div>
                 <div style={{ color: 'var(--color-gray-500)', fontSize: 'var(--fs-small)' }}>{item.desc}</div>
               </div>
             </li>
@@ -405,7 +405,7 @@ export const ContactPage = () => (
                 <CheckCircle2 size={16} color="var(--color-success)" />
               </span>
               <div>
-                <div style={{ fontWeight: 'var(--fw-semibold)', color: 'var(--color-dark)', fontSize: 'var(--fs-body)' }}>{item.title}</div>
+                <div style={{ fontWeight: 'var(--fw-semibold)', color: 'var(--color-text-cream, #F5F1E8)', fontSize: 'var(--fs-body)' }}>{item.title}</div>
                 <div style={{ color: 'var(--color-gray-500)', fontSize: 'var(--fs-small)', marginTop: 2 }}>{item.desc}</div>
               </div>
             </li>
@@ -420,7 +420,7 @@ export const ContactPage = () => (
     {/* CUSTOMER REVIEWS */}
     <div style={{ marginBottom: 'var(--space-12)' }}>
       <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
-        <h3 style={{ fontSize: 'var(--fs-h3)', fontFamily: 'var(--font-heading)', color: 'var(--color-dark)', marginBottom: 'var(--space-2)' }}>
+        <h3 style={{ fontSize: 'var(--fs-h3)', fontFamily: 'var(--font-heading)', color: 'var(--color-text-cream, #F5F1E8)', marginBottom: 'var(--space-2)' }}>
           Verified Google Reviews
         </h3>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 8, fontSize: 'var(--fs-body)' }}>
@@ -480,7 +480,7 @@ export const ContactPage = () => (
                 {rev.name.charAt(0)}
               </div>
               <div>
-                <div style={{ fontWeight: 'var(--fw-semibold)', color: 'var(--color-dark)', fontSize: 'var(--fs-small)' }}>{rev.name}</div>
+                <div style={{ fontWeight: 'var(--fw-semibold)', color: 'var(--color-text-cream, #F5F1E8)', fontSize: 'var(--fs-small)' }}>{rev.name}</div>
                 <div style={{ color: 'var(--color-gray-400)', fontSize: 11 }}>Verified Google Reviewer</div>
               </div>
             </div>

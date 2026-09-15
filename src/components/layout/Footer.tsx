@@ -82,7 +82,7 @@ function NavLink({ to, children }: { to: string; children: React.ReactNode }) {
           display: 'block',
           fontSize: '0.975rem',
           lineHeight: 1,
-          color: hov ? '#D4AF37' : 'rgba(255,255,255,0.65)',
+          color: hov ? '#D4AF37' : '#C8BDB3',
           transform: hov ? 'translateX(4px)' : 'translateX(0)',
           transition: 'color 0.2s ease, transform 0.2s ease',
           textDecoration: 'none',
@@ -112,7 +112,7 @@ function ContactLine({
     gap: 14,
     fontSize: '0.95rem',
     lineHeight: 1.7,
-    color: hov && href ? '#D4AF37' : 'rgba(255,255,255,0.62)',
+    color: hov && href ? '#D4AF37' : '#C8BDB3',
     textDecoration: 'none',
     transition: 'color 0.2s ease',
     cursor: href ? 'pointer' : 'default',
@@ -246,8 +246,8 @@ export function Footer() {
       {/* ════════════════════════════════════════════════════════ */}
       <footer
         style={{
-          background: '#0e0e0e',
-          color: 'rgba(255,255,255,0.62)',
+          background: 'var(--color-walnut-dark, #32140D)',
+          color: '#C8BDB3',
           borderTop: '1px solid rgba(212,175,55,0.22)',
           position: 'relative',
           overflow: 'hidden',
@@ -261,7 +261,7 @@ export function Footer() {
             inset: 0,
             background:
               'radial-gradient(ellipse 80% 260px at 50% 0%,' +
-              'rgba(212,175,55,0.055) 0%,transparent 70%)',
+              'rgba(212,175,55,0.06) 0%,transparent 70%)',
             pointerEvents: 'none',
           }}
         />
@@ -286,7 +286,7 @@ export function Footer() {
             className="mf-col-brand"
             style={{
               paddingRight: 'clamp(20px, 4vw, 60px)',
-              borderRight: '1px solid rgba(255,255,255,0.07)',
+              borderRight: '1px solid rgba(212,175,55,0.12)',
             }}
           >
             {/* Wordmark */}
@@ -299,7 +299,7 @@ export function Footer() {
               style={{
                 fontSize: '0.975rem',
                 lineHeight: 1.8,
-                color: 'rgba(255,255,255,0.5)',
+                color: '#C8BDB3',
                 maxWidth: 340,
                 marginBottom: 40,
               }}
@@ -366,7 +366,7 @@ export function Footer() {
             className="mf-col-links"
             style={{
               paddingRight: 'clamp(16px, 3vw, 48px)',
-              borderRight: '1px solid rgba(255,255,255,0.07)',
+              borderRight: '1px solid rgba(212,175,55,0.12)',
             }}
           >
             <ColHeading>Quick Links</ColHeading>
@@ -605,7 +605,7 @@ export function Footer() {
           height: 44,
           borderRadius: '50%',
           background: '#D4AF37',
-          color: '#111',
+          color: 'var(--color-walnut-dark, #32140D)',
           border: 'none',
           display: 'flex',
           alignItems: 'center',

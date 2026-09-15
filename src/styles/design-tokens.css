@@ -4,28 +4,43 @@
    ============================================================ */
 
 :root {
-  /* ── Brand Colors ── */
-  --color-primary: #3E2723; /* Walnut Charcoal */
-  --color-primary-light: #5D4037;
-  --color-primary-dark: #1B0000;
-  --color-primary-bg: rgba(62, 39, 35, 0.05);
+  /* ── Walnut Brand Palette ── */
+  --color-walnut: #4A1F12;
+  --color-walnut-dark: #32140D;
+  --color-walnut-deep: #1E0D08;
+  --color-walnut-light: #5A2919;
+  --color-walnut-lighter: #6B3522;
+  --color-walnut-surface: #3E1A0F;
+  --color-walnut-card: rgba(90, 41, 25, 0.35);
+  --color-walnut-glass: rgba(74, 31, 18, 0.6);
+  --color-walnut-glow: rgba(74, 31, 18, 0.15);
+
+  /* ── Brand Colors (mapped to walnut) ── */
+  --color-primary: #4A1F12;
+  --color-primary-light: #5A2919;
+  --color-primary-dark: #32140D;
+  --color-primary-bg: rgba(74, 31, 18, 0.08);
 
   --color-accent: #D4AF37; /* Champagne Gold */
   --color-accent-light: #F3E5AB;
+  --color-accent-dark: #b8932b;
 
-  --color-dark: #1A1A1A;
-  --color-charcoal: #222222;
-  --color-gray-900: #333333;
-  --color-gray-700: #555555;
-  --color-gray-500: #888888;
-  --color-gray-400: #AAAAAA;
-  --color-gray-300: #D4D4D4;
-  --color-gray-200: #EBEBEB;
-  --color-gray-100: #F7F5F2;
+  --color-dark: #1E0D08;
+  --color-charcoal: #2A1610;
+  --color-gray-900: #3A2218;
+  --color-gray-700: #6B5A50;
+  --color-gray-500: #8A7A70;
+  --color-gray-400: #A89888;
+  --color-gray-300: #C8BDB3;
+  --color-gray-200: #E0D8D0;
+  --color-gray-100: #F0EAE4;
 
-  --color-cream: #FFFDF8; /* Warm Ivory */
-  --color-warm-white: #FFFCF7;
+  --color-cream: #F5F1E8;
+  --color-warm-white: #F5F1E8;
   --color-white: #FFFFFF;
+
+  --color-text-cream: #F5F1E8;
+  --color-text-muted-warm: #C8BDB3;
 
   --color-success: #2D8A4E;
   --color-error: #C0392B;

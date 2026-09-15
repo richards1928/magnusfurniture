@@ -46,7 +46,7 @@ export function WhyChooseUs() {
 
   return (
     <section style={{
-      background: '#0A0806',
+      background: 'var(--color-walnut-dark, #32140D)',
       padding: '120px 0 140px',
       position: 'relative',
       overflow: 'hidden',
@@ -66,15 +66,19 @@ export function WhyChooseUs() {
       }} />
 
       <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 clamp(20px, 5vw, 80px)' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'clamp(260px, 28%, 360px) 1fr',
-          gap: 80,
-          alignItems: 'start',
-        }}>
+        <div
+          className="wcu-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'clamp(260px, 28%, 360px) 1fr',
+            gap: 80,
+            alignItems: 'start',
+          }}
+        >
 
           {/* ── Left Sticky Heading ─────────────────────────────────────── */}
           <motion.div
+            className="wcu-sticky-panel"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -138,17 +142,21 @@ export function WhyChooseUs() {
           </motion.div>
 
           {/* ── Right Features Grid ─────────────────────────────────────── */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: 20,
-          }}>
+          <div
+            className="wcu-features"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: 20,
+            }}
+          >
             {features.map((feature, i) => {
               const Icon = feature.icon;
               const isH = hovered === i;
               return (
                 <motion.div
                   key={feature.title}
+                  className="wcu-feature-card"
                   initial={{ opacity: 0, y: 28 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -157,9 +165,9 @@ export function WhyChooseUs() {
                   onMouseLeave={() => setHovered(null)}
                   style={{
                     padding: '28px 26px',
-                    background: '#141210',
+                    background: 'var(--color-walnut-light, #5A2919)',
                     borderRadius: 18,
-                    border: isH ? '1px solid rgba(212,175,55,0.35)' : '1px solid rgba(255,255,255,0.06)',
+                    border: isH ? '1px solid rgba(212,175,55,0.45)' : '1px solid rgba(212,175,55,0.15)',
                     boxShadow: isH ? '0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,175,55,0.1)' : '0 4px 20px rgba(0,0,0,0.25)',
                     transform: isH ? 'translateY(-5px)' : 'translateY(0)',
                     transition: 'all 0.35s cubic-bezier(0.22,1,0.36,1)',
@@ -182,7 +190,7 @@ export function WhyChooseUs() {
                   <h3 style={{
                     fontFamily: 'var(--font-heading, "Outfit", sans-serif)',
                     fontSize: '1rem', fontWeight: 700,
-                    color: isH ? '#EDD98A' : '#FFFFFF',
+                    color: isH ? '#EDD98A' : 'var(--color-text-cream, #F5F1E8)',
                     marginBottom: 10,
                     transition: 'color 0.25s ease',
                   }}>
@@ -190,7 +198,7 @@ export function WhyChooseUs() {
                   </h3>
 
                   <p style={{
-                    fontSize: '0.82rem', color: 'rgba(255,255,255,0.42)',
+                    fontSize: '0.82rem', color: 'var(--color-text-muted-warm, #C8BDB3)',
                     lineHeight: 1.75,
                   }}>
                     {feature.desc}

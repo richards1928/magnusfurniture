@@ -52,7 +52,7 @@ export function FeaturedProducts() {
 
   return (
     <section style={{
-      background: '#420D09',
+      background: 'var(--color-walnut, #4A1F12)',
       padding: '120px 0 140px',
       position: 'relative',
       overflow: 'hidden',
@@ -62,13 +62,13 @@ export function FeaturedProducts() {
       <div style={{
         position: 'absolute', top: '-10%', left: '-5%',
         width: 600, height: 600, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
       <div style={{
         position: 'absolute', bottom: '-5%', right: '-5%',
         width: 500, height: 500, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(192,132,252,0.04) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(212,175,55,0.04) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 
@@ -145,10 +145,13 @@ export function FeaturedProducts() {
           </div>
 
           {/* ── Category Filter Tabs ───────────────────────────────────── */}
-          <div style={{
-            marginTop: 48,
-            display: 'flex', gap: 10, flexWrap: 'wrap',
-          }}>
+          <div
+            className="featured-tabs-container"
+            style={{
+              marginTop: 48,
+              display: 'flex', gap: 10, flexWrap: 'wrap',
+            }}
+          >
             {tabs.map(tab => (
               <button
                 key={tab}
@@ -157,12 +160,12 @@ export function FeaturedProducts() {
                   padding: '9px 22px',
                   borderRadius: 100,
                   border: activeTab === tab
-                    ? '1px solid rgba(212,175,55,0.7)'
-                    : '1px solid rgba(255,255,255,0.1)',
+                    ? '1px solid #D4AF37'
+                    : '1px solid rgba(212,175,55,0.18)',
                   background: activeTab === tab
-                    ? 'rgba(212,175,55,0.12)'
-                    : 'rgba(255,255,255,0.03)',
-                  color: activeTab === tab ? '#D4AF37' : 'rgba(255,255,255,0.48)',
+                    ? '#D4AF37'
+                    : 'rgba(90, 41, 25, 0.4)',
+                  color: activeTab === tab ? 'var(--color-walnut-dark, #32140D)' : '#C8BDB3',
                   fontSize: '0.8rem', fontWeight: 600,
                   letterSpacing: '0.08em',
                   cursor: 'pointer',
@@ -171,14 +174,14 @@ export function FeaturedProducts() {
                 }}
                 onMouseEnter={e => {
                   if (activeTab !== tab) {
-                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.22)';
-                    (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.75)';
+                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,175,55,0.4)';
+                    (e.currentTarget as HTMLElement).style.color = '#F5F1E8';
                   }
                 }}
                 onMouseLeave={e => {
                   if (activeTab !== tab) {
-                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.1)';
-                    (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.48)';
+                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,175,55,0.18)';
+                    (e.currentTarget as HTMLElement).style.color = '#C8BDB3';
                   }
                 }}
               >
@@ -192,6 +195,7 @@ export function FeaturedProducts() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
+            className="featured-products-grid"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
@@ -223,22 +227,22 @@ export function FeaturedProducts() {
                     <div style={{
                       borderRadius: 20,
                       overflow: 'hidden',
-                      background: '#18160f',
+                      background: 'var(--color-walnut-light, #5A2919)',
                       border: isHovered
-                        ? '1px solid rgba(212,175,55,0.3)'
-                        : '1px solid rgba(255,255,255,0.06)',
+                        ? '1px solid rgba(212,175,55,0.5)'
+                        : '1px solid rgba(212,175,55,0.15)',
                       transition: 'border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease',
                       transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
                       boxShadow: isHovered
-                        ? '0 24px 60px rgba(0,0,0,0.55), 0 0 0 0 transparent'
-                        : '0 4px 20px rgba(0,0,0,0.3)',
+                        ? '0 24px 60px rgba(0,0,0,0.55)'
+                        : '0 4px 20px rgba(0,0,0,0.25)',
                     }}>
 
                       {/* ── Image Area ───────────────────────────────── */}
                       <div style={{
                         position: 'relative',
                         height: 240,
-                        background: '#1a1710',
+                        background: 'var(--color-walnut-surface, #3E1A0F)',
                         overflow: 'hidden',
                       }}>
                         {imgSrc ? (
@@ -372,27 +376,6 @@ export function FeaturedProducts() {
                         }}>
                           {product.shortDescription || product.description?.slice(0, 90) + '…'}
                         </p>
-
-                        {/* Features pills */}
-                        {product.features?.length > 0 && (
-                          <div style={{
-                            display: 'flex', gap: 6, flexWrap: 'wrap',
-                            marginBottom: 18,
-                          }}>
-                            {product.features.slice(0, 2).map((f, fi) => (
-                              <span key={fi} style={{
-                                padding: '3px 10px',
-                                background: 'rgba(255,255,255,0.05)',
-                                border: '1px solid rgba(255,255,255,0.08)',
-                                borderRadius: 100,
-                                fontSize: '10px', color: 'rgba(255,255,255,0.45)',
-                                letterSpacing: '0.04em',
-                              }}>
-                                {f}
-                              </span>
-                            ))}
-                          </div>
-                        )}
 
                         {/* Divider */}
                         <div style={{

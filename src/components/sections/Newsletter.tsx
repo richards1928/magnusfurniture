@@ -20,7 +20,7 @@ export function Newsletter() {
 
   return (
     <section style={{
-      background: '#0F0D0B',
+      background: 'var(--color-walnut, #4A1F12)',
       padding: '120px 0 140px',
       position: 'relative',
       overflow: 'hidden',
@@ -133,6 +133,7 @@ export function Newsletter() {
             ) : (
               <motion.form
                 key="form"
+                className="newsletter-form"
                 onSubmit={handleSubmit}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -140,13 +141,13 @@ export function Newsletter() {
                 style={{
                   display: 'flex',
                   gap: 0,
-                  background: '#1A1712',
+                  background: 'var(--color-walnut-dark, #32140D)',
                   borderRadius: 100,
                   padding: 6,
                   border: focused
-                    ? '1px solid rgba(212,175,55,0.5)'
-                    : '1px solid rgba(255,255,255,0.1)',
-                  boxShadow: focused ? '0 0 0 4px rgba(212,175,55,0.08)' : 'none',
+                    ? '1px solid rgba(212,175,55,0.6)'
+                    : '1px solid rgba(212,175,55,0.2)',
+                  boxShadow: focused ? '0 0 0 4px rgba(212,175,55,0.1)' : 'none',
                   transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
                   marginBottom: 36,
                 }}
@@ -163,7 +164,7 @@ export function Newsletter() {
                     flex: 1, border: 'none', outline: 'none',
                     background: 'transparent',
                     padding: '14px 24px',
-                    fontSize: '0.9rem', color: '#FFFFFF',
+                    fontSize: '0.9rem', color: 'var(--color-text-cream, #F5F1E8)',
                     fontFamily: 'var(--font-body, "Inter", sans-serif)',
                   }}
                 />
@@ -174,7 +175,7 @@ export function Newsletter() {
                     padding: '14px 28px',
                     background: 'linear-gradient(135deg, #D4AF37 0%, #EDD98A 50%, #D4AF37 100%)',
                     backgroundSize: '200% 100%',
-                    color: '#0C0A09',
+                    color: 'var(--color-walnut-dark, #32140D)',
                     borderRadius: 100,
                     fontSize: '0.82rem', fontWeight: 700,
                     letterSpacing: '0.08em', textTransform: 'uppercase',

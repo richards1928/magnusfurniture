@@ -184,11 +184,11 @@ export function PrivacyPolicyPage() {
         <div
           style={{
             marginTop: 16,
-            background: '#fff',
+            background: 'var(--color-walnut-light, #5A2919)',
             border: '1px solid rgba(212,175,55,0.20)',
             borderRadius: 16,
             padding: '32px 36px',
-            boxShadow: '0 4px 24px rgba(62,39,35,0.06)',
+            boxShadow: '0 4px 24px rgba(90,50,28,0.06)',
           }}
         >
           <p style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#D4AF37', marginBottom: 10 }}>

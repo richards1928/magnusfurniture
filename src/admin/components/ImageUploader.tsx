@@ -73,8 +73,8 @@ export function ImageUploader({ images, onChange, maxImages = 6 }: ImageUploader
           onDrop={e => { e.preventDefault(); setDragOver(false); handleFiles(e.dataTransfer.files); }}
           style={{
             padding: 32, borderRadius: 12,
-            border: `2px dashed ${dragOver ? '#3E2723' : '#D4D4D4'}`,
-            background: dragOver ? 'rgba(62,39,35,0.03)' : '#FAFAFA',
+            border: `2px dashed ${dragOver ? '#5A321C' : '#D4D4D4'}`,
+            background: dragOver ? 'rgba(90,50,28,0.03)' : '#FAFAFA',
             textAlign: 'center', cursor: 'pointer',
             transition: 'all 0.2s ease',
           }}

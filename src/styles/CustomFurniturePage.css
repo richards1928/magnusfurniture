@@ -42,7 +42,7 @@
   transform: translateX(-50%);
   width: 750px;
   height: 450px;
-  background: radial-gradient(ellipse, rgba(212, 175, 55, 0.15) 0%, rgba(62, 39, 35, 0.05) 50%, transparent 75%);
+  background: radial-gradient(ellipse, rgba(212, 175, 55, 0.15) 0%, rgba(90, 50, 28, 0.05) 50%, transparent 75%);
   filter: blur(70px);
   pointer-events: none;
 }
@@ -124,7 +124,7 @@
 
 .pillar-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(62, 39, 35, 0.08);
+  box-shadow: 0 20px 40px rgba(90, 50, 28, 0.08);
   border-color: rgba(212, 175, 55, 0.4);
 }
 

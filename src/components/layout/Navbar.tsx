@@ -38,13 +38,11 @@ export function Navbar() {
         right: 0,
         height: 'var(--nav-height)',
         zIndex: 'var(--z-sticky)',
-        background: isScrolled
-          ? 'rgba(255, 253, 248, 0.97)'
-          : 'rgba(255, 253, 248, 0.92)',
+        background: '#FFFFFF',
         backdropFilter: 'blur(16px) saturate(180%)',
-        borderBottom: '1px solid rgba(0,0,0,0.07)',
+        borderBottom: isScrolled ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(0, 0, 0, 0.05)',
         transition: 'all var(--duration-normal) var(--ease-in-out)',
-        boxShadow: isScrolled ? '0 4px 30px rgba(0, 0, 0, 0.06)' : '0 1px 12px rgba(0,0,0,0.04)',
+        boxShadow: isScrolled ? '0 2px 20px rgba(0, 0, 0, 0.08)' : 'none',
       }}>
         <div className="container" style={{
           display: 'flex',
@@ -73,7 +71,7 @@ export function Navbar() {
                   style={{
                     fontSize: 'var(--fs-small)',
                     fontWeight: isActive ? 'var(--fw-semibold)' : 'var(--fw-medium)',
-                    color: isActive ? 'var(--color-primary)' : 'var(--color-gray-700)',
+                    color: isActive ? '#D4AF37' : '#32140D',
                     textDecoration: 'none',
                     position: 'relative',
                     paddingBottom: 4,
@@ -90,7 +88,7 @@ export function Navbar() {
                         left: 0,
                         right: 0,
                         height: 2,
-                        background: 'var(--color-primary)',
+                        background: 'var(--color-accent)',
                         borderRadius: 1,
                       }}
                     />
@@ -111,20 +109,20 @@ export function Navbar() {
                 gap: 'var(--space-2)',
                 fontSize: 'var(--fs-small)',
                 fontWeight: 'var(--fw-semibold)',
-                color: '#fff',
-                background: 'var(--color-dark)',
+                color: 'var(--color-walnut-dark)',
+                background: 'var(--color-accent)',
                 padding: '10px 24px',
                 borderRadius: 'var(--radius-full)',
                 transition: 'all var(--duration-fast) var(--ease-in-out)',
-                boxShadow: 'var(--shadow-sm)',
+                boxShadow: '0 2px 10px rgba(212, 175, 55, 0.3)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'scale(1.02)';
-                e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(212, 175, 55, 0.45)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+                e.currentTarget.style.boxShadow = '0 2px 10px rgba(212, 175, 55, 0.3)';
               }}
             >
               <Phone size={14} />
@@ -141,7 +139,7 @@ export function Navbar() {
                 height: 44,
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'var(--color-dark)',
+                color: '#32140D',
                 background: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
@@ -167,7 +165,7 @@ export function Navbar() {
               left: 0,
               right: 0,
               bottom: 0,
-              background: 'rgba(253, 252, 250, 0.98)',
+              background: 'rgba(50, 20, 13, 0.98)',
               backdropFilter: 'blur(20px)',
               zIndex: 'var(--z-overlay)',
               display: 'flex',
@@ -192,8 +190,8 @@ export function Navbar() {
                       padding: 'var(--space-4) 0',
                       fontSize: 'var(--fs-h4)',
                       fontWeight: isActive ? 'var(--fw-semibold)' : 'var(--fw-regular)',
-                      color: isActive ? 'var(--color-primary)' : 'var(--color-dark)',
-                      borderBottom: '1px solid var(--color-gray-200)',
+                      color: isActive ? 'var(--color-accent)' : '#F5F1E8',
+                      borderBottom: '1px solid rgba(212, 175, 55, 0.12)',
                     }}
                   >
                     {link.label}
@@ -210,8 +208,8 @@ export function Navbar() {
                 gap: 'var(--space-2)',
                 marginTop: 'var(--space-6)',
                 padding: '14px 28px',
-                background: 'var(--color-primary)',
-                color: '#fff',
+                background: 'var(--color-accent)',
+                color: 'var(--color-walnut-dark)',
                 borderRadius: 'var(--radius-full)',
                 fontWeight: 'var(--fw-semibold)',
                 fontSize: 'var(--fs-body)',

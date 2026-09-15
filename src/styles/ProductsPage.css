@@ -6,7 +6,7 @@
 /* ── Hero Banner ── */
 .products-hero {
   position: relative;
-  background: linear-gradient(160deg, #1A1612 0%, #2A2219 30%, #1A1612 60%, #0C0A09 100%);
+  background: linear-gradient(160deg, #4A1F12 0%, #5A2919 30%, #4A1F12 60%, #32140D 100%);
   padding: 100px 0 72px;
   overflow: hidden;
 }
@@ -109,7 +109,7 @@
   align-items: flex-start;
   padding-top: 48px;
   padding-bottom: 96px;
-  background: #0C0A09;
+  background: var(--color-walnut, #4A1F12);
   min-height: 60vh;
 }
 
@@ -119,8 +119,8 @@
   flex-shrink: 0;
   position: sticky;
   top: calc(var(--nav-height) + 32px);
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(90, 41, 25, 0.35);
+  border: 1px solid rgba(212, 175, 55, 0.15);
   border-radius: var(--radius-lg);
   padding: 28px 24px;
   backdrop-filter: blur(12px);

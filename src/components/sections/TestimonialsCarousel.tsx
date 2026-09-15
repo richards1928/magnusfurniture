@@ -15,7 +15,7 @@ export function TestimonialsCarousel() {
 
   return (
     <section style={{
-      background: '#0A0806',
+      background: 'var(--color-walnut-dark, #32140D)',
       padding: '120px 0 140px',
       position: 'relative',
       overflow: 'hidden',
@@ -90,18 +90,22 @@ export function TestimonialsCarousel() {
         </motion.div>
 
         {/* ── Cards ───────────────────────────────────────────────────── */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))',
-          gap: 24,
-          marginBottom: 72,
-        }}>
+        <div
+          className="testimonials-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))',
+            gap: 24,
+            marginBottom: 72,
+          }}
+        >
           {testimonials.slice(0, 3).map((t, i) => {
             const isH = hovered === t.id;
             const initials = t.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
             return (
               <motion.div
                 key={t.id}
+                className="testimonial-card"
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -110,10 +114,10 @@ export function TestimonialsCarousel() {
                 onMouseLeave={() => setHovered(null)}
                 style={{
                   padding: '36px 32px',
-                  background: '#161310',
+                  background: 'var(--color-walnut-light, #5A2919)',
                   borderRadius: 20,
-                  border: isH ? '1px solid rgba(212,175,55,0.35)' : '1px solid rgba(255,255,255,0.06)',
-                  boxShadow: isH ? '0 20px 56px rgba(0,0,0,0.55)' : '0 4px 20px rgba(0,0,0,0.3)',
+                  border: isH ? '1px solid rgba(212,175,55,0.45)' : '1px solid rgba(212,175,55,0.15)',
+                  boxShadow: isH ? '0 20px 56px rgba(0,0,0,0.55)' : '0 4px 20px rgba(0,0,0,0.25)',
                   transform: isH ? 'translateY(-6px)' : 'translateY(0)',
                   transition: 'all 0.35s cubic-bezier(0.22,1,0.36,1)',
                   display: 'flex', flexDirection: 'column',
@@ -140,7 +144,7 @@ export function TestimonialsCarousel() {
                 {/* Quote text */}
                 <p style={{
                   fontSize: '0.97rem',
-                  color: 'rgba(255,255,255,0.72)',
+                  color: 'var(--color-text-cream, #F5F1E8)',
                   lineHeight: 1.85,
                   fontStyle: 'italic',
                   flex: 1,
@@ -152,7 +156,7 @@ export function TestimonialsCarousel() {
                 {/* Divider */}
                 <div style={{
                   height: 1,
-                  background: isH ? 'rgba(212,175,55,0.15)' : 'rgba(255,255,255,0.06)',
+                  background: isH ? 'rgba(212,175,55,0.25)' : 'rgba(212,175,55,0.12)',
                   marginBottom: 22,
                   transition: 'background 0.3s ease',
                 }} />
@@ -163,7 +167,7 @@ export function TestimonialsCarousel() {
                     width: 46, height: 46, borderRadius: '50%',
                     background: 'linear-gradient(135deg, #D4AF37 0%, #8B6914 100%)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontWeight: 800, color: '#0C0A09', fontSize: '0.95rem',
+                    fontWeight: 800, color: 'var(--color-walnut-dark, #32140D)', fontSize: '0.95rem',
                     fontFamily: 'var(--font-heading, "Outfit", sans-serif)',
                     flexShrink: 0,
                   }}>

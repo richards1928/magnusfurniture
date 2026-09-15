@@ -707,7 +707,7 @@ export function ServicesPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}
           >
-            <Button
+            {/* <Button
               variant="primary"
               size="lg"
               onClick={() => handleOpenQuoteModal()}
@@ -718,7 +718,7 @@ export function ServicesPage() {
               }}
             >
               Get a Free Quote <ArrowRight size={18} />
-            </Button>
+            </Button> */}
             <Button
               variant="outline"
               size="lg"

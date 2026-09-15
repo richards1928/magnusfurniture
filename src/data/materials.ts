@@ -57,7 +57,7 @@ export const materials: Material[] = [
     description: 'Rich dark wood with luxurious finish',
     colorVariants: [
       { id: 'walnut-natural', name: 'Natural Walnut', hex: '#5C4033', priceModifier: 0 },
-      { id: 'walnut-dark', name: 'Dark Walnut', hex: '#3E2723', priceModifier: 200 },
+      { id: 'walnut-dark', name: 'Dark Walnut', hex: '#5A321C', priceModifier: 200 },
       { id: 'walnut-light', name: 'Light Walnut', hex: '#8B7355', priceModifier: 100 },
     ],
   },

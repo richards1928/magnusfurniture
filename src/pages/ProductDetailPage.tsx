@@ -1,7 +1,7 @@
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Check, Shield, Truck, Settings } from 'lucide-react';
+import { ArrowLeft, Check, Shield, Truck, Settings, Phone } from 'lucide-react';
 import { getProductBySlug } from '../products/services/catalogService';
 import { Button } from '../components/ui/Button';
 
@@ -71,12 +71,12 @@ export function ProductDetailPage() {
           <ArrowLeft size={16} /> Back to Products
         </Link>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 'var(--space-16)', alignItems: 'start' }}>
+        <div className="product-detail-grid" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 'var(--space-16)', alignItems: 'start' }}>
           {/* Visuals */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
             <div style={{
               width: '100%', aspectRatio: '1', borderRadius: 'var(--radius-lg)',
-              background: '#ffffff',
+              background: 'var(--color-walnut-light, #5A2919)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               border: '1px solid var(--color-gray-200)', marginBottom: 'var(--space-4)',
               position: 'relative',
@@ -121,7 +121,7 @@ export function ProductDetailPage() {
                     onClick={() => { setActiveImage(img); setImgError(false); }}
                     style={{
                       aspectRatio: '1', borderRadius: 'var(--radius-md)',
-                      background: '#ffffff', 
+                      background: 'var(--color-walnut-light, #5A2919)', 
                       border: `2px solid ${activeImage === img ? 'var(--color-primary)' : 'var(--color-gray-200)'}`,
                       cursor: 'pointer',
                       overflow: 'hidden',
@@ -175,9 +175,11 @@ export function ProductDetailPage() {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-              <Button variant="primary" size="lg" style={{ width: '100%' }}>
-                Request Quote
-              </Button>
+              <a href="tel:9090626207" style={{ textDecoration: 'none', width: '100%' }}>
+                <Button variant="primary" size="lg" style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                  <Phone size={16} /> Call Us: 9090 626 207
+                </Button>
+              </a>
               <Button variant="whatsapp" size="lg" style={{ width: '100%' }} href={`https://wa.me/919090626207?text=I'm interested in the ${product.name}`}>
                 Inquire on WhatsApp
               </Button>
@@ -200,7 +202,7 @@ export function ProductDetailPage() {
             </div>
             
             {/* Service guarantees */}
-            <div style={{ display: 'flex', gap: 'var(--space-6)', marginTop: 'var(--space-8)' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-4)', marginTop: 'var(--space-8)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 'var(--fs-small)', color: 'var(--color-gray-600)' }}><Shield size={16} color="var(--color-primary)" /> 3-Year Warranty</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 'var(--fs-small)', color: 'var(--color-gray-600)' }}><Truck size={16} color="var(--color-primary)" /> Free Delivery</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 'var(--fs-small)', color: 'var(--color-gray-600)' }}><Settings size={16} color="var(--color-primary)" /> Free Assembly</div>
@@ -210,7 +212,7 @@ export function ProductDetailPage() {
       </div>
       <style>{`
         @media (max-width: 900px) {
-          .container > div:last-child { grid-template-columns: 1fr !important; }
+          .product-detail-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
         }
       `}</style>
     </div>

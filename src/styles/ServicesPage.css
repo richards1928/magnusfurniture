@@ -6,15 +6,15 @@
 /* ── Custom Theme Tokens for Spatial UI ── */
 .services-page {
   --spatial-shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
-  --spatial-shadow-hover: 0 20px 40px rgba(62, 39, 35, 0.08), 0 8px 16px rgba(0, 0, 0, 0.04);
+  --spatial-shadow-hover: 0 20px 40px rgba(90, 50, 28, 0.08), 0 8px 16px rgba(0, 0, 0, 0.04);
   --spatial-shadow-glow: 0 0 30px rgba(212, 175, 55, 0.25);
-  --spatial-card-bg: rgba(255, 255, 255, 0.85);
-  --spatial-glass-bg: rgba(255, 253, 248, 0.7);
+  --spatial-card-bg: rgba(90, 41, 25, 0.45);
+  --spatial-glass-bg: rgba(74, 31, 18, 0.65);
   --spatial-glass-border: rgba(212, 175, 55, 0.18);
   
-  background-color: var(--color-warm-white);
+  background-color: var(--color-walnut, #4A1F12);
   min-height: 100vh;
-  color: var(--color-gray-700);
+  color: var(--color-text-muted-warm, #C8BDB3);
   font-family: var(--font-body);
   position: relative;
   overflow-x: hidden;
@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 50% 0%, #2A1D1A 0%, #1A1210 50%, #0D0908 100%);
+  background: radial-gradient(circle at 50% 0%, #5A2919 0%, #4A1F12 50%, #32140D 100%);
   color: #FFFFFF;
   overflow: hidden;
 }
@@ -53,7 +53,7 @@
   transform: translateX(-50%);
   width: 600px;
   height: 400px;
-  background: radial-gradient(ellipse, rgba(212, 175, 55, 0.12) 0%, rgba(62, 39, 35, 0.05) 50%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(212, 175, 55, 0.12) 0%, rgba(90, 50, 28, 0.05) 50%, transparent 70%);
   filter: blur(60px);
   pointer-events: none;
 }
@@ -64,7 +64,7 @@
   right: 10%;
   width: 400px;
   height: 300px;
-  background: radial-gradient(ellipse, rgba(62, 39, 35, 0.25) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(90, 50, 28, 0.25) 0%, transparent 70%);
   filter: blur(50px);
   pointer-events: none;
 }
@@ -189,7 +189,7 @@
   background: var(--color-primary);
   color: var(--color-accent-light);
   transform: scale(1.05) rotate(-3deg);
-  box-shadow: 0 8px 20px rgba(62, 39, 35, 0.15);
+  box-shadow: 0 8px 20px rgba(90, 50, 28, 0.15);
 }
 
 .service-card-title {
@@ -474,7 +474,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-4);
-  box-shadow: 0 4px 12px rgba(62, 39, 35, 0.15);
+  box-shadow: 0 4px 12px rgba(90, 50, 28, 0.15);
 }
 
 .why-card-title {
@@ -750,5 +750,5 @@
 .form-select:focus,
 .form-textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(62, 39, 35, 0.1);
+  box-shadow: 0 0 0 3px rgba(90, 50, 28, 0.1);
 }

@@ -5,7 +5,7 @@ import { MagnusMonogram } from '../ui/MagnusLogo';
 export function ContactPreview() {
   return (
     <section className="section" style={{ background: 'var(--color-warm-white)', position: 'relative', overflow: 'hidden' }}>
-      <div className="container" style={{
+      <div className="container contact-preview-grid" style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         gap: 'var(--space-16)',
@@ -104,7 +104,7 @@ export function ContactPreview() {
 
       <style>{`
         @media (max-width: 900px) {
-          .container { grid-template-columns: 1fr !important; }
+          .contact-preview-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

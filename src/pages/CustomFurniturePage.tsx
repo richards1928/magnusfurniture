@@ -13,7 +13,8 @@ import {
   Monitor,
   Box,
   X,
-  Sparkles
+  Sparkles,
+  Phone
 } from 'lucide-react';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Button } from '../components/ui/Button';
@@ -40,7 +41,7 @@ const finishOptions: FinishOption[] = [
     id: 'walnut',
     name: 'Walnut Charcoal Veneer',
     type: 'Natural Hardwood Finish',
-    colorHex: '#3E2723',
+    colorHex: '#5A321C',
     image: deskWalnut,
     description: 'Deep, rich walnut grain with matte protective lacquer for executive cabins.',
     accent: 'Champagne Brass Trim'
@@ -49,7 +50,7 @@ const finishOptions: FinishOption[] = [
     id: 'teak',
     name: 'Royal Teak & Gold',
     type: 'Premium Architectural Wood',
-    colorHex: '#5D4037',
+    colorHex: '#7A4A2C',
     image: deskTeak,
     description: 'Warm golden teak tones pairing naturally with modern open-plan spaces.',
     accent: 'Brushed Gold Framing'
@@ -178,14 +179,15 @@ export function CustomFurniturePage() {
                 Launch 3D Workspace Designer <ArrowRight size={18} />
               </Button>
             </Link>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => setQuoteModalOpen(true)}
-              style={{ borderColor: 'rgba(255, 255, 255, 0.3)', color: '#FFFFFF' }}
-            >
-              Request Custom CAD Proposal
-            </Button>
+            <a href="tel:9090626207" style={{ textDecoration: 'none' }}>
+              <Button
+                variant="outline"
+                size="lg"
+                style={{ borderColor: 'rgba(255, 255, 255, 0.3)', color: '#FFFFFF', display: 'flex', alignItems: 'center', gap: '8px' }}
+              >
+                <Phone size={16} /> Call Us: 9090 626 207
+              </Button>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -291,7 +293,7 @@ export function CustomFurniturePage() {
               <div style={{
                 borderRadius: 'var(--radius-xl)',
                 overflow: 'hidden',
-                background: '#0D0A09',
+                background: 'var(--color-walnut-surface, #3E1A0F)',
                 aspectRatio: '16/10',
                 display: 'flex',
                 alignItems: 'center',
@@ -422,13 +424,14 @@ export function CustomFurniturePage() {
                   Browse Project Gallery <ArrowRight size={16} />
                 </Button>
               </Link>
-              <Button
-                variant="outline"
-                onClick={() => setQuoteModalOpen(true)}
-                style={{ borderColor: 'rgba(255,255,255,0.3)', color: '#FFF' }}
-              >
-                Request Custom CAD Estimate
-              </Button>
+              <a href="tel:9090626207" style={{ textDecoration: 'none' }}>
+                <Button
+                  variant="outline"
+                  style={{ borderColor: 'rgba(255,255,255,0.3)', color: '#FFF', display: 'flex', alignItems: 'center', gap: '8px' }}
+                >
+                  <Phone size={16} /> Call Us: 9090 626 207
+                </Button>
+              </a>
             </div>
           </div>
         </div>

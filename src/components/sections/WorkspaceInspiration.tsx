@@ -6,9 +6,9 @@ export function WorkspaceInspiration() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const containerStyle: React.CSSProperties = {
-    backgroundColor: '#0C0A08',
+    backgroundColor: 'var(--color-walnut-dark, #32140D)',
     padding: '80px 20px',
-    color: '#ffffff',
+    color: 'var(--color-text-cream, #F5F1E8)',
     fontFamily: '"Inter", sans-serif',
     display: 'flex',
     flexDirection: 'column',
@@ -36,10 +36,11 @@ export function WorkspaceInspiration() {
     fontWeight: 700,
     marginBottom: '20px',
     lineHeight: 1.2,
+    color: 'var(--color-text-cream, #F5F1E8)',
   };
 
   const subtitleStyle: React.CSSProperties = {
-    color: '#a0a0a0',
+    color: 'var(--color-text-muted-warm, #C8BDB3)',
     fontSize: '1.1rem',
     lineHeight: 1.6,
   };
@@ -57,7 +58,7 @@ export function WorkspaceInspiration() {
       id: 1,
       title: 'Modern Startup Office',
       category: 'Open Plan',
-      gradient: 'linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%)',
+      gradient: 'linear-gradient(135deg, #5A2919 0%, #32140D 100%)',
       colSpan: 1,
       // Realistic temporary AI reference photo — replace with real project photo when available
       image: '/assets/inspiration/modern-startup-office.webp',
@@ -66,7 +67,7 @@ export function WorkspaceInspiration() {
       id: 2,
       title: 'Executive Suite',
       category: 'Private Cabin',
-      gradient: 'linear-gradient(135deg, #3E2723 0%, #1B0000 100%)',
+      gradient: 'linear-gradient(135deg, #5A2919 0%, #4A1F12 100%)',
       colSpan: 1,
       // Realistic temporary AI reference photo — replace with real project photo when available
       image: '/assets/inspiration/executive-suite.webp',
@@ -75,7 +76,7 @@ export function WorkspaceInspiration() {
       id: 3,
       title: 'Conference Room',
       category: 'Meeting Space',
-      gradient: 'linear-gradient(135deg, #37474F 0%, #263238 100%)',
+      gradient: 'linear-gradient(135deg, #4A1F12 0%, #32140D 100%)',
       colSpan: 1,
       // Realistic temporary AI reference photo — replace with real project photo when available
       image: '/assets/inspiration/conference-room.webp',
@@ -84,7 +85,7 @@ export function WorkspaceInspiration() {
       id: 4,
       title: 'Reception Lobby',
       category: 'Lounge',
-      gradient: 'linear-gradient(135deg, #4E342E 0%, #3E2723 100%)',
+      gradient: 'linear-gradient(135deg, #6B3522 0%, #5A2919 100%)',
       colSpan: 1,
       // Realistic temporary AI reference photo — replace with real project photo when available
       image: '/assets/inspiration/reception-lobby.webp',
@@ -155,14 +156,17 @@ export function WorkspaceInspiration() {
         </p>
       </motion.div>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
-        gap: '24px',
-        width: '100%',
-        maxWidth: '1200px',
-        marginBottom: '40px'
-      }}>
+      <div
+        className="workspace-insp-grid"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
+          gap: '24px',
+          width: '100%',
+          maxWidth: '1200px',
+          marginBottom: '40px'
+        }}
+      >
         {cards.map((card, index) => (
           <motion.div
             key={card.id}
@@ -261,7 +265,7 @@ export function WorkspaceInspiration() {
                   padding: '8px 16px',
                   backgroundColor: '#D4AF37',
                   borderRadius: '20px',
-                  color: '#000',
+                  color: 'var(--color-walnut-dark, #32140D)',
                   fontSize: '0.8rem',
                   fontWeight: 600,
                   display: 'flex',
@@ -277,6 +281,7 @@ export function WorkspaceInspiration() {
       </div>
 
       <motion.div 
+        className="workspace-stats-bar"
         style={statsContainerStyle}
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -284,11 +289,11 @@ export function WorkspaceInspiration() {
         transition={{ duration: 0.6 }}
       >
         <div style={statItemStyle}><span style={statTextStyle}>17+ Projects Completed</span></div>
-        <div style={statDividerStyle}></div>
+        <div className="workspace-stat-divider" style={statDividerStyle}></div>
         <div style={statItemStyle}><span style={statTextStyle}>500+ Workstations</span></div>
-        <div style={statDividerStyle}></div>
+        <div className="workspace-stat-divider" style={statDividerStyle}></div>
         <div style={statItemStyle}><span style={statTextStyle}>100% Client Satisfaction</span></div>
-        <div style={statDividerStyle}></div>
+        <div className="workspace-stat-divider" style={statDividerStyle}></div>
         <div style={statItemStyle}><span style={statTextStyle}>Hyderabad & Beyond</span></div>
       </motion.div>
 

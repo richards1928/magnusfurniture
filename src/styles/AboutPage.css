@@ -5,23 +5,23 @@
 
 /* ── Custom Properties ── */
 :root {
-  --about-dark: #090807;
-  --about-dark-alt: #110F0D;
-  --about-dark-card: rgba(22, 20, 19, 0.65);
-  --about-warm: #FAF9F6;
-  --about-warm-alt: #F4F2EE;
-  --about-cream: #FCFAF6;
+  --about-dark: #32140D;
+  --about-dark-alt: #4A1F12;
+  --about-dark-card: rgba(90, 41, 25, 0.45);
+  --about-warm: #4A1F12;
+  --about-warm-alt: #32140D;
+  --about-cream: #4A1F12;
   --about-gold: #D4AF37;
   --about-gold-light: #E8CC6E;
   --about-gold-glow: rgba(212, 175, 55, 0.08);
   --about-gold-border: rgba(212, 175, 55, 0.12);
   --about-gold-border-hover: rgba(212, 175, 55, 0.45);
-  --about-text-white: #FFFFFF;
-  --about-text-white-soft: rgba(255, 255, 255, 0.78);
+  --about-text-white: #F5F1E8;
+  --about-text-white-soft: #C8BDB3;
   --about-text-white-muted: rgba(255, 255, 255, 0.48);
-  --about-text-dark: #1C1917;
-  --about-text-dark-soft: #57534E;
-  --about-glass: rgba(22, 20, 19, 0.6);
+  --about-text-dark: #F5F1E8;
+  --about-text-dark-soft: #C8BDB3;
+  --about-glass: rgba(90, 41, 25, 0.45);
   --about-glass-border: rgba(255, 255, 255, 0.07);
 }
 
@@ -304,7 +304,7 @@
 }
 
 .abt-card--light {
-  background: #FFFFFF;
+  background: var(--color-walnut-light, #5A2919);
   border: 1px solid var(--about-gold-border);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
 }
@@ -886,7 +886,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #FAF9F6;
+  background: var(--color-walnut, #4A1F12);
   color: var(--about-gold);
   display: flex;
   align-items: center;

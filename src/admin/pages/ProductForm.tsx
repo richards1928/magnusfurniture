@@ -146,7 +146,7 @@ export function ProductForm() {
             <input value={specVal} onChange={e => setSpecVal(e.target.value)} placeholder="Spec value"
               style={{ flex: 1, padding: '10px 12px', border: '1px solid #E5E5E5', borderRadius: 8, fontSize: 14 }} />
             <button type="button" onClick={addSpec} style={{
-              padding: '10px 16px', background: '#3E2723', color: '#fff', borderRadius: 8,
+              padding: '10px 16px', background: '#5A321C', color: '#fff', borderRadius: 8,
               border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
             }}>Add</button>
           </div>

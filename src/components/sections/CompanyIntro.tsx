@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 export function CompanyIntro() {
   return (
     <section className="section" style={{ background: 'var(--color-white)' }}>
-      <div className="container" style={{
+      <div className="container company-intro-grid" style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         gap: 'var(--space-16)',
@@ -102,7 +102,7 @@ export function CompanyIntro() {
 
       <style>{`
         @media (max-width: 900px) {
-          .container { grid-template-columns: 1fr !important; }
+          .company-intro-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

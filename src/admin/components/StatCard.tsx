@@ -26,7 +26,7 @@ export function StatCard({ title, value, subtitle, icon, trend, style }: StatCar
         {icon && (
           <div style={{
             width: 36, height: 36, borderRadius: 10,
-            background: 'rgba(62,39,35,0.06)', color: '#3E2723',
+            background: 'rgba(90,50,28,0.06)', color: '#5A321C',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>{icon}</div>
         )}

@@ -17,7 +17,7 @@ export function ProductsPage() {
     : 'Explore our complete collection of premium, handcrafted furniture.';
 
   return (
-    <div style={{ background: '#0C0A09', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--color-walnut, #4A1F12)', minHeight: '100vh' }}>
       {/* ── Premium Hero Banner ── */}
       <div className="products-hero">
         <div className="products-hero__inner container">

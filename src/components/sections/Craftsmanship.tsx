@@ -35,7 +35,7 @@ export function Craftsmanship() {
 
   return (
     <section style={{
-      background: '#111009',
+      background: 'var(--color-walnut, #4A1F12)',
       padding: '120px 0 140px',
       position: 'relative',
       overflow: 'hidden',
@@ -102,28 +102,35 @@ export function Craftsmanship() {
         <div style={{ position: 'relative' }}>
 
           {/* Connecting line (desktop) */}
-          <div style={{
-            position: 'absolute',
-            top: 48,
-            left: '12.5%', right: '12.5%',
-            height: 1,
-            background: 'linear-gradient(to right, transparent, rgba(212,175,55,0.25) 20%, rgba(212,175,55,0.25) 80%, transparent)',
-            pointerEvents: 'none',
-            zIndex: 0,
-          }} />
+          <div
+            className="craft-connecting-line"
+            style={{
+              position: 'absolute',
+              top: 48,
+              left: '12.5%', right: '12.5%',
+              height: 1,
+              background: 'linear-gradient(to right, transparent, rgba(212,175,55,0.25) 20%, rgba(212,175,55,0.25) 80%, transparent)',
+              pointerEvents: 'none',
+              zIndex: 0,
+            }}
+          />
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: 20,
-            position: 'relative', zIndex: 1,
-          }}>
+          <div
+            className="craft-grid"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: 20,
+              position: 'relative', zIndex: 1,
+            }}
+          >
             {steps.map((step, i) => {
               const Icon = step.icon;
               const isH = hovered === i;
               return (
                 <motion.div
                   key={step.num}
+                  className="craft-card"
                   initial={{ opacity: 0, y: 32 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -132,9 +139,9 @@ export function Craftsmanship() {
                   onMouseLeave={() => setHovered(null)}
                   style={{
                     padding: '32px 24px 28px',
-                    background: '#1A1712',
+                    background: 'var(--color-walnut-light, #5A2919)',
                     borderRadius: 20,
-                    border: isH ? '1px solid rgba(212,175,55,0.35)' : '1px solid rgba(255,255,255,0.06)',
+                    border: isH ? '1px solid rgba(212,175,55,0.45)' : '1px solid rgba(212,175,55,0.15)',
                     boxShadow: isH ? '0 20px 56px rgba(0,0,0,0.5)' : '0 4px 20px rgba(0,0,0,0.25)',
                     transform: isH ? 'translateY(-6px)' : 'translateY(0)',
                     transition: 'all 0.35s cubic-bezier(0.22,1,0.36,1)',
@@ -145,7 +152,7 @@ export function Craftsmanship() {
                   {/* Step number */}
                   <div style={{
                     fontSize: '3rem', fontWeight: 800,
-                    color: isH ? 'rgba(212,175,55,0.2)' : 'rgba(255,255,255,0.06)',
+                    color: isH ? 'rgba(212,175,55,0.25)' : 'rgba(212,175,55,0.08)',
                     fontFamily: 'var(--font-heading, "Outfit", sans-serif)',
                     lineHeight: 1, marginBottom: 20,
                     letterSpacing: '-0.04em',
@@ -169,7 +176,7 @@ export function Craftsmanship() {
                   <h3 style={{
                     fontFamily: 'var(--font-heading, "Outfit", sans-serif)',
                     fontSize: '1rem', fontWeight: 700,
-                    color: isH ? '#EDD98A' : '#FFFFFF',
+                    color: isH ? '#EDD98A' : 'var(--color-text-cream, #F5F1E8)',
                     marginBottom: 12,
                     transition: 'color 0.25s ease',
                   }}>
@@ -177,7 +184,7 @@ export function Craftsmanship() {
                   </h3>
 
                   <p style={{
-                    fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)',
+                    fontSize: '0.8rem', color: 'var(--color-text-muted-warm, #C8BDB3)',
                     lineHeight: 1.8, flex: 1,
                   }}>
                     {step.desc}

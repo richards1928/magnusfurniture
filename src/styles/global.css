@@ -5,6 +5,7 @@
 
 @import './design-tokens.css';
 @import './animations.css';
+@import './responsive.css';
 
 /* ── Reset ── */
 *, *::before, *::after {
@@ -25,8 +26,8 @@ body {
   font-family: var(--font-body);
   font-size: var(--fs-body);
   line-height: var(--lh-normal);
-  color: var(--color-gray-700);
-  background-color: var(--color-warm-white);
+  color: var(--color-text-muted-warm);
+  background-color: var(--color-walnut);
   overflow-x: hidden;
   /* Never lock vertical scroll on main website */
   overflow-y: auto;
@@ -44,12 +45,13 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  background-color: var(--color-walnut);
 }
 
 /* ── Typography ── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--color-dark);
+  color: var(--color-text-cream);
   line-height: var(--lh-tight);
   letter-spacing: var(--ls-tight);
   font-weight: var(--fw-semibold);
@@ -63,6 +65,7 @@ h4 { font-size: var(--fs-h4); }
 p {
   margin: 0;
   line-height: var(--lh-normal);
+  color: var(--color-text-muted-warm);
 }
 
 a {
@@ -72,7 +75,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 img, video {
@@ -149,8 +152,8 @@ ul, ol {
 
 /* ── Selection ── */
 ::selection {
-  background-color: var(--color-primary-bg);
-  color: var(--color-primary-dark);
+  background-color: rgba(212, 175, 55, 0.3);
+  color: var(--color-text-cream);
 }
 
 /* ── Scrollbar (webkit) ── */
@@ -158,12 +161,12 @@ ul, ol {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-cream);
+  background: var(--color-walnut-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gray-300);
+  background: var(--color-walnut-light);
   border-radius: var(--radius-full);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gray-400);
+  background: var(--color-accent);
 }
