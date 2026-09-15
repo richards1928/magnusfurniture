@@ -52,7 +52,7 @@ export function FeaturedProducts() {
 
   return (
     <section style={{
-      background: '#0F0D0B',
+      background: '#420D09',
       padding: '120px 0 140px',
       position: 'relative',
       overflow: 'hidden',
