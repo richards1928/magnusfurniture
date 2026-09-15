@@ -246,7 +246,7 @@ export function Footer() {
       {/* ════════════════════════════════════════════════════════ */}
       <footer
         style={{
-          background: 'var(--color-walnut-dark, #32140D)',
+          background: '#32140C',
           color: '#C8BDB3',
           borderTop: '1px solid rgba(212,175,55,0.22)',
           position: 'relative',
