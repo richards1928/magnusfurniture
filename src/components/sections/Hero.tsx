@@ -146,7 +146,7 @@ export function Hero() {
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
-        background: 'var(--color-walnut-dark, #32140D)',
+        background: 'var(--color-walnut-dark, #0C0A09)',
       }}
     >
       {/* ── Video Background ── */}
@@ -182,7 +182,7 @@ export function Hero() {
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(to right, rgba(50,20,13,0.88) 0%, rgba(50,20,13,0.65) 38%, rgba(50,20,13,0.2) 58%, rgba(50,20,13,0.0) 75%)',
+              'linear-gradient(to right, rgba(12,10,9,0.92) 0%, rgba(12,10,9,0.70) 38%, rgba(12,10,9,0.22) 58%, rgba(12,10,9,0.0) 75%)',
             pointerEvents: 'none',
           }}
         />
@@ -194,7 +194,7 @@ export function Hero() {
             left: 0,
             right: 0,
             height: 140,
-            background: 'linear-gradient(to top, rgba(74,31,18,0.75) 0%, transparent 100%)',
+            background: 'linear-gradient(to top, rgba(12,10,9,0.85) 0%, transparent 100%)',
             pointerEvents: 'none',
           }}
         />

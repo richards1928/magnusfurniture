@@ -52,7 +52,7 @@ export function FeaturedProducts() {
 
   return (
     <section style={{
-      background: 'var(--color-walnut, #4A1F12)',
+      background: 'var(--color-walnut, #12100E)',
       padding: '120px 0 140px',
       position: 'relative',
       overflow: 'hidden',
@@ -62,13 +62,13 @@ export function FeaturedProducts() {
       <div style={{
         position: 'absolute', top: '-10%', left: '-5%',
         width: 600, height: 600, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
       <div style={{
         position: 'absolute', bottom: '-5%', right: '-5%',
         width: 500, height: 500, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(212,175,55,0.04) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 

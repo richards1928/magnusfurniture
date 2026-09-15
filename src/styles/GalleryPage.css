@@ -5,7 +5,7 @@
 
 /* ── Page shell ── */
 .glry-page {
-  background: var(--color-walnut, #4A1F12);
+  background: var(--color-walnut, #12100E);
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -17,7 +17,7 @@
   position: relative;
   padding-top: calc(var(--nav-height) + 80px);
   padding-bottom: 80px;
-  background: radial-gradient(circle at 50% 0%, #5A2919 0%, #4A1F12 60%, #32140D 100%);
+  background: radial-gradient(circle at 50% 0%, #1C1915 0%, #12100E 60%, #0C0A09 100%);
   color: #fff;
   text-align: center;
   overflow: hidden;
@@ -27,8 +27,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(212,175,55,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212,175,55,0.035) 1px, transparent 1px);
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, transparent 72%);
   -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, transparent 72%);
@@ -42,7 +42,7 @@
   transform: translateX(-50%);
   width: 700px;
   height: 420px;
-  background: radial-gradient(ellipse, rgba(212,175,55,0.13) 0%, rgba(90,50,28,0.04) 50%, transparent 75%);
+  background: radial-gradient(ellipse, rgba(201,168,76,0.16) 0%, rgba(28,25,21,0.04) 50%, transparent 75%);
   filter: blur(72px);
   pointer-events: none;
 }
@@ -63,9 +63,9 @@
   gap: 7px;
   padding: 6px 18px;
   border-radius: 9999px;
-  background: rgba(212,175,55,0.1);
-  border: 1px solid rgba(212,175,55,0.28);
-  color: #D4AF37;
+  background: rgba(201,168,76,0.10);
+  border: 1px solid rgba(201,168,76,0.30);
+  color: #C9A84C;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.16em;

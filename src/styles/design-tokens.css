@@ -4,43 +4,43 @@
    ============================================================ */
 
 :root {
-  /* ── Walnut Brand Palette ── */
-  --color-walnut: #4A1F12;
-  --color-walnut-dark: #32140D;
-  --color-walnut-deep: #1E0D08;
-  --color-walnut-light: #5A2919;
-  --color-walnut-lighter: #6B3522;
-  --color-walnut-surface: #3E1A0F;
-  --color-walnut-card: rgba(90, 41, 25, 0.35);
-  --color-walnut-glass: rgba(74, 31, 18, 0.6);
-  --color-walnut-glow: rgba(74, 31, 18, 0.15);
+  /* ── Premium Obsidian Brand Palette ── */
+  --color-walnut: #12100E;          /* rich dark charcoal — base background */
+  --color-walnut-dark: #0C0A09;     /* near-black obsidian — deepest bg */
+  --color-walnut-deep: #080706;     /* absolute deep black */
+  --color-walnut-light: #1C1915;    /* warm dark surface */
+  --color-walnut-lighter: #26221D;  /* elevated warm charcoal */
+  --color-walnut-surface: #161310;  /* subtle raised surface */
+  --color-walnut-card: rgba(28, 25, 21, 0.65);
+  --color-walnut-glass: rgba(18, 16, 14, 0.75);
+  --color-walnut-glow: rgba(201, 168, 76, 0.08);
 
-  /* ── Brand Colors (mapped to walnut) ── */
-  --color-primary: #4A1F12;
-  --color-primary-light: #5A2919;
-  --color-primary-dark: #32140D;
-  --color-primary-bg: rgba(74, 31, 18, 0.08);
+  /* ── Brand Colors (mapped to obsidian) ── */
+  --color-primary: #1C1915;
+  --color-primary-light: #26221D;
+  --color-primary-dark: #0C0A09;
+  --color-primary-bg: rgba(28, 25, 21, 0.12);
 
-  --color-accent: #D4AF37; /* Champagne Gold */
-  --color-accent-light: #F3E5AB;
-  --color-accent-dark: #b8932b;
+  --color-accent: #C9A84C;          /* Antique Gold — richer, deeper than champagne */
+  --color-accent-light: #E8D5A3;
+  --color-accent-dark: #A8893E;
 
-  --color-dark: #1E0D08;
-  --color-charcoal: #2A1610;
-  --color-gray-900: #3A2218;
-  --color-gray-700: #6B5A50;
-  --color-gray-500: #8A7A70;
-  --color-gray-400: #A89888;
-  --color-gray-300: #C8BDB3;
-  --color-gray-200: #E0D8D0;
-  --color-gray-100: #F0EAE4;
+  --color-dark: #080706;
+  --color-charcoal: #1C1915;
+  --color-gray-900: #2A2520;
+  --color-gray-700: #6B6058;
+  --color-gray-500: #8A8078;
+  --color-gray-400: #A89880;
+  --color-gray-300: #C4B8A8;
+  --color-gray-200: #DDD5C8;
+  --color-gray-100: #F0EAD6;
 
-  --color-cream: #F5F1E8;
-  --color-warm-white: #F5F1E8;
+  --color-cream: #F0EAD6;           /* warm ivory */
+  --color-warm-white: #F0EAD6;
   --color-white: #FFFFFF;
 
-  --color-text-cream: #F5F1E8;
-  --color-text-muted-warm: #C8BDB3;
+  --color-text-cream: #F0EAD6;      /* warm ivory headings */
+  --color-text-muted-warm: #A89880; /* warm taupe body text */
 
   --color-success: #2D8A4E;
   --color-error: #C0392B;

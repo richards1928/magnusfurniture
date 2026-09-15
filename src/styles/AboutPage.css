@@ -5,24 +5,24 @@
 
 /* ── Custom Properties ── */
 :root {
-  --about-dark: #32140D;
-  --about-dark-alt: #4A1F12;
-  --about-dark-card: rgba(90, 41, 25, 0.45);
-  --about-warm: #4A1F12;
-  --about-warm-alt: #32140D;
-  --about-cream: #4A1F12;
-  --about-gold: #D4AF37;
-  --about-gold-light: #E8CC6E;
-  --about-gold-glow: rgba(212, 175, 55, 0.08);
-  --about-gold-border: rgba(212, 175, 55, 0.12);
-  --about-gold-border-hover: rgba(212, 175, 55, 0.45);
-  --about-text-white: #F5F1E8;
-  --about-text-white-soft: #C8BDB3;
-  --about-text-white-muted: rgba(255, 255, 255, 0.48);
-  --about-text-dark: #F5F1E8;
-  --about-text-dark-soft: #C8BDB3;
-  --about-glass: rgba(90, 41, 25, 0.45);
-  --about-glass-border: rgba(255, 255, 255, 0.07);
+  --about-dark: #0C0A09;
+  --about-dark-alt: #12100E;
+  --about-dark-card: rgba(28, 25, 21, 0.60);
+  --about-warm: #12100E;
+  --about-warm-alt: #0C0A09;
+  --about-cream: #12100E;
+  --about-gold: #C9A84C;
+  --about-gold-light: #E8D5A3;
+  --about-gold-glow: rgba(201, 168, 76, 0.10);
+  --about-gold-border: rgba(201, 168, 76, 0.18);
+  --about-gold-border-hover: rgba(201, 168, 76, 0.55);
+  --about-text-white: #F0EAD6;
+  --about-text-white-soft: #C4B8A8;
+  --about-text-white-muted: rgba(240, 234, 214, 0.50);
+  --about-text-dark: #F0EAD6;
+  --about-text-dark-soft: #C4B8A8;
+  --about-glass: rgba(28, 25, 21, 0.60);
+  --about-glass-border: rgba(255, 255, 255, 0.06);
 }
 
 /* ── Shared Section Layout ── */
