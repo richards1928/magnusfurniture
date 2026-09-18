@@ -1,7 +1,7 @@
 import { storage } from './storage';
 import type { WorkspaceRequest } from '../types/admin.types';
 
-const COLLECTION = 'workspace_requests';
+const COLLECTION = 'quote_requests';
 
 export const workspaceService = {
   async getAll(): Promise<WorkspaceRequest[]> {

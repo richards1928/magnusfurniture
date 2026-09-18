@@ -1,25 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FormField } from '../components/FormField';
+import { settingsService, defaultSettings } from '../services/settings.service';
 
 export function SettingsPage() {
-  const [settings, setSettings] = useState({
-    businessName: 'Magnus Office Furniture',
-    tagline: 'Premium Office Furniture in Hyderabad',
-    phone: '9090626207',
-    email: 'magnusofficefurniture@gmail.com',
-    whatsapp: '919090626207',
-    address: 'M R Elite, 3rd Floor, Opposite Sarath City, Kondapur, Hyderabad 500084',
-    seoTitle: 'Magnus Office Furniture | Premium Office Furniture in Hyderabad',
-    seoDescription: 'Transform your workspace with Magnus Office Furniture. Premium office chairs, workstations, and conference tables in Hyderabad.',
-  });
+  const [settings, setSettings] = useState(defaultSettings);
   const [saved, setSaved] = useState(false);
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    settingsService.get().then(setSettings);
+  }, []);
 
   const set = (k: string, v: string) => setSettings(p => ({ ...p, [k]: v }));
 
-  const handleSave = () => {
-    localStorage.setItem('magnus_admin_settings', JSON.stringify(settings));
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
+  const handleSave = async () => {
+    if (saving) return;
+    setSaving(true);
+    try {
+      const updated = await settingsService.update(settings);
+      setSettings(updated);
+      setSaved(true);
+      setTimeout(() => setSaved(false), 2000);
+    } finally {
+      setSaving(false);
+    }
   };
 
   return (
@@ -54,11 +58,12 @@ export function SettingsPage() {
           </div>
         </div>
 
-        <button onClick={handleSave} style={{
+        <button onClick={handleSave} disabled={saving} style={{
           padding: '12px 28px', background: '#1A1612', color: '#fff',
-          borderRadius: 10, fontSize: 14, fontWeight: 600, border: 'none', cursor: 'pointer',
+          borderRadius: 10, fontSize: 14, fontWeight: 600, border: 'none', cursor: saving ? 'not-allowed' : 'pointer',
+          opacity: saving ? 0.7 : 1,
         }}>
-          {saved ? '✓ Saved!' : 'Save Settings'}
+          {saving ? 'Saving...' : saved ? '✓ Saved!' : 'Save Settings'}
         </button>
       </div>
     </div>

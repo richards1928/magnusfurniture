@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { leadsService } from '../admin/services/leads.service';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   LayoutGrid,
@@ -188,19 +189,52 @@ export function ServicesPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('Office Space Planning');
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formSubmitting, setFormSubmitting] = useState(false);
+  const [formName, setFormName] = useState('');
+  const [formCompany, setFormCompany] = useState('');
+  const [formEmail, setFormEmail] = useState('');
+  const [formPhone, setFormPhone] = useState('');
+  const [formMessage, setFormMessage] = useState('');
 
   const handleOpenQuoteModal = (serviceName?: string) => {
     if (serviceName) setSelectedService(serviceName);
     setFormSubmitted(false);
+    setFormName(''); setFormCompany(''); setFormEmail(''); setFormPhone(''); setFormMessage('');
     setModalOpen(true);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const [formError, setFormError] = useState<string | null>(null);
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setModalOpen(false);
-    }, 2200);
+    if (formSubmitting) return;
+    setFormError(null);
+    setFormSubmitting(true);
+    try {
+      await leadsService.create({
+        name: formName.trim(),
+        email: formEmail.trim().toLowerCase(),
+        phone: formPhone.trim(),
+        company: formCompany.trim(),
+        message: formMessage.trim(),
+        source: 'website' as const,
+        productInterest: selectedService,
+        status: 'new' as const,
+        notes: '',
+      });
+      setFormSubmitted(true);
+      setTimeout(() => {
+        setModalOpen(false);
+      }, 2200);
+    } catch (err) {
+      setFormError(
+        err instanceof Error
+          ? err.message
+          : 'Unable to submit your request at this moment. Please try again or call us at 9090626207.'
+      );
+    } finally {
+      setFormSubmitting(false);
+    }
   };
 
   return (
@@ -785,6 +819,19 @@ export function ServicesPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleFormSubmit}>
+                    {formError && (
+                      <div style={{
+                        padding: '10px 14px',
+                        borderRadius: 'var(--radius-md)',
+                        background: '#FEE2E2',
+                        color: '#B91C1C',
+                        fontSize: 'var(--fs-small)',
+                        marginBottom: 'var(--space-4)',
+                        border: '1px solid #FCA5A5'
+                      }}>
+                        {formError}
+                      </div>
+                    )}
                     <div className="form-group">
                       <label className="form-label">Service of Interest</label>
                       <select
@@ -802,22 +849,22 @@ export function ServicesPage() {
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)' }}>
                       <div className="form-group">
                         <label className="form-label">Full Name *</label>
-                        <input type="text" required placeholder="e.g. Rajesh Kumar" className="form-input" />
+                        <input type="text" required placeholder="e.g. Rajesh Kumar" className="form-input" value={formName} onChange={(e) => setFormName(e.target.value)} />
                       </div>
                       <div className="form-group">
                         <label className="form-label">Company Name *</label>
-                        <input type="text" required placeholder="e.g. TechCorp Systems" className="form-input" />
+                        <input type="text" required placeholder="e.g. TechCorp Systems" className="form-input" value={formCompany} onChange={(e) => setFormCompany(e.target.value)} />
                       </div>
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)' }}>
                       <div className="form-group">
                         <label className="form-label">Email Address *</label>
-                        <input type="email" required placeholder="name@company.com" className="form-input" />
+                        <input type="email" required placeholder="name@company.com" className="form-input" value={formEmail} onChange={(e) => setFormEmail(e.target.value)} />
                       </div>
                       <div className="form-group">
                         <label className="form-label">Phone Number *</label>
-                        <input type="tel" required placeholder="+91 98765 43210" className="form-input" />
+                        <input type="tel" required placeholder="+91 98765 43210" className="form-input" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} />
                       </div>
                     </div>
 
@@ -827,21 +874,25 @@ export function ServicesPage() {
                         rows={3}
                         placeholder="Tell us about your floor space, seating count, timeline, or special customization needs..."
                         className="form-textarea"
+                        value={formMessage}
+                        onChange={(e) => setFormMessage(e.target.value)}
                       />
                     </div>
 
                     <Button
                       type="submit"
                       variant="primary"
+                      disabled={formSubmitting}
                       style={{
                         width: '100%',
                         justifyContent: 'center',
                         marginTop: 'var(--space-4)',
                         padding: '14px',
-                        fontSize: 'var(--fs-body-lg)'
+                        fontSize: 'var(--fs-body-lg)',
+                        opacity: formSubmitting ? 0.7 : 1,
                       }}
                     >
-                      Submit Consultation Request <ArrowRight size={18} />
+                      {formSubmitting ? 'Submitting...' : 'Submit Consultation Request'} {!formSubmitting && <ArrowRight size={18} />}
                     </Button>
                   </form>
                 )}

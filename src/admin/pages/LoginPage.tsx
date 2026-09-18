@@ -62,7 +62,8 @@ export function LoginPage() {
             <label style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#666', marginBottom: 6, display: 'block' }}>Email</label>
             <input
               type="email" value={email} onChange={e => setEmail(e.target.value)}
-              required placeholder="admin@magnus.com"
+              required placeholder="admin@company.com"
+              autoComplete="username"
               style={{
                 width: '100%', padding: '14px 16px', fontSize: 14,
                 border: '1px solid #E5E5E5', borderRadius: 10,
@@ -79,6 +80,7 @@ export function LoginPage() {
                 type={showPw ? 'text' : 'password'} value={password}
                 onChange={e => setPassword(e.target.value)}
                 required placeholder="Enter password"
+                autoComplete="current-password"
                 style={{
                   width: '100%', padding: '14px 44px 14px 16px', fontSize: 14,
                   border: '1px solid #E5E5E5', borderRadius: 10,

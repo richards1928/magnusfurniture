@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { workspaceService } from '../admin/services/workspace.service';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -79,13 +80,44 @@ export function CustomFurniturePage() {
   const [selectedFinish, setSelectedFinish] = useState<FinishOption>(finishOptions[0]);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formSubmitting, setFormSubmitting] = useState(false);
+  const [formCategory, setFormCategory] = useState('Executive Desks');
+  const [formName, setFormName] = useState('');
+  const [formCompany, setFormCompany] = useState('');
+  const [formEmail, setFormEmail] = useState('');
+  const [formPhone, setFormPhone] = useState('');
+  const [formDetails, setFormDetails] = useState('');
+  const [formError, setFormError] = useState<string | null>(null);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setQuoteModalOpen(false);
-    }, 2200);
+    if (formSubmitting) return;
+    setFormError(null);
+    setFormSubmitting(true);
+    try {
+      await workspaceService.create({
+        companyName: formCompany.trim() || 'Individual',
+        contactName: formName.trim(),
+        email: formEmail.trim().toLowerCase(),
+        phone: formPhone.trim(),
+        teamSize: '',
+        requirements: `[${formCategory}] ${formDetails.trim()}`,
+        status: 'pending' as const,
+        notes: '',
+      });
+      setFormSubmitted(true);
+      setTimeout(() => {
+        setQuoteModalOpen(false);
+      }, 2200);
+    } catch (err) {
+      setFormError(
+        err instanceof Error
+          ? err.message
+          : 'Unable to submit your CAD estimate request at this time. Please try again or reach out at 9090626207.'
+      );
+    } finally {
+      setFormSubmitting(false);
+    }
   };
 
   return (
@@ -488,9 +520,22 @@ export function CustomFurniturePage() {
                   </div>
                 ) : (
                   <form onSubmit={handleFormSubmit}>
+                    {formError && (
+                      <div style={{
+                        padding: '10px 14px',
+                        borderRadius: 'var(--radius-md)',
+                        background: '#FEE2E2',
+                        color: '#B91C1C',
+                        fontSize: 'var(--fs-small)',
+                        marginBottom: 'var(--space-4)',
+                        border: '1px solid #FCA5A5'
+                      }}>
+                        {formError}
+                      </div>
+                    )}
                     <div className="form-group">
                       <label className="form-label">Custom Furniture Category</label>
-                      <select className="form-select">
+                      <select className="form-select" value={formCategory} onChange={(e) => setFormCategory(e.target.value)}>
                         <option value="Executive Desks">Executive / MD Cabins</option>
                         <option value="Modular Workstations">Modular Team Workstations</option>
                         <option value="Boardroom Tables">Conference / Boardroom Tables</option>
@@ -502,22 +547,22 @@ export function CustomFurniturePage() {
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)' }}>
                       <div className="form-group">
                         <label className="form-label">Full Name *</label>
-                        <input type="text" required placeholder="e.g. Anand Sharma" className="form-input" />
+                        <input type="text" required placeholder="e.g. Anand Sharma" className="form-input" value={formName} onChange={(e) => setFormName(e.target.value)} />
                       </div>
                       <div className="form-group">
                         <label className="form-label">Company Name *</label>
-                        <input type="text" required placeholder="e.g. Horizon Labs" className="form-input" />
+                        <input type="text" required placeholder="e.g. Horizon Labs" className="form-input" value={formCompany} onChange={(e) => setFormCompany(e.target.value)} />
                       </div>
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)' }}>
                       <div className="form-group">
                         <label className="form-label">Email *</label>
-                        <input type="email" required placeholder="name@company.com" className="form-input" />
+                        <input type="email" required placeholder="name@company.com" className="form-input" value={formEmail} onChange={(e) => setFormEmail(e.target.value)} />
                       </div>
                       <div className="form-group">
                         <label className="form-label">Phone *</label>
-                        <input type="tel" required placeholder="+91 90906 26209" className="form-input" />
+                        <input type="tel" required placeholder="+91 90906 26209" className="form-input" value={formPhone} onChange={(e) => setFormPhone(e.target.value)} />
                       </div>
                     </div>
 
@@ -527,21 +572,25 @@ export function CustomFurniturePage() {
                         rows={3}
                         placeholder="Mention required desk dimensions, wood finish preferences, power grommet needs, or room layout notes..."
                         className="form-textarea"
+                        value={formDetails}
+                        onChange={(e) => setFormDetails(e.target.value)}
                       />
                     </div>
 
                     <Button
                       type="submit"
                       variant="primary"
+                      disabled={formSubmitting}
                       style={{
                         width: '100%',
                         justifyContent: 'center',
                         marginTop: 'var(--space-4)',
                         padding: '14px',
-                        fontSize: 'var(--fs-body-lg)'
+                        fontSize: 'var(--fs-body-lg)',
+                        opacity: formSubmitting ? 0.7 : 1,
                       }}
                     >
-                      Get Instant CAD Estimate <ArrowRight size={18} />
+                      {formSubmitting ? 'Submitting...' : 'Get Instant CAD Estimate'} {!formSubmitting && <ArrowRight size={18} />}
                     </Button>
                   </form>
                 )}

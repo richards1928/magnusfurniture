@@ -10,4 +10,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    // Three.js + R3F designer chunk is ~1.1MB (loaded on demand via React.lazy).
+    // Suppress the default 500kB warning for expected large vendor chunks.
+    chunkSizeWarningLimit: 1200,
+  },
 })

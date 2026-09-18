@@ -12,10 +12,12 @@ import { pricingStore } from '../../store/pricingStore';
 import { materials } from '../../data/materials';
 import { Copy, Trash2, Sliders, ChevronDown, Check } from 'lucide-react';
 import { Tooltip } from '../ui/Tooltip';
+import { DesignerQuoteModal } from './DesignerQuoteModal';
 
 export function PropertiesPanel() {
   const state = useSnapshot(designerStore);
   useSnapshot(pricingStore);
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
 
   const selectedComp = state.selectedComponentIds.length > 0 
     ? state.components.find(c => c.instanceId === state.selectedComponentIds[0])
@@ -468,7 +470,7 @@ export function PropertiesPanel() {
 
       {/* Quote Request CTA */}
       <button
-        onClick={() => alert(`Thank you! Your custom table proposal request (${state.components.length} components) has been submitted to Magnus Workspace Design team. We will contact you shortly!`)}
+        onClick={() => setQuoteModalOpen(true)}
         style={{
           width: '100%',
           height: 46,
@@ -488,6 +490,8 @@ export function PropertiesPanel() {
       >
         Request Quote for Design
       </button>
+
+      <DesignerQuoteModal isOpen={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { 
   designerStore, 
@@ -11,20 +11,20 @@ import {
   toggleLayers,
   toggleLeftPanelCollapsed
 } from '../../store/designerStore';
-import { pricingStore } from '../../store/pricingStore';
 import { Sidebar } from '../ui/Sidebar';
 import { ComponentPalette } from './ComponentPalette';
 import { PropertiesPanel } from './PropertiesPanel';
 import { LayersPanel } from './LayersPanel';
 import { DesignModeBar } from './DesignModeBar';
 import { Tooltip } from '../ui/Tooltip';
-import { ArrowLeft, Layers, Share2, Undo2, Redo2, Copy, Trash2, Download, Upload, Eye } from 'lucide-react';
+import { ArrowLeft, Layers, Share2, Undo2, Redo2, Copy, Trash2, Download, Upload, Eye, FileText } from 'lucide-react';
 import Scene from '../canvas/Scene';
 import { saveScene, loadScene } from '../../engine/serialization';
+import { DesignerQuoteModal } from './DesignerQuoteModal';
 
 export function Workspace() {
   const state = useSnapshot(designerStore);
-  const pricing = useSnapshot(pricingStore);
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -357,8 +357,37 @@ export function Workspace() {
               <Share2 size={18} />
             </button>
           </Tooltip>
+
+          <div style={{ width: 1, height: 24, background: 'rgba(255, 255, 255, 0.12)' }} />
+
+          <button
+            onClick={() => setQuoteModalOpen(true)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
+              padding: '0 14px',
+              height: 38,
+              borderRadius: 12,
+              background: 'linear-gradient(135deg, #d4a853 0%, #b8860b 100%)',
+              color: '#0f172a',
+              border: 'none',
+              fontSize: 13,
+              fontWeight: 700,
+              cursor: 'pointer',
+              boxShadow: '0 2px 10px rgba(212, 168, 83, 0.3)',
+              transition: 'all 0.15s ease',
+            }}
+            onMouseOver={(e) => e.currentTarget.style.filter = 'brightness(1.1)'}
+            onMouseOut={(e) => e.currentTarget.style.filter = 'none'}
+          >
+            <FileText size={15} />
+            <span>Request Quote</span>
+          </button>
         </div>
       </div>
+
+      <DesignerQuoteModal isOpen={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} />
 
       {/* Floating Design Mode Bar & Template Switcher */}
       <div style={{ position: 'absolute', top: 76, left: 0, right: 0, zIndex: 25, pointerEvents: 'none' }}>
