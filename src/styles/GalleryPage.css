@@ -5,7 +5,7 @@
 
 /* ── Page shell ── */
 .glry-page {
-  background: var(--color-walnut, #12100E);
+  background: #F0EAD6;
   min-height: 100vh;
   overflow-x: hidden;
 }

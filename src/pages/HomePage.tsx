@@ -6,7 +6,7 @@ import { WorkspaceInspiration } from '../components/sections/WorkspaceInspiratio
 // import { CompletedProjects } from '../components/sections/CompletedProjects';
 import { DesignYourOwn } from '../components/sections/DesignYourOwn';
 import { TestimonialsCarousel } from '../components/sections/TestimonialsCarousel';
-import { Newsletter } from '../components/sections/Newsletter';
+// import { Newsletter } from '../components/sections/Newsletter';
 
 export function HomePage() {
   return (
@@ -35,8 +35,8 @@ export function HomePage() {
       {/* 8. Testimonials */}
       <TestimonialsCarousel />
 
-      {/* 9. Newsletter */}
-      <Newsletter />
+      {/* 9. Newsletter - commented out */}
+      {/* <Newsletter /> */}
     </>
   );
 }
