@@ -1,5 +1,6 @@
 import { storage } from './storage';
 import type { AdminCategory } from '../types/admin.types';
+import { fetchSupabaseCatalog } from '../../products/services/catalogService';
 
 const COLLECTION = 'categories';
 
@@ -18,14 +19,20 @@ export const categoriesService = {
       id: storage.generateId(),
       createdAt: new Date().toISOString(),
     };
-    return storage.create(COLLECTION, category);
+    const res = await storage.create(COLLECTION, category);
+    fetchSupabaseCatalog();
+    return res;
   },
 
   async update(id: string, data: Partial<AdminCategory>): Promise<AdminCategory | null> {
-    return storage.update<AdminCategory>(COLLECTION, id, data);
+    const res = await storage.update<AdminCategory>(COLLECTION, id, data);
+    fetchSupabaseCatalog();
+    return res;
   },
 
   async remove(id: string): Promise<boolean> {
-    return storage.remove(COLLECTION, id);
+    const res = await storage.remove(COLLECTION, id);
+    fetchSupabaseCatalog();
+    return res;
   },
 };

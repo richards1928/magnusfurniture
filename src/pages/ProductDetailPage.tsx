@@ -2,7 +2,7 @@ import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Check, Shield, Truck, Settings, Phone } from 'lucide-react';
-import { getProductBySlug } from '../products/services/catalogService';
+import { useCatalog } from '../products/services/catalogService';
 import { Button } from '../components/ui/Button';
 
 const PLACEHOLDER_IMAGE = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'><rect width='100%' height='100%' fill='%23f8f6f0'/><g transform='translate(200, 220)'><rect width='200' height='140' rx='12' fill='%23e2ded4'/><path d='M30 100 L80 50 L120 80 L170 30 L190 100 Z' fill='%23c5bea8'/><circle cx='60' cy='40' r='16' fill='%23d3ccba'/></g><text x='50%' y='410' font-family='sans-serif' font-size='22' font-weight='600' fill='%23666666' text-anchor='middle'>MAGNUS</text><text x='50%' y='440' font-family='sans-serif' font-size='15' fill='%23999999' text-anchor='middle'>Product Image Coming Soon</text></svg>";
@@ -11,6 +11,7 @@ export function ProductDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const location = useLocation();
   const navigate = useNavigate();
+  const { getProductBySlug } = useCatalog();
   const product = getProductBySlug(slug!);
   const passedImage = (location.state as any)?.image;
 

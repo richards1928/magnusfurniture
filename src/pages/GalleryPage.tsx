@@ -1,7 +1,8 @@
-﻿import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
 import { MagnusMonogram } from '../components/ui/MagnusLogo';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import '../styles/GalleryPage.css';
 
 const RAW_FILENAMES: string[] = [
@@ -97,12 +98,28 @@ function Lightbox({ images, current, onClose, onPrev, onNext }: {
 }
 
 export function GalleryPage() {
+  const [galleryImages, setGalleryImages] = useState<GalleryImage[]>(IMAGES);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (isSupabaseConfigured() && supabase) {
+      supabase.from('gallery').select('*').order('created_at', { ascending: false }).then(({ data }) => {
+        if (data && data.length > 0) {
+          const dbImages: GalleryImage[] = data.map((item: any, i: number) => ({
+            src: item.image,
+            index: i,
+          }));
+          const combined = [...dbImages, ...IMAGES].map((img, idx) => ({ ...img, index: idx }));
+          setGalleryImages(combined);
+        }
+      });
+    }
+  }, []);
 
   const openLightbox = useCallback((i: number) => setLightboxIndex(i), []);
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
   const goPrev = useCallback(() => setLightboxIndex((n) => (n !== null && n > 0 ? n - 1 : n)), []);
-  const goNext = useCallback(() => setLightboxIndex((n) => (n !== null && n < IMAGES.length - 1 ? n + 1 : n)), []);
+  const goNext = useCallback(() => setLightboxIndex((n) => (n !== null && n < galleryImages.length - 1 ? n + 1 : n)), [galleryImages.length]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -142,7 +159,7 @@ export function GalleryPage() {
             modular workstations, and completed workspace projects across Hyderabad.
           </motion.p>
           <motion.div className="glry-count-pill" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45, delay: 0.26 }}>
-            {IMAGES.length} spaces
+            {galleryImages.length} spaces
           </motion.div>
         </div>
       </section>
@@ -150,12 +167,12 @@ export function GalleryPage() {
       <section className="glry-grid-section">
         <div className="container">
           <div className="glry-grid">
-            {IMAGES.map((img, i) => (
+            {galleryImages.map((img, i) => (
               <motion.button
                 key={img.src}
                 className="glry-card"
                 onClick={() => openLightbox(i)}
-                aria-label={`View workspace image ${i + 1} of ${IMAGES.length}`}
+                aria-label={`View workspace image ${i + 1} of ${galleryImages.length}`}
                 initial={{ opacity: 0, y: 26 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-48px' }}
@@ -184,7 +201,7 @@ export function GalleryPage() {
 
       <AnimatePresence>
         {lightboxIndex !== null && (
-          <Lightbox images={IMAGES} current={lightboxIndex} onClose={closeLightbox} onPrev={goPrev} onNext={goNext} />
+          <Lightbox images={galleryImages} current={lightboxIndex} onClose={closeLightbox} onPrev={goPrev} onNext={goNext} />
         )}
       </AnimatePresence>
     </div>

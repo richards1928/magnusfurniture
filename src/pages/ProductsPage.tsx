@@ -1,13 +1,14 @@
 
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { products, categories, getCategoryBySlug, getProductsByCategory } from '../products/services/catalogService';
+import { useCatalog } from '../products/services/catalogService';
 import { ProductCard } from '../components/product/ProductCard';
 import { ChevronRight } from 'lucide-react';
 import '../styles/ProductsPage.css';
 
 export function ProductsPage() {
   const { slug } = useParams<{ slug?: string }>();
+  const { products, categories, getCategoryBySlug, getProductsByCategory } = useCatalog();
   
   const currentCategory = slug ? getCategoryBySlug(slug) : null;
   const displayProducts = currentCategory ? getProductsByCategory(slug!) : products;

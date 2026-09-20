@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { categories } from '../products/services/catalogService';
+import { useCatalog } from '../products/services/catalogService';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Card } from '../components/ui/Card';
 
 export function CategoriesPage() {
+  const { categories } = useCatalog();
   return (
     <div style={{ background: 'var(--color-warm-white)', minHeight: '100vh', paddingBottom: 'var(--space-20)' }}>
       <div style={{

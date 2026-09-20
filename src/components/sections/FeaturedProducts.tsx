@@ -1,17 +1,24 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { products } from '../../products/services/catalogService';
+import { useCatalog, type Product, type Category } from '../../products/services/catalogService';
 import { ArrowRight, ArrowUpRight, Sparkles, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useMemo } from 'react';
 
 // ── Category tabs derived from real data ──────────────────────────────────────
 const ALL = 'All';
-function buildTabs(prods: typeof products) {
+function buildTabs(prods: Product[], allCategories?: Category[]) {
   const counts: Record<string, number> = {};
   prods.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
+  if (allCategories) {
+    allCategories.forEach(c => {
+      if (counts[c.name] === undefined) {
+        counts[c.name] = c.productCount || 0;
+      }
+    });
+  }
   const cats = Object.entries(counts)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 6)
+    .slice(0, 8)
     .map(([name]) => name);
   return [ALL, ...cats];
 }
@@ -41,14 +48,15 @@ const catIcon: Record<string, string> = {
 };
 
 export function FeaturedProducts() {
-  const tabs = useMemo(() => buildTabs(products), []);
+  const { products: allProducts, categories: allCategories } = useCatalog();
+  const tabs = useMemo(() => buildTabs(allProducts, allCategories), [allProducts, allCategories]);
   const [activeTab, setActiveTab] = useState(ALL);
   const [hovered, setHovered] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
-    const base = activeTab === ALL ? products : products.filter(p => p.category === activeTab);
+    const base = activeTab === ALL ? allProducts : allProducts.filter(p => p.category.toLowerCase() === activeTab.toLowerCase());
     return base.slice(0, 8);
-  }, [activeTab]);
+  }, [activeTab, allProducts]);
 
   return (
     <section style={{
@@ -206,7 +214,26 @@ export function FeaturedProducts() {
               gap: 24,
             }}
           >
-            {filtered.map((product, i) => {
+            {filtered.length === 0 ? (
+              <div style={{
+                gridColumn: '1 / -1',
+                textAlign: 'center',
+                padding: '60px 20px',
+                color: 'rgba(255,255,255,0.7)',
+                background: 'rgba(255,255,255,0.03)',
+                borderRadius: 20,
+                border: '1px dashed rgba(212,175,55,0.25)',
+              }}>
+                <div style={{ fontSize: '2.5rem', marginBottom: 12 }}>📦</div>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: '#F5F1E8', margin: '0 0 8px' }}>
+                  No products in {activeTab} yet
+                </h3>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', margin: 0 }}>
+                  New items for this collection are arriving soon. Explore our other collections or check back shortly!
+                </p>
+              </div>
+            ) : (
+              filtered.map((product, i) => {
               const imgSrc = product.hero || product.thumbnail || '';
               const isHovered = hovered === product.id;
 
@@ -418,7 +445,7 @@ export function FeaturedProducts() {
                   </Link>
                 </motion.div>
               );
-            })}
+            }))}
           </motion.div>
         </AnimatePresence>
 

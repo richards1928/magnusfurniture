@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { testimonials } from '../../data/content';
 import { Star, Quote, BadgeCheck } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 
 const trustBadges = [
   { icon: '⭐', label: 'Google 4.9 / 5' },
@@ -11,7 +12,29 @@ const trustBadges = [
 ];
 
 export function TestimonialsCarousel() {
+  const [items, setItems] = useState(testimonials);
   const [hovered, setHovered] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isSupabaseConfigured() && supabase) {
+      supabase.from('testimonials').select('*').eq('status', 'published').order('created_at', { ascending: false }).then(({ data }) => {
+        if (data && data.length > 0) {
+          const dbItems = data.map((t: any) => ({
+            id: t.id,
+            name: t.name,
+            role: t.role || '',
+            company: t.company || '',
+            location: t.location || '',
+            quote: t.quote,
+            rating: t.rating || 5,
+            avatar: t.avatar || '',
+            featured: t.featured || false,
+          }));
+          setItems([...dbItems, ...testimonials]);
+        }
+      });
+    }
+  }, []);
 
   return (
     <section style={{
@@ -99,7 +122,7 @@ export function TestimonialsCarousel() {
             marginBottom: 72,
           }}
         >
-          {testimonials.slice(0, 3).map((t, i) => {
+          {items.slice(0, 3).map((t, i) => {
             const isH = hovered === t.id;
             const initials = t.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
             return (

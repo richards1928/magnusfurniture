@@ -1,5 +1,6 @@
 import { storage } from './storage';
 import type { AdminProduct } from '../types/admin.types';
+import { fetchSupabaseCatalog } from '../../products/services/catalogService';
 
 const COLLECTION = 'products';
 
@@ -19,18 +20,24 @@ export const productsService = {
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
-    return storage.create(COLLECTION, product);
+    const res = await storage.create(COLLECTION, product);
+    fetchSupabaseCatalog();
+    return res;
   },
 
   async update(id: string, data: Partial<AdminProduct>): Promise<AdminProduct | null> {
-    return storage.update<AdminProduct>(COLLECTION, id, {
+    const res = await storage.update<AdminProduct>(COLLECTION, id, {
       ...data,
       updatedAt: new Date().toISOString(),
     });
+    fetchSupabaseCatalog();
+    return res;
   },
 
   async remove(id: string): Promise<boolean> {
-    return storage.remove(COLLECTION, id);
+    const res = await storage.remove(COLLECTION, id);
+    fetchSupabaseCatalog();
+    return res;
   },
 
   async getFeatured(): Promise<AdminProduct[]> {
