@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronRight, Award } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 
@@ -55,10 +55,10 @@ export function AboutHero() {
       <div className="abt-container">
         <div className="abt-hero__content">
           {/* Floating Premium Badge */}
-          <div className="abt-hero__badge abt-fade-in">
+          {/* <div className="abt-hero__badge abt-fade-in">
             <Award size={14} className="abt-shimmer" />
             <span>EXECUTIVE SPACES ✦ CRAFTED SINCE 1928</span>
-          </div>
+          </div> */}
 
           {/* Breadcrumb */}
           <nav className="abt-hero__breadcrumb abt-fade-in abt-delay-1" aria-label="Breadcrumb">

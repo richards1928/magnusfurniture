@@ -6,9 +6,9 @@ export function WorkspaceInspiration() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const containerStyle: React.CSSProperties = {
-    backgroundColor: 'var(--color-walnut-dark, #32140D)',
+    backgroundColor: '#F0EAD6',
     padding: '80px 20px',
-    color: 'var(--color-text-cream, #F5F1E8)',
+    color: '#12100E',
     fontFamily: '"Inter", sans-serif',
     display: 'flex',
     flexDirection: 'column',
@@ -22,7 +22,7 @@ export function WorkspaceInspiration() {
   };
 
   const overlineStyle: React.CSSProperties = {
-    color: '#D4AF37',
+    color: '#8A6D23',
     textTransform: 'uppercase',
     letterSpacing: '2px',
     fontSize: '0.85rem',
@@ -36,11 +36,11 @@ export function WorkspaceInspiration() {
     fontWeight: 700,
     marginBottom: '20px',
     lineHeight: 1.2,
-    color: 'var(--color-text-cream, #F5F1E8)',
+    color: '#12100E',
   };
 
   const subtitleStyle: React.CSSProperties = {
-    color: 'var(--color-text-muted-warm, #C8BDB3)',
+    color: '#5C544B',
     fontSize: '1.1rem',
     lineHeight: 1.6,
   };
@@ -98,9 +98,10 @@ export function WorkspaceInspiration() {
     justifyContent: 'center',
     gap: '32px',
     padding: '30px',
-    backgroundColor: 'rgba(255, 255, 255, 0.03)',
+    backgroundColor: '#FFFFFF',
     borderRadius: '16px',
-    border: '1px solid rgba(212, 175, 55, 0.2)',
+    border: '1px solid rgba(138, 109, 35, 0.25)',
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
     maxWidth: '1200px',
     width: '100%',
     marginBottom: '60px',
@@ -115,20 +116,20 @@ export function WorkspaceInspiration() {
   const statDividerStyle: React.CSSProperties = {
     width: '1px',
     height: '24px',
-    backgroundColor: 'rgba(255,255,255,0.1)',
+    backgroundColor: 'rgba(0, 0, 0, 0.12)',
   };
 
   const statTextStyle: React.CSSProperties = {
-    color: '#e0e0e0',
+    color: '#2A2520',
     fontSize: '0.95rem',
-    fontWeight: 500,
+    fontWeight: 600,
   };
 
   const buttonStyle: React.CSSProperties = {
     padding: '16px 32px',
-    border: '1px solid #D4AF37',
+    border: '2px solid #8A6D23',
     backgroundColor: 'transparent',
-    color: '#D4AF37',
+    color: '#8A6D23',
     fontSize: '1rem',
     fontWeight: 600,
     borderRadius: '30px',

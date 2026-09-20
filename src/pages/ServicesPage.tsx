@@ -336,6 +336,7 @@ export function ServicesPage() {
             subtitle="What We Offer"
             title="Comprehensive Workspace Services"
             description="Our specialized corporate capabilities empower businesses to plan, design, manufacture, and maintain world-class office environments."
+            light
           />
 
           <div className="services-grid-container">
@@ -483,6 +484,7 @@ export function ServicesPage() {
             subtitle="Tailored Sector Expertise"
             title="Industries We Serve"
             description="We deliver customized furniture and workspace planning for diverse commercial, institutional, and hospitality sectors."
+            light
           />
 
           <div className="industries-grid">
@@ -554,6 +556,7 @@ export function ServicesPage() {
             subtitle="Showcase Capabilities"
             title="Featured Service Highlights"
             description="Real project executions demonstrating our scale, custom tailoring, and turnkey workspace capability."
+            light
           />
 
           {/* Highlight 1 */}

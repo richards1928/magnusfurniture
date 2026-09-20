@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {
+=======
+﻿{
+>>>>>>> adecd8ee67be8d460f09a6376c8cc75434e5b6e4
   "hosting": {
     "public": "dist",
     "ignore": [
@@ -11,6 +15,7 @@
         "source": "**",
         "destination": "/index.html"
       }
+<<<<<<< HEAD
     ],
     "headers": [
       {
@@ -48,6 +53,8 @@
           }
         ]
       }
+=======
+>>>>>>> adecd8ee67be8d460f09a6376c8cc75434e5b6e4
     ]
   }
 }
