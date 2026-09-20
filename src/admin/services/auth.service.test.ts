@@ -138,4 +138,23 @@ describe('authService', () => {
     expect(authService.getToken()).toBeNull();
     expect(authService.getUser()).toBeNull();
   });
+
+  it('validates email in requestPasswordReset', async () => {
+    const res1 = await authService.requestPasswordReset('');
+    expect(res1.success).toBe(false);
+    expect(res1.error).toContain('Email address is required');
+
+    const res2 = await authService.requestPasswordReset('   ');
+    expect(res2.success).toBe(false);
+  });
+
+  it('validates password minimum length in updatePassword', async () => {
+    const res1 = await authService.updatePassword('');
+    expect(res1.success).toBe(false);
+    expect(res1.error).toContain('at least 8 characters');
+
+    const res2 = await authService.updatePassword('short');
+    expect(res2.success).toBe(false);
+    expect(res2.error).toContain('at least 8 characters');
+  });
 });

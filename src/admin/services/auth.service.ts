@@ -175,4 +175,88 @@ export const authService = {
     const token = this.getToken();
     return token?.user || null;
   },
+
+  /**
+   * Request a password recovery email via Supabase Auth.
+   * Dynamically constructs redirectTo using window.location.origin so both dev (5173)
+   * and production domains work without hardcoding ports.
+   */
+  async requestPasswordReset(email: string): Promise<{ success: boolean; error?: string }> {
+    const trimmedEmail = email.trim().toLowerCase();
+    if (!trimmedEmail) {
+      return { success: false, error: 'Email address is required.' };
+    }
+
+    if (isSupabaseConfigured() && supabase) {
+      try {
+        const redirectTo = typeof window !== 'undefined' && window.location?.origin
+          ? `${window.location.origin}/admin/reset-password`
+          : undefined;
+
+        const { error } = await supabase.auth.resetPasswordForEmail(trimmedEmail, {
+          redirectTo,
+        });
+
+        if (error) {
+          return { success: false, error: error.message };
+        }
+
+        return { success: true };
+      } catch (err) {
+        return {
+          success: false,
+          error: err instanceof Error ? err.message : 'Failed to send password reset email.',
+        };
+      }
+    }
+
+    return { success: false, error: 'Authentication service is not configured.' };
+  },
+
+  /**
+   * Update the user password when in a Supabase password-recovery session.
+   * On success, establishes the admin session token.
+   */
+  async updatePassword(newPassword: string): Promise<{ success: boolean; error?: string }> {
+    if (!newPassword || newPassword.length < 8) {
+      return { success: false, error: 'Password must be at least 8 characters long.' };
+    }
+
+    if (isSupabaseConfigured() && supabase) {
+      try {
+        const { data, error } = await supabase.auth.updateUser({
+          password: newPassword,
+        });
+
+        if (error) {
+          return { success: false, error: error.message };
+        }
+
+        if (data.user) {
+          const sessionData = await supabase.auth.getSession();
+          const session = sessionData.data.session;
+          const sessionToken: AuthToken = {
+            token: session?.access_token || '',
+            user: {
+              id: data.user.id,
+              email: data.user.email || '',
+              name: data.user.user_metadata?.full_name || 'Magnus Administrator',
+              role: 'super_admin',
+            },
+            expiresAt: session?.expires_at ? session.expires_at * 1000 : Date.now() + 8 * 60 * 60 * 1000,
+          };
+          this.setSession(sessionToken);
+        }
+
+        return { success: true };
+      } catch (err) {
+        return {
+          success: false,
+          error: err instanceof Error ? err.message : 'Failed to update password.',
+        };
+      }
+    }
+
+    return { success: false, error: 'Authentication service is not configured.' };
+  },
 };

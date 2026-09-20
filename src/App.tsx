@@ -1,5 +1,5 @@
-import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { lazy, Suspense, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
 
 // ── Eager imports: lightweight pages critical for first paint ──
@@ -27,6 +27,7 @@ const DesignerPage = lazy(() => import('./pages/DesignerPage').then(m => ({ defa
 
 // ── Lazy imports: Admin panel (recharts, admin services, etc.) ──
 const LoginPage = lazy(() => import('./admin/pages/LoginPage').then(m => ({ default: m.LoginPage })));
+const ResetPasswordPage = lazy(() => import('./admin/pages/ResetPasswordPage').then(m => ({ default: m.ResetPasswordPage })));
 const AdminLayout = lazy(() => import('./admin/components/AdminLayout').then(m => ({ default: m.AdminLayout })));
 const DashboardPage = lazy(() => import('./admin/pages/DashboardPage').then(m => ({ default: m.DashboardPage })));
 const AdminProductsPage = lazy(() => import('./admin/pages/ProductsPage').then(m => ({ default: m.AdminProductsPage })));
@@ -97,9 +98,25 @@ function Placeholder({ title }: { title: string }) {
   );
 }
 
+// ── Password recovery listener to automatically route recovery tokens ──
+function AuthRecoveryListener() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = window.location.hash || '';
+    if (hash.includes('type=recovery') && location.pathname !== '/admin/reset-password') {
+      navigate(`/admin/reset-password${hash}`, { replace: true });
+    }
+  }, [navigate, location]);
+
+  return null;
+}
+
 function App() {
   return (
     <AuthProvider>
+      <AuthRecoveryListener />
       <Suspense fallback={<PageLoader />}>
         <Routes>
           {/* Main Website Layout */}
@@ -152,6 +169,7 @@ function App() {
 
           {/* Admin */}
           <Route path="/admin/login" element={<LoginPage />} />
+          <Route path="/admin/reset-password" element={<ResetPasswordPage />} />
 
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<DashboardPage />} />
