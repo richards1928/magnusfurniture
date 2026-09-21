@@ -287,3 +287,119 @@ img, video, svg, canvas {
 .flex-wrap-mobile {
   flex-wrap: wrap !important;
 }
+
+/* ── 14. Contact Page & SimplePage Mobile Fit ── */
+.simple-page-wrapper {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+.simple-page-card {
+  padding: var(--space-12);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.contact-grid > div,
+.info-grid > div,
+.reviews-grid > div {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-8) !important;
+  }
+  .info-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-8) !important;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6) !important;
+  }
+  .cta-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--space-3) !important;
+  }
+  .cta-buttons > * {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .simple-page-card {
+    padding: 24px 16px !important;
+  }
+  .simple-page-header {
+    padding-top: calc(var(--nav-height) + var(--space-6)) !important;
+    padding-bottom: var(--space-6) !important;
+    margin-bottom: var(--space-6) !important;
+  }
+  .map-card-wrapper {
+    overflow: hidden;
+  }
+  .map-ambient-glow {
+    inset: 0 !important;
+    filter: blur(8px) !important;
+  }
+  .magnus-map-card {
+    min-height: auto !important;
+  }
+  .map-iframe {
+    min-height: 280px !important;
+    height: 280px !important;
+  }
+  .contact-cta-card {
+    padding: 32px 16px !important;
+  }
+  .contact-cta-card h3 {
+    font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .map-card-header {
+    padding: 12px 14px !important;
+    gap: 10px !important;
+  }
+  .map-header-link {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .map-card-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding: 12px 14px !important;
+  }
+  .map-card-bottom .map-dir-link {
+    align-self: flex-start !important;
+  }
+  .contact-info-card,
+  .contact-review-card {
+    padding: 18px 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .simple-page-card {
+    padding: 20px 14px !important;
+  }
+  .contact-social-buttons a {
+    flex: 1 1 calc(50% - 10px) !important;
+    justify-content: center !important;
+    padding: 9px 12px !important;
+    font-size: var(--fs-xs) !important;
+  }
+}
+

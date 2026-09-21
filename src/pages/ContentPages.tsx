@@ -18,8 +18,8 @@ import { InstagramIcon, YoutubeIcon, LinkedinIcon, FacebookIcon } from '../compo
 
 function SimplePage({ title, description, children }: { title: string, description: string, children?: ReactNode }) {
   return (
-    <div style={{ background: 'var(--color-warm-white)', minHeight: '100vh', paddingBottom: 'var(--space-20)' }}>
-      <div style={{
+    <div className="simple-page-wrapper" style={{ background: 'var(--color-warm-white)', minHeight: '100vh', paddingBottom: 'var(--space-20)', width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
+      <div className="simple-page-header" style={{
         background: 'var(--color-cream)',
         paddingTop: 'calc(var(--nav-height) + var(--space-12))',
         paddingBottom: 'var(--space-12)',
@@ -31,7 +31,7 @@ function SimplePage({ title, description, children }: { title: string, descripti
         </div>
       </div>
       <div className="container">
-        <div style={{ padding: 'var(--space-12)', background: 'var(--color-white)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-gray-200)', minHeight: 400 }}>
+        <div className="simple-page-card" style={{ background: 'var(--color-white)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-gray-200)', minHeight: 400 }}>
           {children ? children : <p style={{ color: 'var(--color-gray-500)' }}>Content coming soon...</p>}
         </div>
       </div>
@@ -61,14 +61,14 @@ export const ContactPage = () => (
   <SimplePage title="Contact Us" description="Get in touch with our corporate sales and support team.">
     {/* TOP SECTION: CONTACT DETAILS AND MAP */}
     <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-12)', marginBottom: 'var(--space-12)', alignItems: 'stretch' }}>
-      <div>
+      <div style={{ minWidth: 0, maxWidth: '100%' }}>
         <h3 style={{ fontSize: 'var(--fs-h3)', fontFamily: 'var(--font-heading)', marginBottom: 'var(--space-4)', color: 'var(--color-dark)', display: 'flex', alignItems: 'center', gap: 12 }}>
           <MagnusMonogram size={32} color="gold" style={{ opacity: 0.85, flexShrink: 0 }} />
           Get in Touch
         </h3>
         
         {/* Google Rating Badge */}
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 12px', borderRadius: 'var(--radius-full)', background: 'var(--color-primary-bg)', color: 'var(--color-primary)', border: '1px solid rgba(90, 50, 28, 0.1)', marginBottom: 'var(--space-6)' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 12px', borderRadius: 'var(--radius-full)', background: 'var(--color-primary-bg)', color: 'var(--color-primary)', border: '1px solid rgba(90, 50, 28, 0.1)', marginBottom: 'var(--space-6)', flexWrap: 'wrap', maxWidth: '100%' }}>
           <Star size={16} fill="var(--color-accent)" stroke="var(--color-accent)" />
           <span style={{ fontWeight: 'var(--fw-bold)' }}>4.9 / 5</span>
           <span style={{ color: 'var(--color-gray-500)', fontSize: 'var(--fs-small)' }}>Based on 17 Google Reviews</span>
@@ -96,13 +96,13 @@ export const ContactPage = () => (
             <div style={{ fontSize: 'var(--fs-xs)', textTransform: 'uppercase', color: 'var(--color-gray-400)', letterSpacing: 'var(--ls-wider)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
               <Mail size={14} color="var(--color-primary)" /> Email
             </div>
-            <a href="mailto:magnusofficefurniture@gmail.com" style={{ color: 'var(--color-primary)', fontWeight: 'var(--fw-medium)', textDecoration: 'none' }}>magnusofficefurniture@gmail.com</a>
+            <a href="mailto:magnusofficefurniture@gmail.com" style={{ color: 'var(--color-primary)', fontWeight: 'var(--fw-medium)', textDecoration: 'none', wordBreak: 'break-word', overflowWrap: 'anywhere' }}>magnusofficefurniture@gmail.com</a>
           </div>
           <div>
             <div style={{ fontSize: 'var(--fs-xs)', textTransform: 'uppercase', color: 'var(--color-gray-400)', letterSpacing: 'var(--ls-wider)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
               <Globe size={14} color="var(--color-primary)" /> Website
             </div>
-            <a href="https://magnusofficefurniture.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', fontWeight: 'var(--fw-medium)', textDecoration: 'none' }}>magnusofficefurniture.com</a>
+            <a href="https://magnusofficefurniture.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', fontWeight: 'var(--fw-medium)', textDecoration: 'none', wordBreak: 'break-word', overflowWrap: 'anywhere' }}>magnusofficefurniture.com</a>
           </div>
           <div>
             <div style={{ fontSize: 'var(--fs-xs)', textTransform: 'uppercase', color: 'var(--color-gray-400)', letterSpacing: 'var(--ls-wider)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -128,7 +128,7 @@ export const ContactPage = () => (
             <div style={{ fontSize: 'var(--fs-xs)', textTransform: 'uppercase', color: 'var(--color-gray-400)', letterSpacing: 'var(--ls-wider)' }}>
               Follow Us
             </div>
-            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            <div className="contact-social-buttons" style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               <a href="https://wa.me/919090626207" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#25D366', color: '#fff', padding: '10px 20px', borderRadius: 'var(--radius-md)', fontWeight: 'var(--fw-semibold)', textDecoration: 'none', fontSize: 'var(--fs-small)' }}>
                 <MessageSquare size={16} fill="#fff" /> WhatsApp
               </a>
@@ -151,9 +151,10 @@ export const ContactPage = () => (
 
       {/* Premium Magnus Showroom Location Card */}
       {/* ── Ambient glow wrapper — does not clip the card ── */}
-      <div style={{ position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <div className="map-card-wrapper" style={{ position: 'relative', height: '100%', display: 'flex', flexDirection: 'column', minWidth: 0, maxWidth: '100%' }}>
         {/* Soft champagne ambient glow behind the card */}
         <div
+          className="map-ambient-glow"
           aria-hidden="true"
           style={{
             position: 'absolute',
@@ -184,6 +185,9 @@ export const ContactPage = () => (
             transition:
               'border-color 400ms var(--ease-in-out), box-shadow 400ms var(--ease-in-out), transform 400ms var(--ease-in-out)',
             background: 'var(--color-walnut-light, #5A2919)',
+            width: '100%',
+            maxWidth: '100%',
+            boxSizing: 'border-box',
           }}
           onMouseEnter={(e) => {
             const el = e.currentTarget as HTMLDivElement;
@@ -206,7 +210,7 @@ export const ContactPage = () => (
         >
 
           {/* ── Header: Walnut Charcoal ── */}
-          <div style={{
+          <div className="map-card-header" style={{
             background: 'linear-gradient(135deg, #32140D 0%, #4A1F12 60%, #5A2919 100%)',
             borderBottom: '1px solid rgba(212,175,55,0.18)',
             padding: '14px 18px',
@@ -215,15 +219,17 @@ export const ContactPage = () => (
             justifyContent: 'space-between',
             gap: 12,
             flexShrink: 0,
+            flexWrap: 'wrap',
+            boxSizing: 'border-box',
           }}>
             {/* Left: Monogram + Location text */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}>
               <MagnusMonogram
                 size={28}
                 borderRadius={6}
                 style={{ flexShrink: 0, opacity: 0.92 }}
               />
-              <div>
+              <div style={{ minWidth: 0 }}>
                 <div style={{
                   fontFamily: 'var(--font-heading)',
                   fontSize: '0.72rem',
@@ -244,8 +250,8 @@ export const ContactPage = () => (
                   color: 'rgba(255,255,255,0.55)',
                   lineHeight: 1,
                 }}>
-                  <MapPin size={11} color="rgba(212,175,55,0.65)" strokeWidth={2} />
-                  Kondapur, Hyderabad
+                  <MapPin size={11} color="rgba(212,175,55,0.65)" strokeWidth={2} style={{ flexShrink: 0 }} />
+                  <span>Kondapur, Hyderabad</span>
                 </div>
               </div>
             </div>
@@ -256,6 +262,7 @@ export const ContactPage = () => (
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
+              className="map-header-link"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -289,6 +296,7 @@ export const ContactPage = () => (
           {/* ── Map iframe (unchanged) ── */}
           <iframe
             src="https://maps.google.com/maps?q=Magnus%20Office%20Furniture%20Kondapur%20Hyderabad&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            className="map-iframe"
             style={{ border: 0, width: '100%', flex: 1, minHeight: 430, display: 'block', pointerEvents: 'none' }}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -301,6 +309,7 @@ export const ContactPage = () => (
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
+            className="map-card-bottom"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -311,9 +320,11 @@ export const ContactPage = () => (
               borderTop: '1px solid rgba(212,175,55,0.14)',
               textDecoration: 'none',
               flexShrink: 0,
+              maxWidth: '100%',
+              boxSizing: 'border-box',
             }}
           >
-            <div>
+            <div style={{ minWidth: 0, flex: 1 }}>
               <div style={{
                 fontFamily: 'var(--font-heading)',
                 fontSize: '0.82rem',
@@ -332,8 +343,8 @@ export const ContactPage = () => (
                 gap: 4,
                 lineHeight: 1,
               }}>
-                <MapPin size={11} color="var(--color-gray-400)" strokeWidth={2} />
-                Kondapur, Hyderabad · Opposite Sarath City
+                <MapPin size={11} color="var(--color-gray-400)" strokeWidth={2} style={{ flexShrink: 0 }} />
+                <span>Kondapur, Hyderabad · Opposite Sarath City</span>
               </div>
             </div>
             <div
@@ -348,6 +359,7 @@ export const ContactPage = () => (
                 whiteSpace: 'nowrap',
                 transition: 'color 400ms var(--ease-in-out)',
                 letterSpacing: '0.01em',
+                flexShrink: 0,
               }}
             >
               Get Directions <ExternalLink size={13} strokeWidth={2.5} />
@@ -363,7 +375,7 @@ export const ContactPage = () => (
     {/* MID SECTION: WHY CHOOSE MAGNUS & QUICK CONTACT */}
     <div className="info-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-8)', marginBottom: 'var(--space-12)' }}>
       {/* Card 1: Why Choose Magnus? */}
-      <div style={{ padding: 'var(--space-6)', background: 'var(--color-cream)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-gray-200)' }}>
+      <div className="contact-info-card" style={{ padding: 'var(--space-6)', background: 'var(--color-cream)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-gray-200)', minWidth: 0 }}>
         <h4 style={{ fontSize: 'var(--fs-h4)', fontFamily: 'var(--font-heading)', fontWeight: 'var(--fw-semibold)', color: 'var(--color-primary)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 8 }}>
           <Award size={20} color="var(--color-accent)" /> Why Choose Magnus?
         </h4>
@@ -389,7 +401,7 @@ export const ContactPage = () => (
       </div>
 
       {/* Card 2: Quick Contact & Enquiries */}
-      <div style={{ padding: 'var(--space-6)', background: 'var(--color-cream)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-gray-200)' }}>
+      <div className="contact-info-card" style={{ padding: 'var(--space-6)', background: 'var(--color-cream)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-gray-200)', minWidth: 0 }}>
         <h4 style={{ fontSize: 'var(--fs-h4)', fontFamily: 'var(--font-heading)', fontWeight: 'var(--fw-semibold)', color: 'var(--color-primary)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 8 }}>
           <Clock size={20} /> Quick Contact Info
         </h4>
@@ -454,6 +466,7 @@ export const ContactPage = () => (
         ].map((rev, idx) => (
           <div
             key={idx}
+            className="contact-review-card"
             style={{
               padding: 'var(--space-6)',
               background: 'var(--color-white)',
@@ -463,6 +476,7 @@ export const ContactPage = () => (
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
+              minWidth: 0,
             }}
           >
             <div>
@@ -490,7 +504,7 @@ export const ContactPage = () => (
     </div>
 
     {/* PREMIUM CALL TO ACTION */}
-    <div style={{
+    <div className="contact-cta-card" style={{
       padding: 'var(--space-10) var(--space-8)',
       background: 'var(--color-primary)',
       borderRadius: 'var(--radius-lg)',
@@ -500,6 +514,8 @@ export const ContactPage = () => (
       marginTop: 'var(--space-8)',
       position: 'relative',
       overflow: 'hidden',
+      maxWidth: '100%',
+      boxSizing: 'border-box',
     }}>
 
       <div style={{
@@ -568,7 +584,39 @@ export const ContactPage = () => (
         .info-grid { grid-template-columns: 1fr !important; gap: var(--space-8) !important; }
         .reviews-grid { grid-template-columns: 1fr !important; gap: var(--space-6) !important; }
         .cta-buttons { flex-direction: column !important; align-items: stretch !important; gap: var(--space-3) !important; }
+        .cta-buttons > * { width: 100% !important; justify-content: center !important; }
+      }
+      @media (max-width: 768px) {
+        .simple-page-card { padding: 24px 16px !important; }
+        .simple-page-header {
+          padding-top: calc(var(--nav-height) + var(--space-6)) !important;
+          padding-bottom: var(--space-6) !important;
+          margin-bottom: var(--space-6) !important;
+        }
+        .map-card-wrapper { overflow: hidden !important; }
+        .map-ambient-glow { inset: 0 !important; filter: blur(8px) !important; }
+        .magnus-map-card { min-height: auto !important; }
+        .map-iframe { min-height: 280px !important; height: 280px !important; }
+        .contact-cta-card { padding: 32px 16px !important; }
+        .contact-cta-card h3 { font-size: clamp(1.4rem, 5vw, 1.8rem) !important; }
+      }
+      @media (max-width: 560px) {
+        .map-card-header { padding: 12px 14px !important; gap: 10px !important; }
+        .map-header-link { width: 100% !important; justify-content: center !important; }
+        .map-card-bottom { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; padding: 12px 14px !important; }
+        .map-card-bottom .map-dir-link { align-self: flex-start !important; }
+        .contact-info-card, .contact-review-card { padding: 18px 14px !important; }
+      }
+      @media (max-width: 480px) {
+        .simple-page-card { padding: 20px 14px !important; }
+        .contact-social-buttons a {
+          flex: 1 1 calc(50% - 10px) !important;
+          justify-content: center !important;
+          padding: 9px 12px !important;
+          font-size: var(--fs-xs) !important;
+        }
       }
     `}</style>
   </SimplePage>
 );
+

@@ -60,10 +60,10 @@
     ],
     "features": [],
     "images": {
-      "hero": "/assets/products/mdTables/vb-regal-desk.webp",
-      "thumbnail": "/assets/products/mdTables/vb-regal-desk.webp",
+      "hero": "/assets/products/mdTables/vb-regal-desk.png",
+      "thumbnail": "/assets/products/mdTables/vb-regal-desk.png",
       "gallery": [
-        "/assets/products/mdTables/vb-regal-desk.webp"
+        "/assets/products/mdTables/vb-regal-desk.png"
       ]
     },
     "brochure": "",
