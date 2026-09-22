@@ -1,8 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCatalog, type Product, type Category } from '../../products/services/catalogService';
-import { ArrowRight, ArrowUpRight, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useMemo } from 'react';
+import { ProductCard } from '../product/ProductCard';
+import '../../styles/ProductsPage.css';
 
 // ── Category tabs derived from real data ──────────────────────────────────────
 const ALL = 'All';
@@ -23,35 +25,10 @@ function buildTabs(prods: Product[], allCategories?: Category[]) {
   return [ALL, ...cats];
 }
 
-// ── Badge colours ─────────────────────────────────────────────────────────────
-const badgeColour: Record<string, string> = {
-  Bestseller: '#D4AF37',
-  Premium:    '#C084FC',
-  New:        '#34D399',
-  Popular:    '#60A5FA',
-  Sale:       '#F87171',
-};
-
-// ── Fallback icon when no image ───────────────────────────────────────────────
-const catIcon: Record<string, string> = {
-  'MD Tables':              '🖥️',
-  'Manager Tables':         '🖥️',
-  'Workstations':           '💻',
-  'Conference Tables':      '🤝',
-  'Reception Tables':       '🏢',
-  'Storages and Pedestals': '🗄️',
-  'Discussion Tables':      '💬',
-  'Executive Chairs':       '💺',
-  'Visitor Chairs':         '🪑',
-  'Cafeteria Furniture':    '☕',
-  'High Counter Tables':    '📐',
-};
-
 export function FeaturedProducts() {
   const { products: allProducts, categories: allCategories } = useCatalog();
   const tabs = useMemo(() => buildTabs(allProducts, allCategories), [allProducts, allCategories]);
   const [activeTab, setActiveTab] = useState(ALL);
-  const [hovered, setHovered] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
     const base = activeTab === ALL ? allProducts : allProducts.filter(p => p.category.toLowerCase() === activeTab.toLowerCase());
@@ -233,219 +210,16 @@ export function FeaturedProducts() {
                 </p>
               </div>
             ) : (
-              filtered.map((product, i) => {
-              const imgSrc = product.hero || product.thumbnail || '';
-              const isHovered = hovered === product.id;
-
-              return (
+              filtered.map((product, i) => (
                 <motion.div
                   key={product.id}
-                  initial={{ opacity: 0, y: 32 }}
+                  initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                  onMouseEnter={() => setHovered(product.id)}
-                  onMouseLeave={() => setHovered(null)}
+                  transition={{ duration: 0.5, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <Link
-                    to={`/products/${product.slug}`}
-                    state={{ image: imgSrc }}
-                    style={{ textDecoration: 'none', display: 'block' }}
-                  >
-                    <div style={{
-                      borderRadius: 20,
-                      overflow: 'hidden',
-                      background: 'var(--color-walnut-light, #5A2919)',
-                      border: isHovered
-                        ? '1px solid rgba(212,175,55,0.5)'
-                        : '1px solid rgba(212,175,55,0.15)',
-                      transition: 'border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease',
-                      transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
-                      boxShadow: isHovered
-                        ? '0 24px 60px rgba(0,0,0,0.55)'
-                        : '0 4px 20px rgba(0,0,0,0.25)',
-                    }}>
-
-                      {/* ── Image Area ───────────────────────────────── */}
-                      <div style={{
-                        position: 'relative',
-                        height: 240,
-                        background: 'var(--color-walnut-surface, #3E1A0F)',
-                        overflow: 'hidden',
-                      }}>
-                        {imgSrc ? (
-                          <img
-                            src={imgSrc}
-                            alt={product.name}
-                            loading="lazy"
-                            style={{
-                              width: '100%', height: '100%',
-                              objectFit: 'cover',
-                              transition: 'transform 0.6s cubic-bezier(0.22,1,0.36,1)',
-                              transform: isHovered ? 'scale(1.08)' : 'scale(1)',
-                            }}
-                          />
-                        ) : (
-                          <div style={{
-                            width: '100%', height: '100%',
-                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            fontSize: 64, opacity: 0.25,
-                          }}>
-                            {catIcon[product.category] || '📦'}
-                          </div>
-                        )}
-
-                        {/* Dark gradient over image */}
-                        <div style={{
-                          position: 'absolute', inset: 0,
-                          background: 'linear-gradient(to top, rgba(24,22,15,0.85) 0%, rgba(24,22,15,0.1) 55%, transparent 100%)',
-                          transition: 'opacity 0.35s ease',
-                          opacity: isHovered ? 0.9 : 0.6,
-                        }} />
-
-                        {/* Badge row */}
-                        <div style={{
-                          position: 'absolute', top: 14, left: 14, right: 14,
-                          display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start',
-                        }}>
-                          {/* Category chip */}
-                          <span style={{
-                            padding: '4px 12px',
-                            background: 'rgba(0,0,0,0.55)',
-                            backdropFilter: 'blur(8px)',
-                            border: '1px solid rgba(255,255,255,0.1)',
-                            borderRadius: 100,
-                            fontSize: '10px', fontWeight: 600,
-                            letterSpacing: '0.1em', textTransform: 'uppercase',
-                            color: 'rgba(255,255,255,0.65)',
-                          }}>
-                            {product.category}
-                          </span>
-
-                          {/* Product badge */}
-                          {product.badge && (
-                            <span style={{
-                              padding: '4px 12px',
-                              background: badgeColour[product.badge] || '#D4AF37',
-                              borderRadius: 100,
-                              fontSize: '10px', fontWeight: 700,
-                              letterSpacing: '0.08em', textTransform: 'uppercase',
-                              color: '#0C0A09',
-                            }}>
-                              {product.badge}
-                            </span>
-                          )}
-                        </div>
-
-                        {/* Hover: Quick View pill */}
-                        <motion.div
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 8 }}
-                          transition={{ duration: 0.25 }}
-                          style={{
-                            position: 'absolute', bottom: 14, left: '50%',
-                            transform: 'translateX(-50%)',
-                            display: 'flex', alignItems: 'center', gap: 6,
-                            padding: '8px 18px',
-                            background: 'rgba(212,175,55,0.92)',
-                            borderRadius: 100,
-                            fontSize: '11px', fontWeight: 700,
-                            letterSpacing: '0.1em', textTransform: 'uppercase',
-                            color: '#0C0A09',
-                            whiteSpace: 'nowrap',
-                          }}
-                        >
-                          <ArrowUpRight size={12} />
-                          View Details
-                        </motion.div>
-                      </div>
-
-                      {/* ── Card Body ─────────────────────────────────── */}
-                      <div style={{ padding: '20px 22px 22px' }}>
-
-                        {/* Star rating row */}
-                        <div style={{
-                          display: 'flex', alignItems: 'center', gap: 6,
-                          marginBottom: 10,
-                        }}>
-                          <div style={{ display: 'flex', gap: 2 }}>
-                            {[...Array(5)].map((_, si) => (
-                              <Star key={si} size={11}
-                                fill={si < 4 ? 'rgba(212,175,55,0.9)' : 'rgba(212,175,55,0.3)'}
-                                color={si < 4 ? 'rgba(212,175,55,0.9)' : 'rgba(212,175,55,0.3)'}
-                              />
-                            ))}
-                          </div>
-                          <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)' }}>
-                            4.8
-                          </span>
-                        </div>
-
-                        {/* Product name */}
-                        <h3 style={{
-                          fontFamily: 'var(--font-heading, "Outfit", sans-serif)',
-                          fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
-                          fontWeight: 600, color: '#FFFFFF',
-                          lineHeight: 1.35, marginBottom: 8,
-                          transition: 'color 0.25s ease',
-                          ...(isHovered ? { color: '#EDD98A' } : {}),
-                        }}>
-                          {product.name}
-                        </h3>
-
-                        {/* Short description */}
-                        <p style={{
-                          fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)',
-                          lineHeight: 1.65, marginBottom: 18,
-                          display: '-webkit-box',
-                          WebkitLineClamp: 2,
-                          WebkitBoxOrient: 'vertical',
-                          overflow: 'hidden',
-                        }}>
-                          {product.shortDescription || product.description?.slice(0, 90) + '…'}
-                        </p>
-
-                        {/* Divider */}
-                        <div style={{
-                          height: 1,
-                          background: 'rgba(255,255,255,0.06)',
-                          marginBottom: 16,
-                        }} />
-
-                        {/* Footer: price + CTA */}
-                        <div style={{
-                          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                        }}>
-                          <div>
-                            <div style={{
-                              fontSize: '0.85rem',
-                              fontWeight: 600,
-                              color: '#D4AF37',
-                              letterSpacing: '0.02em',
-                            }}>
-                              Request a Quote
-                            </div>
-                          </div>
-
-                          <motion.span
-                            animate={{ x: isHovered ? 3 : 0 }}
-                            transition={{ duration: 0.2 }}
-                            style={{
-                              display: 'inline-flex', alignItems: 'center', gap: 6,
-                              fontSize: '11px', fontWeight: 700,
-                              letterSpacing: '0.1em', textTransform: 'uppercase',
-                              color: isHovered ? '#D4AF37' : 'rgba(255,255,255,0.35)',
-                              transition: 'color 0.25s ease',
-                            }}
-                          >
-                            Details <ArrowRight size={12} />
-                          </motion.span>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
+                  <ProductCard product={product} />
                 </motion.div>
-              );
-            }))}
+              )))}
           </motion.div>
         </AnimatePresence>
 
