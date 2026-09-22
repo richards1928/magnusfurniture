@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { designerStore, selectFurniture } from '../../store/designerStore';
 import { furnitureTypes } from '../../data/furniture-types';
 import { ArrowLeft, ArrowRight, Compass, Cpu, Layers, ShieldCheck } from 'lucide-react';
-import '../../styles/SelectionScreen.css';
 
 // Archetype Metadata for official architectural presentation
 const ARCHETYPE_METADATA: Record<string, {

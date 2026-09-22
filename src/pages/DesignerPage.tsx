@@ -3,6 +3,7 @@ import { designerStore } from '../store/designerStore';
 import { SelectionScreen } from '../components/designer/SelectionScreen';
 import { Workspace } from '../components/designer/Workspace';
 import { useEffect } from 'react';
+import '../styles/SelectionScreen.css';
 
 export function DesignerPage() {
   const state = useSnapshot(designerStore);
