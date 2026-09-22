@@ -111,7 +111,7 @@ export function ProductsPage() {
         </div>
 
         {/* Product Grid */}
-        <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ flex: 1, minWidth: 0, width: '100%' }}>
           {/* Sort Bar */}
           <div className="products-sort-bar">
             <div className="products-sort-bar__count">
@@ -125,13 +125,14 @@ export function ProductsPage() {
           </div>
 
           {displayProducts.length > 0 ? (
-            <div className="products-grid">
+            <div className="products-grid" style={{ width: '100%' }}>
               {displayProducts.map((product, i) => (
                 <motion.div
                   key={product.id}
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ width: '100%', maxWidth: 440, margin: '0 auto' }}
                 >
                   <ProductCard product={product} />
                 </motion.div>

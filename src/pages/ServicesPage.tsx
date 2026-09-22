@@ -368,11 +368,11 @@ export function ServicesPage() {
                   <h3 className="service-card-title">{item.title}</h3>
                   <p className="service-card-desc">{item.description}</p>
 
-                  <div style={{ marginTop: 'auto' }}>
+                  {/* <div style={{ marginTop: 'auto' }}>
                     <div className="service-card-action">
                       Request Consultation <ArrowRight size={14} />
                     </div>
-                  </div>
+                  </div> */}
                 </motion.div>
               );
             })}
@@ -583,9 +583,10 @@ export function ServicesPage() {
               </p>
               <Button
                 variant="primary"
-                onClick={() => handleOpenQuoteModal('End-to-End Workspace Solutions')}
+                href="tel:9090626207"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
               >
-                Plan Your Workspace <ArrowRight size={16} />
+                <PhoneCall size={16} /> Call: 9090626207
               </Button>
             </div>
           </motion.div>
@@ -614,9 +615,10 @@ export function ServicesPage() {
               </p>
               <Button
                 variant="primary"
-                onClick={() => handleOpenQuoteModal('Custom Furniture Expertise')}
+                href="tel:9090626207"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
               >
-                Request Custom Design <ArrowRight size={16} />
+                <PhoneCall size={16} /> Call: 9090626207
               </Button>
             </div>
           </motion.div>
@@ -645,9 +647,10 @@ export function ServicesPage() {
               </p>
               <Button
                 variant="primary"
-                onClick={() => handleOpenQuoteModal('Corporate Bulk Project Proposal')}
+                href="tel:9090626207"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
               >
-                Request Bulk Proposal <ArrowRight size={16} />
+                <PhoneCall size={16} /> Call: 9090626207
               </Button>
             </div>
           </motion.div>

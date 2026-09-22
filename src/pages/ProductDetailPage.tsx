@@ -77,12 +77,12 @@ export function ProductDetailPage() {
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
             <div style={{
               width: '100%', aspectRatio: '1', borderRadius: 'var(--radius-lg)',
-              background: 'var(--color-walnut-light, #5A2919)',
+              background: '#ffffff',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              border: '1px solid var(--color-gray-200)', marginBottom: 'var(--space-4)',
+              border: '1px solid rgba(212, 175, 55, 0.2)', marginBottom: 'var(--space-4)',
               position: 'relative',
               overflow: 'hidden',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.06)',
             }}>
               <img
                 key={currentImgSrc}
@@ -122,8 +122,8 @@ export function ProductDetailPage() {
                     onClick={() => { setActiveImage(img); setImgError(false); }}
                     style={{
                       aspectRatio: '1', borderRadius: 'var(--radius-md)',
-                      background: 'var(--color-walnut-light, #5A2919)', 
-                      border: `2px solid ${activeImage === img ? 'var(--color-primary)' : 'var(--color-gray-200)'}`,
+                      background: '#ffffff', 
+                      border: `2px solid ${activeImage === img ? 'var(--color-primary)' : 'rgba(212, 175, 55, 0.2)'}`,
                       cursor: 'pointer',
                       overflow: 'hidden',
                       display: 'flex',

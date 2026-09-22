@@ -385,11 +385,7 @@ export function CustomFurniturePage() {
             description="Our structured 4-step manufacturing process ensures perfect fit, high structural integrity, and timely delivery."
           />
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: 'var(--space-6)'
-          }}>
+          <div className="workflow-steps-grid">
             {[
               { step: '01', icon: PenTool, title: 'Requirement Analysis', desc: 'Detailed site measurements, seating layout study, and functional specs.' },
               { step: '02', icon: Monitor, title: '3D CAD Rendering', desc: 'Drafting 2D floor plans & photorealistic 3D models for instant approval.' },
@@ -544,7 +540,7 @@ export function CustomFurniturePage() {
                       </select>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)' }}>
+                    <div className="form-row-grid">
                       <div className="form-group">
                         <label className="form-label">Full Name *</label>
                         <input type="text" required placeholder="e.g. Anand Sharma" className="form-input" value={formName} onChange={(e) => setFormName(e.target.value)} />
@@ -555,7 +551,7 @@ export function CustomFurniturePage() {
                       </div>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)' }}>
+                    <div className="form-row-grid">
                       <div className="form-group">
                         <label className="form-label">Email *</label>
                         <input type="email" required placeholder="name@company.com" className="form-input" value={formEmail} onChange={(e) => setFormEmail(e.target.value)} />

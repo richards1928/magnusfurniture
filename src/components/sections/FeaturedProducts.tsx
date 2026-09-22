@@ -189,6 +189,7 @@ export function FeaturedProducts() {
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
               gap: 24,
+              justifyContent: 'center',
             }}
           >
             {filtered.length === 0 ? (
@@ -216,6 +217,7 @@ export function FeaturedProducts() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ width: '100%', maxWidth: 440, margin: '0 auto' }}
                 >
                   <ProductCard product={product} />
                 </motion.div>

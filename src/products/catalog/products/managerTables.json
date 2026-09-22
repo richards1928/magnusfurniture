@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": "MAG-MGR-001",
     "sku": "MAG-MGR-VBFUSION",
@@ -38,10 +38,10 @@
     "applications": [],
     "features": [],
     "images": {
-      "hero": "/assets/products/managerTables/vb-hexa.png",
-      "thumbnail": "/assets/products/managerTables/vb-hexa.png",
+      "hero": "/assets/products/managerTables/vb-hexa-v2.png",
+      "thumbnail": "/assets/products/managerTables/vb-hexa-v2.png",
       "gallery": [
-        "/assets/products/managerTables/vb-hexa.png"
+        "/assets/products/managerTables/vb-hexa-v2.png"
       ]
     },
     "brochure": "",

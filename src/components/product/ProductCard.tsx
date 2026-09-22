@@ -30,7 +30,7 @@ export function ProductCard({ product }: { product: Product }) {
   const imgSrc = product.hero || product.thumbnail || "";
 
   return (
-    <Link to={`/products/${product.slug}`} state={{ image: imgSrc }} className="premium-product-card">
+    <Link to={`/products/${product.slug}`} state={{ image: imgSrc }} className="premium-product-card" style={{ width: '100%' }}>
       {/* Image Area */}
       <div className="premium-product-card__image-wrap">
         <div className={`premium-product-card__image-bg${imgSrc && !loaded ? ' is-loading' : ''}`}>

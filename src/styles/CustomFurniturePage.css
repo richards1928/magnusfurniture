@@ -145,3 +145,44 @@
   background: var(--color-primary);
   color: var(--color-accent);
 }
+
+/* ── Craftsmanship Workflow Steps Grid ── */
+.workflow-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .workflow-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .workflow-steps-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+/* ── Form Row Grid ── */
+.form-row-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 500px) {
+  .form-row-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Mobile Hero Adjustments ── */
+@media (max-width: 768px) {
+  .custom-hero {
+    padding-top: calc(var(--nav-height) + var(--space-8));
+    padding-bottom: var(--space-12);
+  }
+}

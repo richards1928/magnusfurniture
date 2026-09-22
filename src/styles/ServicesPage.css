@@ -520,6 +520,13 @@
     gap: 0;
     direction: ltr;
   }
+
+  .highlight-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .highlight-image-wrapper {
