@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "magnus-furniture-299d8",
     "public": "dist",
     "ignore": [
       "firebase.json",
