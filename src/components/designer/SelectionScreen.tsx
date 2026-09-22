@@ -38,7 +38,7 @@ const ARCHETYPE_METADATA: Record<string, {
     dimensionLabel: '150 × 75 × 70 cm',
     features: ['Solid Walnut Core', 'O-Loop Steel Frame', 'Acoustic Panel Ready'],
     specs: 'Executive Workstation',
-    image: '/assets/products/mdTables/vb-regal-desk.webp',
+    image: '/assets/products/mdTables/executive-office-desk-arch.jpg',
   },
   'dining-table': {
     title: 'Conference Table',
@@ -444,7 +444,7 @@ export function SelectionScreen() {
                       filter: isHovered ? 'brightness(1.02) contrast(1.04)' : 'brightness(0.9) contrast(1)',
                     }}
                     onError={(e) => {
-                      e.currentTarget.src = '/assets/products/mdTables/vb-regal-desk.webp';
+                      e.currentTarget.src = '/assets/products/mdTables/executive-office-desk-arch.jpg';
                     }}
                   />
 
