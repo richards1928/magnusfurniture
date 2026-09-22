@@ -5,27 +5,34 @@ import { Link } from 'react-router-dom';
 import { designerStore, selectFurniture } from '../../store/designerStore';
 import { furnitureTypes } from '../../data/furniture-types';
 import { ArrowLeft, ArrowRight, Compass, Cpu, Layers, ShieldCheck } from 'lucide-react';
+import '../../styles/SelectionScreen.css';
 
 // Archetype Metadata for official architectural presentation
 const ARCHETYPE_METADATA: Record<string, {
+  title: string;
+  description: string;
   code: string;
   categoryTag: string;
-  categoryGroup: 'workplace' | 'living';
+  categoryGroup: 'workplace' | 'conference';
   dimensionLabel: string;
   features: string[];
   specs: string;
   image: string;
 }> = {
   'study-table': {
-    code: 'ARCH-01 // STUDY',
-    categoryTag: 'COMMERCIAL & STUDY',
+    title: 'Workstation Desk',
+    description: 'Design a personalized ergonomic workstation desk with drawers, dividers, and integrated cable routing.',
+    code: 'ARCH-01 // WORKSPACE',
+    categoryTag: 'COMMERCIAL WORKSTATION',
     categoryGroup: 'workplace',
     dimensionLabel: '120 × 75 × 60 cm',
     features: ['Modular Drawers', 'Oak / Steel Columns', 'Cable Routing'],
-    specs: 'Study Table & Desk',
+    specs: 'Commercial Workstation Desk',
     image: '/assets/gallery/056e666f-cd55-4bbe-84fe-c65cd5b77944.jpg',
   },
   'office-table': {
+    title: 'Executive Office Desk',
+    description: 'Build a premium executive cabin desk with solid walnut accents, steel frame, and credenza storage.',
     code: 'ARCH-02 // EXEC',
     categoryTag: 'EXECUTIVE SERIES',
     categoryGroup: 'workplace',
@@ -35,30 +42,36 @@ const ARCHETYPE_METADATA: Record<string, {
     image: '/assets/products/mdTables/vb-regal-desk.webp',
   },
   'dining-table': {
-    code: 'ARCH-03 // DINE',
-    categoryTag: 'HOSPITALITY & LIVING',
-    categoryGroup: 'living',
-    dimensionLabel: '180 × 76 × 90 cm',
-    features: ['Solid Teak Surface', 'Turned Timber Posts', '8-Seater Capacity'],
-    specs: 'Banquet & Dining Table',
+    title: 'Conference Table',
+    description: 'Create the perfect boardroom and conference table engineered for team collaboration and executive meetings.',
+    code: 'ARCH-03 // CONF',
+    categoryTag: 'CONFERENCE & BOARDROOM',
+    categoryGroup: 'conference',
+    dimensionLabel: '240 × 76 × 120 cm',
+    features: ['Solid Hardwood Surface', 'Heavy-Duty Steel Base', '8–12 Seater Capacity'],
+    specs: 'Executive Conference Table',
     image: '/assets/gallery/500701ec-09f9-446a-922a-852806efe644.jpg',
   },
   'coffee-table': {
-    code: 'ARCH-04 // LOW',
-    categoryTag: 'LOUNGE & RESIDENTIAL',
-    categoryGroup: 'living',
+    title: 'Lounge Coffee Table',
+    description: 'Design a stylish coffee table for executive cabins, reception waiting areas, and breakout zones.',
+    code: 'ARCH-04 // LOUNGE',
+    categoryTag: 'OFFICE LOUNGE & RECEPTION',
+    categoryGroup: 'conference',
     dimensionLabel: '100 × 45 × 60 cm',
     features: ['Tempered Safety Glass', 'Geometric Hairpin Frame', 'Dual-Tier Storage'],
-    specs: 'Lounge Coffee Table',
+    specs: 'Reception & Lounge Table',
     image: '/assets/gallery/70606cd9-cc97-4d21-8720-302497b8bbd3.jpg',
   },
   'tv-unit': {
+    title: 'Office Media Credenza',
+    description: 'Build a modern presentation media console and credenza with integrated cable management for conference rooms.',
     code: 'ARCH-05 // MEDIA',
-    categoryTag: 'MEDIA ARCHITECTURE',
-    categoryGroup: 'living',
+    categoryTag: 'AV & PRESENTATION',
+    categoryGroup: 'conference',
     dimensionLabel: '180 × 55 × 45 cm',
     features: ['Fluted Slatted Front', 'Concealed Cable Channel', 'Lowline Stance'],
-    specs: 'Media & Console Unit',
+    specs: 'Conference Media Credenza',
     image: '/assets/gallery/10593491-4b51-4019-af21-376b0ea833cc.jpg',
   },
 };
@@ -69,7 +82,7 @@ const ARCHETYPE_METADATA: Record<string, {
 
 export function SelectionScreen() {
   useSnapshot(designerStore);
-  const [activeFilter, setActiveFilter] = useState<'all' | 'workplace' | 'living'>('all');
+  const [activeFilter, setActiveFilter] = useState<'all' | 'workplace' | 'conference'>('all');
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   const filteredFurniture = furnitureTypes.filter(ft => {
@@ -79,38 +92,12 @@ export function SelectionScreen() {
   });
 
   return (
-    <div style={{
-      width: '100%',
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      padding: '0 24px 60px 24px',
-      background: '#0a0c12',
-      backgroundImage: `
-        radial-gradient(ellipse 90% 50% at 50% -15%, rgba(212, 175, 55, 0.08) 0%, transparent 65%),
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
-      `,
-      backgroundSize: '100% 100%, 40px 40px, 40px 40px',
-      color: '#f8fafc',
-      fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-      position: 'relative',
-    }}>
+    <div className="selection-screen-container">
       
       {/* ── Studio Top Header Bar ── */}
-      <header style={{
-        width: '100%',
-        maxWidth: '1240px',
-        padding: '24px 0 32px 0',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.07)',
-        marginBottom: '40px',
-      }}>
+      <header className="selection-header">
         {/* Left: Brand & Return link */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+        <div className="selection-header-left" style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
           <Link to="/custom-furniture" style={{ textDecoration: 'none' }}>
             <motion.button
               whileHover={{ x: -3, borderColor: 'rgba(212, 175, 55, 0.5)' }}
@@ -288,36 +275,20 @@ export function SelectionScreen() {
         </p>
 
         {/* ── Category Filter Tabs Bar ── */}
-        <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '6px',
-          background: 'rgba(15, 20, 32, 0.75)',
-          padding: '4px',
-          borderRadius: '10px',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
-          marginTop: '26px',
-        }}>
+        <div className="selection-filter-bar">
           {[
             { key: 'all', label: 'All Archetypes (5)' },
-            { key: 'workplace', label: 'Workplace & Executive (2)' },
-            { key: 'living', label: 'Living & Dining (3)' },
+            { key: 'workplace', label: 'Workplace & Desks (2)' },
+            { key: 'conference', label: 'Conference & Lounge (3)' },
           ].map(tab => (
             <button
               key={tab.key}
               onClick={() => setActiveFilter(tab.key as any)}
+              className="selection-filter-btn"
               style={{
-                padding: '7px 16px',
-                borderRadius: '7px',
-                border: 'none',
                 background: activeFilter === tab.key ? 'rgba(212, 175, 55, 0.16)' : 'transparent',
                 color: activeFilter === tab.key ? '#F3E5AB' : '#94a3b8',
                 boxShadow: activeFilter === tab.key ? 'inset 0 0 0 1px rgba(212, 175, 55, 0.4)' : 'none',
-                fontSize: '12px',
-                fontWeight: 600,
-                letterSpacing: '0.04em',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
               }}
             >
               {tab.label}
@@ -329,17 +300,13 @@ export function SelectionScreen() {
       {/* ── Archetype Cards Grid ── */}
       <motion.div 
         layout
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '24px',
-          width: '100%',
-          maxWidth: '1200px',
-        }}
+        className="selection-cards-grid"
       >
         <AnimatePresence>
           {filteredFurniture.map((ft, i) => {
             const meta = ARCHETYPE_METADATA[ft.id] || {
+              title: ft.name,
+              description: ft.description,
               code: `ARCH-0${i + 1}`,
               categoryTag: 'ARCHITECTURAL SERIES',
               categoryGroup: 'workplace',
@@ -353,6 +320,7 @@ export function SelectionScreen() {
               <motion.div
                 layout
                 key={ft.id}
+                className="selection-card-item"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
@@ -568,7 +536,7 @@ export function SelectionScreen() {
                     alignItems: 'center',
                     justifyContent: 'space-between',
                   }}>
-                    <span>{ft.name}</span>
+                    <span>{meta.title || ft.name}</span>
                     <span style={{
                       fontSize: '11px',
                       fontFamily: 'monospace',
@@ -585,7 +553,7 @@ export function SelectionScreen() {
                     lineHeight: 1.55,
                     marginBottom: '14px',
                   }}>
-                    {ft.description}
+                    {meta.description || ft.description}
                   </p>
 
                   {/* Architectural Feature Pills */}
@@ -665,32 +633,17 @@ export function SelectionScreen() {
       </motion.div>
 
       {/* ── Official Engineering Standards Bottom Ribbon ── */}
-      <footer style={{
-        marginTop: '56px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '24px',
-        flexWrap: 'wrap',
-        padding: '16px 28px',
-        borderRadius: '9999px',
-        background: 'rgba(15, 20, 32, 0.6)',
-        border: '1px solid rgba(255, 255, 255, 0.06)',
-        color: '#64748b',
-        fontSize: '11px',
-        letterSpacing: '0.08em',
-        textTransform: 'uppercase',
-      }}>
+      <footer className="selection-footer-ribbon">
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
           <ShieldCheck size={14} color="#D4AF37" />
           <span>MAGNUS INDUSTRIAL QUALITY</span>
         </div>
-        <span style={{ color: 'rgba(255,255,255,0.1)' }}>|</span>
+        <span className="ribbon-divider" style={{ color: 'rgba(255,255,255,0.1)' }}>|</span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
           <Cpu size={14} color="#D4AF37" />
           <span>REAL-TIME PHOTOMETRIC RENDERING</span>
         </div>
-        <span style={{ color: 'rgba(255,255,255,0.1)' }}>|</span>
+        <span className="ribbon-divider" style={{ color: 'rgba(255,255,255,0.1)' }}>|</span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
           <Compass size={14} color="#D4AF37" />
           <span>BESPOKE MANUFACTURING IN HYDERABAD</span>
